@@ -1,4 +1,57 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Animate sections on scroll
+    const sections = document.querySelectorAll('section');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    timelineItems.forEach(item => {
+        observer.observe(item);
+    });
+
+
+    // Hide header on scroll down, show on scroll up
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            header.style.top = '-80px';
+        } else {
+            header.style.top = '0';
+        }
+        lastScrollTop = scrollTop;
+    });
+
+
     const experience = [
         {
             date: "Mar 2025 – Present",
@@ -58,19 +111,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const testimonials = [
         {
             quote: "A core strength; constantly looks for refinement in processes, naturally seeking automation and reducing manual touch points. Able to 'simplify the amount of tasks required' by using multiple technologies.",
-            author: "Invent & Simplify"
+            author: "Manager @ Amazon"
         },
         {
             quote: "Possesses vast knowledge of all that Amazon has to offer. Is the go-to person for difficult technical issues and has deep database expertise combined with Amazonian processes knowledge.",
-            author: "Dive Deep & Expertise"
+            author: "Peer @ Amazon"
         },
         {
             quote: "Highly collaborative and very responsive to new requirements, ensuring alignment when working with stakeholders. Known for working with a smile and calm demeanor, even under stress or pressure.",
-            author: "Earn Trust & Collaboration"
+            author: "Stakeholder @ Amazon"
         },
         {
             quote: "Quick to act, deliver results, and implement solutions, often finding workarounds to time-critical blockers.",
-            author: "Bias for Action / Deliver Results"
+            author: "Manager @ Amazon"
         }
     ];
 
@@ -87,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
         timelineContainer.appendChild(timelineItem);
+        observer.observe(timelineItem);
     });
 
     const projectsContainer = document.querySelector('.project-cards');
