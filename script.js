@@ -55,6 +55,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
 
+    const testimonials = [
+        {
+            quote: "A core strength; constantly looks for refinement in processes, naturally seeking automation and reducing manual touch points. Able to 'simplify the amount of tasks required' by using multiple technologies.",
+            author: "Invent & Simplify"
+        },
+        {
+            quote: "Possesses vast knowledge of all that Amazon has to offer. Is the go-to person for difficult technical issues and has deep database expertise combined with Amazonian processes knowledge.",
+            author: "Dive Deep & Expertise"
+        },
+        {
+            quote: "Highly collaborative and very responsive to new requirements, ensuring alignment when working with stakeholders. Known for working with a smile and calm demeanor, even under stress or pressure.",
+            author: "Earn Trust & Collaboration"
+        },
+        {
+            quote: "Quick to act, deliver results, and implement solutions, often finding workarounds to time-critical blockers.",
+            author: "Bias for Action / Deliver Results"
+        }
+    ];
+
     const timelineContainer = document.querySelector('.timeline');
     experience.forEach((item, index) => {
         const side = index % 2 === 0 ? 'left' : 'right';
@@ -80,5 +99,16 @@ document.addEventListener('DOMContentLoaded', function() {
             <p><strong>Tech:</strong> ${project.tech}</p>
         `;
         projectsContainer.appendChild(card);
+    });
+
+    const testimonialsContainer = document.querySelector('.testimonial-cards');
+    testimonials.forEach(testimonial => {
+        const card = document.createElement('div');
+        card.classList.add('testimonial-card');
+        card.innerHTML = `
+            <p>"${testimonial.quote}"</p>
+            <h3>- ${testimonial.author}</h3>
+        `;
+        testimonialsContainer.appendChild(card);
     });
 });
