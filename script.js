@@ -1,112 +1,104 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Animate sections on scroll
-    const sections = document.querySelectorAll('section');
-    const timelineItems = document.querySelectorAll('.timeline-item');
-
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
+    // --- Data ---
+    const experienceData = {
+        "eng-manager-citiustech": {
+            title: "Engineering Manager, CitiusTech",
+            date: "Mar 2025 – Present",
+            summary: "Managed an 8-person data team, accelerating 5 critical data projects in 3 months.",
+            details: `
+                <ul>
+                    <li>Managed a team of 8 data professionals (DEs/BIEs).</li>
+                    <li>Accelerated 5 critical data projects within the first 3 months.</li>
+                    <li>Key activities included DBT model building in Redshift, GitHub integration for version control, and creating Looker dashboards for visualization.</li>
+                </ul>
+            `
+        },
+        "trader-mentor": {
+            title: "Individual Trader & Mentor",
+            date: "2022 – 2024",
+            summary: "Managed derivative portfolios over ₹3 crore, achieving 20% CAGR.",
+            details: `
+                <ul>
+                    <li>Managed over six derivative trading portfolios with a total value exceeding ₹3 crore.</li>
+                    <li>Achieved a consistent 20% Compound Annual Growth Rate (CAGR).</li>
+                    <li>Developed and back-tested four time-based option strategies, which achieved a 50% CAGR over multi-year periods.</li>
+                </ul>
+            `
+        },
+        "sr-bie-alexa": {
+            title: "Sr. BIE, Amazon Alexa",
+            date: "2020 – 2022",
+            summary: "Spearheaded data architecture for the Connected Device organization.",
+            details: `
+                <ul>
+                    <li>Led data architecture and developed customer-facing dashboards for the Connected Device organization, supporting over 15 teams.</li>
+                    <li>Established a robust data infrastructure using Redshift and data pipelining.</li>
+                    <li>Built self-service products, including QuickSight Dashboards and a Query Bank for FAQs, which reduced data access time from two weeks to less than an hour.</li>
+                </ul>
+            `
+        },
+        "sr-bie-ads": {
+            title: "Sr. BIE, Amazon Ads",
+            date: "2018 – 2020",
+            summary: "Designed and implemented the Head Count Tracking (HCT) Tool.",
+            details: `
+                <ul>
+                    <li>Designed and implemented the Head Count Tracking (HCT) Tool for Amazon Ads, which automated and streamlined the process of tracking employee headcount.</li>
+                    <li>The tool used SharePoint forms for input, Redshift for data storage, and QuickSight for visualization.</li>
+                    <li>Freed up approximately 50% of a financial analyst's bandwidth.</li>
+                    <li>Delivered Retargeting metrics (WBR) by creating joined queries on Athena tables.</li>
+                </ul>
+            `
+        }
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-
-    timelineItems.forEach(item => {
-        observer.observe(item);
-    });
-
-
-    // Hide header on scroll down, show on scroll up
-    let lastScrollTop = 0;
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
-            header.style.top = '-80px';
-        } else {
-            header.style.top = '0';
-        }
-        lastScrollTop = scrollTop;
-    });
-
-
-    const experience = [
-        {
-            date: "Mar 2025 – Present",
-            role: "Engineering Manager, CitiusTech (Client: Kyruus Health)",
-            accomplishments: "Managed an 8-person data team (DEs/BIEs). Accelerated 5 critical data projects within 3 months, involving DBT model building (Redshift), GitHub integration, and Looker dashboard creation."
-        },
-        {
-            date: "2022 – 2024",
-            role: "Individual Trader and Freelancing Mentor",
-            accomplishments: "Managed over six derivative trading portfolios exceeding ₹3 crore, achieving 20% CAGR. Developed four time-based option strategies with multi-year back testing, achieving 50% CAGR."
-        },
-        {
-            date: "2020 – 2022",
-            role: "Sr. BIE, Amazon Alexa",
-            accomplishments: "Spearheaded data architecture and customer-facing dashboards for the Connected Device organization across 15+ teams. Established a robust data infrastructure (Redshift, data pipelining) and built self-service products like QuickSight Dashboards and a Query Bank for FAQs, reducing data access time from two weeks to less than an hour."
-        },
-        {
-            date: "2018 – 2020",
-            role: "Sr. BIE, Amazon Ads",
-            accomplishments: "Designed and implemented the Head Count Tracking (HCT) Tool for Amazon Ads using SharePoint forms, Redshift, and QuickSight dashboards, freeing up approximately 50% of a financial analyst's bandwidth. Delivered Retargeting metrics (WBR) by creating joined queries on Athena tables."
-        },
-        {
-            date: "2016 – 2018",
-            role: "Sr. BIE, Amazon Compliance",
-            accomplishments: "Developed a denormalized table unifying data from over 90 unrelated sources into a comprehensive table with 100+ columns, enabling faster reporting cycles and the creation of over 300 metrics dashboards. Involved in collaboration with COPS to spin up a 4-node Redshift cluster and provide Tableau licenses."
-        },
-        {
-            date: "2012 – 2016",
-            role: "SME / Business Analyst, Amazon India",
-            accomplishments: "Delivered high-impact projects in Defect Reduction (e.g., Repeat rate reduction, Barcode reconciliation), saving 32,000 ISS TTs (8 FTE savings). Implemented quality measures using Lean Six Sigma to ensure 100% quality. Automated Hazmat classification using SQL/Excel functions to classify ~15K ASINs in bulk."
-        }
-    ];
-
-    const projects = [
-        {
+    const projectData = {
+        "headct-tool": {
             title: "HeadCT Tool Implementation",
-            details: "Replaced manual headcount tracking with a scalable system using SharePoint Forms, Redshift, and QuickSight. Reduced manual effort, saving ~50% of a financial analyst's bandwidth.",
-            tech: "SharePoint Forms, Redshift, HR BI, QuickSight, DataNet ETL"
+            summary: "Replaced manual headcount tracking with a scalable, automated system.",
+            details: `
+                <p><strong>Problem:</strong> Manual headcount tracking via emails, chime, and Excel was inefficient and not scalable.</p>
+                <p><strong>Solution:</strong> Developed an integrated system using SharePoint forms for user input and HR BI data (via DataNet ETL) into a Redshift database. Visualized results in QuickSight.</p>
+                <p><strong>Impact:</strong> Reduced manual effort, saving approximately 50% of a financial analyst's bandwidth and providing a single source of truth for headcount.</p>
+                <p><strong>Technologies:</strong> SharePoint Forms, Redshift, HR BI, QuickSight, DataNet ETL</p>
+            `
         },
-        {
+        "compliance-data": {
             title: "Compliance Data Unification",
-            details: "Unified data from 90+ sources into a single denormalized table to accelerate reporting and provide end-to-end visibility. Enabled faster analysis for key metrics.",
-            tech: "Redshift, SQL, ETL development"
+            summary: "Unified data from over 90 sources into a single source of truth.",
+            details: `
+                <p><strong>Problem:</strong> Data was siloed across 90+ unrelated sources, making comprehensive reporting and analysis nearly impossible.</p>
+                <p><strong>Solution:</strong> Developed a denormalized table that unified these sources into a single table with over 100 columns.</p>
+                <p><strong>Impact:</strong> Accelerated reporting cycles and provided end-to-end visibility for key stakeholders. Enabled faster analysis for metrics like SLA miss reports for gated ASINs.</p>
+                <p><strong>Technologies:</strong> Redshift, SQL, ETL Development</p>
+            `
         },
-        {
+        "dsp-sdp-reporting": {
             title: "DSP/SDP Reporting",
-            details: "Built data pipelines and queries for Single Display Product (SDP) and Sponsored Display metrics. Ensured WBR reporting could continue under intense time pressure.",
-            tech: "Athena, Redshift, SQL, QuickSight, ADW"
+            summary: "Built data pipelines and queries for critical advertising metrics.",
+            details: `
+                <p><strong>Problem:</strong> Needed to build data pipelines and queries for Single Display Product (SDP) and Sponsored Display metrics under intense time pressure for WBR reporting.</p>
+                <p><strong>Solution:</strong> Created queries and views to define metrics for active advertisers using complex SQL logic on da_athena.sp_campaign and spbetaadvertisers tables.</p>
+                <p><strong>Impact:</strong> Ensured that WBR reporting could continue without interruption, providing critical data to the business.</p>
+                <p><strong>Technologies:</strong> Athena, Redshift, SQL, QuickSight, ADW</p>
+            `
         },
-        {
+        "automation-fte": {
             title: "Automation & FTE Savings",
-            details: "Consistently focused on automation. Projects include the Auto Reporter tool, optimizing DG Hazmat processes, and standardization of CTI onboarding.",
-            tech: "SQL, Excel VBA, DataNet"
+            summary: "Consistently focused on automation to drive efficiency.",
+            details: `
+                <p>A consistent theme across projects has been a focus on automation and simplification to save time and resources.</p>
+                <ul>
+                    <li><strong>Auto Reporter Tool:</strong> Automated the generation of reports, saving manual effort.</li>
+                    <li><strong>Hazmat Classification:</strong> Optimized dangerous goods (DG) Hazmat processes to classify 15K ASINs in bulk using SQL/Excel functions.</li>
+                    <li><strong>CTI Onboarding:</strong> Standardized CTI onboarding for EU-3 MPs, reducing complexity and time.</li>
+                </ul>
+                <p><strong>Impact:</strong> These and other projects contributed to a total savings of over 50 FTEs.</p>
+                <p><strong>Technologies:</strong> SQL, Excel VBA, DataNet</p>
+            `
         }
-    ];
+    };
 
     const testimonials = [
         {
@@ -127,33 +119,35 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     ];
 
-    const timelineContainer = document.querySelector('.timeline');
-    experience.forEach((item, index) => {
-        const side = index % 2 === 0 ? 'left' : 'right';
-        const timelineItem = document.createElement('div');
-        timelineItem.classList.add('timeline-item', side);
-        timelineItem.innerHTML = `
-            <div class="timeline-content">
-                <h3>${item.role}</h3>
-                <span>${item.date}</span>
-                <p>${item.accomplishments}</p>
-            </div>
-        `;
-        timelineContainer.appendChild(timelineItem);
-        observer.observe(timelineItem);
-    });
-
-    const projectsContainer = document.querySelector('.project-cards');
-    projects.forEach(project => {
+    // --- DOM Manipulation ---
+    const experienceContainer = document.getElementById('experience-cards');
+    for (const id in experienceData) {
+        const item = experienceData[id];
         const card = document.createElement('div');
         card.classList.add('card');
+        card.dataset.id = id;
+        card.dataset.type = 'experience';
         card.innerHTML = `
-            <h3>${project.title}</h3>
-            <p>${project.details}</p>
-            <p><strong>Tech:</strong> ${project.tech}</p>
+            <h3>${item.title}</h3>
+            <span>${item.date}</span>
+            <p>${item.summary}</p>
+        `;
+        experienceContainer.appendChild(card);
+    }
+
+    const projectsContainer = document.getElementById('project-cards');
+    for (const id in projectData) {
+        const item = projectData[id];
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.dataset.id = id;
+        card.dataset.type = 'project';
+        card.innerHTML = `
+            <h3>${item.title}</h3>
+            <p>${item.summary}</p>
         `;
         projectsContainer.appendChild(card);
-    });
+    }
 
     const testimonialsContainer = document.querySelector('.testimonial-cards');
     testimonials.forEach(testimonial => {
@@ -164,5 +158,74 @@ document.addEventListener('DOMContentLoaded', function() {
             <h3>- ${testimonial.author}</h3>
         `;
         testimonialsContainer.appendChild(card);
+    });
+
+    // --- Modal Logic ---
+    const modal = document.getElementById('modal');
+    const modalBody = document.getElementById('modal-body');
+    const closeButton = document.querySelector('.close-button');
+
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', () => {
+            const id = card.dataset.id;
+            const type = card.dataset.type;
+            let data;
+            if (type === 'experience') {
+                data = experienceData[id];
+            } else {
+                data = projectData[id];
+            }
+            
+            modalBody.innerHTML = `
+                <h2>${data.title}</h2>
+                ${data.date ? `<span>${data.date}</span>` : ''}
+                <div>${data.details}</div>
+            `;
+            modal.style.display = 'block';
+        });
+    });
+
+    closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+
+    // --- Animations ---
+    const sections = document.querySelectorAll('section');
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            header.style.top = '-80px';
+        } else {
+            header.style.top = '0';
+        }
+        lastScrollTop = scrollTop;
     });
 });

@@ -10,9 +10,10 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
+                <li><a href="#profile">Home</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -25,11 +26,25 @@
                 <img src="Passport Pic.jpeg" alt="Sharath's Profile Picture" class="profile-pic">
                 <h1>Sharath</h1>
                 <h2>Innovative Senior Business Intelligence Engineer, Manager, and Entrepreneur</h2>
-                <p>Results-driven leader with 12-13 years of expertise in Data-Driven Strategies and Analytics. Known for architecting scalable data solutions, automating processes, and enabling strategic decision-making through comprehensive dashboards and data models. Proven ability to leverage technical capabilities to solve hard & impactful problems, contributing to savings of over 30 to 50+ full-time equivalent (FTE) positions.</p>
+                <p>Results-driven leader with over 12 years of expertise in Data-Driven Strategies and Analytics. Known for architecting scalable data solutions, automating processes, and enabling strategic decision-making through comprehensive dashboards and data models. Proven ability to leverage technical capabilities to solve hard & impactful problems, contributing to savings of over 50+ full-time equivalent (FTE) positions.</p>
             </div>
         </section>
 
-        <section id="about">
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div id="experience-cards" class="card-container">
+                <!-- Experience cards will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Key Projects</h2>
+            <div id="project-cards" class="card-container">
+                <!-- Project cards will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <section id="skills">
             <h2>Technical Skills</h2>
             <div class="skills-container">
                 <div class="skill-card">
@@ -67,20 +82,6 @@
             </div>
         </section>
 
-        <section id="experience">
-            <h2>Professional Timeline</h2>
-            <div class="timeline">
-                <!-- Experience items will be added here -->
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Projects and Key Deliverables</h2>
-            <div class="project-cards">
-                <!-- Project cards will be added here -->
-            </div>
-        </section>
-
         <section id="testimonials">
             <h2>What Others Are Saying</h2>
             <div class="testimonial-cards">
@@ -97,6 +98,13 @@
             </div>
         </section>
     </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 Sharath. All Rights Reserved.</p>
