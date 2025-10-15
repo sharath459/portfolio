@@ -122,26 +122,42 @@ h2 {
     color: var(--primary-color);
 }
 
-.skills {
-    text-align: center;
+.skills-container {
     display: flex;
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
 }
 
-.skills div {
+.skill-card {
     background: var(--surface-color);
-    padding: 1.5rem;
+    padding: 1.5rem 2rem;
     border-radius: 10px;
     box-shadow: var(--card-shadow);
     flex: 1;
     min-width: 280px;
+    border-top: 4px solid var(--primary-color);
 }
 
-.skills h3 {
+.skill-card h3 {
     color: var(--primary-color);
     margin-top: 0;
+    text-align: left;
+}
+
+.skill-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-card li {
+    padding: 8px 0;
+    border-bottom: 1px solid #333;
+}
+
+.skill-card li:last-child {
+    border-bottom: none;
 }
 
 .timeline {
