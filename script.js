@@ -50,10 +50,58 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li>Delivered Retargeting metrics (WBR) by creating joined queries on Athena tables.</li>
                 </ul>
             `
+        },
+        "sr-bie-compliance": {
+            title: "Sr. BIE, Amazon Compliance",
+            date: "2016 – 2018",
+            summary: "Developed a denormalized table unifying data from over 90 sources.",
+            details: `
+                <ul>
+                    <li>Developed a denormalized table unifying data from over 90 unrelated sources into a comprehensive table with 100+ columns.</li>
+                    <li>This enabled faster reporting cycles and the creation of over 300 metrics dashboards.</li>
+                    <li>Collaborated with COPS to spin up a 4-node Redshift cluster and provide Tableau licenses.</li>
+                </ul>
+            `
+        },
+        "sme-analyst-india": {
+            title: "SME / Business Analyst, Amazon India",
+            date: "2012 – 2016",
+            summary: "Delivered high-impact projects in Defect Reduction, saving 8 FTEs.",
+            details: `
+                <ul>
+                    <li>Delivered high-impact projects in Defect Reduction (e.g., Repeat rate reduction, Barcode reconciliation), saving 32,000 ISS TTs (equivalent to 8 FTEs).</li>
+                    <li>Implemented quality measures using Lean Six Sigma to ensure 100% quality.</li>
+                    <li>Automated Hazmat classification using SQL/Excel functions to classify ~15K ASINs in bulk.</li>
+                </ul>
+            `
         }
     };
 
     const projectData = {
+        "agentic-ai-migration": {
+            title: "Agentic AI Workflow for dbt Migration",
+            summary: "Automated the migration of 500 Matillion jobs to dbt models using an Agentic AI workflow, saving 90% of manual development effort.",
+            details: `
+                <p><strong>Problem:</strong> Manually migrating 500 Matillion jobs to dbt models was a time-consuming and error-prone process.</p>
+                <p><strong>Solution:</strong> Engineered a high-efficiency Agentic AI workflow using Python and Claude to automate the migration. The system auto-generated the necessary SQL and YAML (metadata) files for the dbt models on Redshift MCPs.</p>
+                <p><strong>Impact:</strong> This automation resulted in a 90% saving in manual development effort, dramatically accelerating the migration project.</p>
+                <p><strong>Technologies:</strong> Python, Claude, Agentic AI, dbt, Redshift</p>
+            `
+        },
+        "gen-ai-projects": {
+            title: "Gen AI Implementations",
+            summary: "Developed a Databricks chatbot, a custom data ingestion API, and replicated a Power BI dashboard in React to showcase full-stack data delivery.",
+            details: `
+                <p>A series of projects demonstrating capabilities in applying Generative AI to solve business problems:</p>
+                <ul>
+                    <li><strong>Databricks GenAI Chatbot:</strong> Built a Proof-of-Concept chatbot using Databricks's GenAI capabilities (via its API) to accelerate internal information retrieval for data teams.</li>
+                    <li><strong>Custom Data Ingestion API:</strong> Developed a custom Python API script to automate reliable, structured data ingestion from a proprietary service, including the auto-generation of a seed table.</li>
+                    <li><strong>Power BI to React Dashboard Replication:</strong> Re-created a Power BI dashboard in React.js to eliminate licensing costs and provide a platform for flexible, custom feature development.</li>
+                </ul>
+                <p><strong>Impact:</strong> These projects showcased a full-stack data delivery perspective and the ability to leverage modern AI tools to improve efficiency and reduce costs.</p>
+                <p><strong>Technologies:</strong> Python, Gen AI, Databricks, APIs, React.js</p>
+            `
+        },
         "headct-tool": {
             title: "HeadCT Tool Implementation",
             summary: "Replaced manual headcount tracking with a scalable, automated system.",
@@ -96,6 +144,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 </ul>
                 <p><strong>Impact:</strong> These and other projects contributed to a total savings of over 50 FTEs.</p>
                 <p><strong>Technologies:</strong> SQL, Excel VBA, DataNet</p>
+            `
+        },
+        "rpc-bi-arch": {
+            title: "BI Data Architecture for RPC",
+            summary: "Designed and implemented a new data architecture using Tableau.",
+            details: `
+                <p><strong>Problem:</strong> The RPC team required a more robust and scalable BI solution to support their reporting and analytics needs.</p>
+                <p><strong>Solution:</strong> Designed a new BI data architecture from the ground up. This involved creating new data models and ETL processes to feed into a Tableau-based reporting system.</p>
+                <p><strong>Impact:</strong> Provided the RPC team with a powerful and flexible BI platform, enabling them to generate insights and make data-driven decisions more effectively.</p>
+                <p><strong>Technologies:</strong> Tableau, SQL, ETL, Data Modeling</p>
+            `
+        },
+        "defect-reduction": {
+            title: "Defect Reduction Initiatives",
+            summary: "Led high-impact projects at Amazon India focused on defect reduction.",
+            details: `
+                <p><strong>Problem:</strong> A number of operational processes had high defect rates, leading to wasted resources and increased costs.</p>
+                <p><strong>Solution:</strong> Led several initiatives focused on identifying the root causes of defects and implementing solutions. This included process automation, implementing Lean Six Sigma quality measures, and developing new reconciliation tools.</p>
+                <p><strong>Impact:</strong> These initiatives resulted in significant improvements, including a reduction of 32,000 ISS TTs, which is equivalent to saving 8 FTEs.</p>
+                <p><strong>Technologies:</strong> SQL, Excel, Lean Six Sigma</p>
             `
         }
     };
