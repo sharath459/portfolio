@@ -76,6 +76,15 @@ section.visible {
     transform: translateY(0);
 }
 
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--primary-color);
+    margin-bottom: 1.5rem;
+    animation: fadeIn 1s ease-in-out;
+}
 
 #profile {
     text-align: center;
