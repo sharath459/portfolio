@@ -1,74 +1,77 @@
 const experienceData = {
     "eng-manager-citiustech": {
-        title: "Engineering Manager, CitiusTech",
+        title: "Engineering Manager, CitiusTech (Kyruus Health)",
         date: "Mar 2025 – Present",
-        summary: "Managed an 8-person data team, accelerating 5 critical data projects in 3 months.",
+        summary: "Managing an 8-person data team, accelerating 5 critical data projects in 3 months and streamlining development workflows.",
         details: `
             <ul>
-                <li>Managed a team of 8 data professionals (DEs/BIEs).</li>
-                <li>Accelerated 5 critical data projects within the first 3 months.</li>
-                <li>Key activities included DBT model building in Redshift, GitHub integration for version control, and creating Looker dashboards for visualization.</li>
+                <li>Manage a team of 8 data professionals (Data Engineers & BI Engineers).</li>
+                <li>Accelerated 5 critical data projects within the first 3 months of joining.</li>
+                <li>Key activities include building dbt models in Redshift, integrating GitHub for version control, and creating Looker dashboards for visualization.</li>
             </ul>
         `
     },
     "trader-mentor": {
         title: "Individual Trader & Mentor",
         date: "2022 – 2024",
-        summary: "Managed derivative portfolios over ₹3 crore, achieving 20% CAGR.",
+        summary: "Managed derivative portfolios over ₹3 crore, achieving 20% CAGR while mentoring new traders.",
         details: `
             <ul>
-                <li>Managed over six derivative trading portfolios with a total value exceeding ₹3 crore.</li>
-                <li>Achieved a consistent 20% Compound Annual Growth Rate (CAGR).</li>
-                <li>Developed and back-tested four time-based option strategies, which achieved a 50% CAGR over multi-year periods.</li>
+                <li>Managed over six derivative trading portfolios with a total value exceeding ₹3 crore, achieving a consistent 20% Compound Annual Growth Rate (CAGR).</li>
+                <li>Developed and back-tested four time-based option strategies that achieved a 50% CAGR over multi-year periods.</li>
+                <li>Recruited, trained, and mentored interns and mentees in trading principles and strategies.</li>
             </ul>
         `
     },
     "sr-bie-alexa": {
         title: "Sr. BIE, Amazon Alexa",
         date: "2020 – 2022",
-        summary: "Spearheaded data architecture for the Connected Device organization.",
+        summary: "Spearheaded data architecture for the Connected Device organization, hiring a team of 4 and reducing data access time from weeks to hours.",
         details: `
             <ul>
-                <li>Led data architecture and developed customer-facing dashboards for the Connected Device organization, supporting over 15 teams.</li>
-                <li>Established a robust data infrastructure using Redshift and data pipelining.</li>
-                <li>Built self-service products, including QuickSight Dashboards and a Query Bank for FAQs, which reduced data access time from two weeks to less than an hour.</li>
+                <li>Led the creation of a comprehensive data architecture and customer-facing dashboards for the Alexa Connected Device organization, supporting over 15 teams.</li>
+                <li>Developed a 3-year data roadmap and hired a BI team of 4 to execute it.</li>
+                <li>Established a robust data infrastructure using Redshift and data pipelining, building self-service products (QuickSight Dashboards, Query Banks) that reduced data access time from two weeks to less than an hour.</li>
             </ul>
         `
     },
     "sr-bie-ads": {
         title: "Sr. BIE, Amazon Ads",
-        date: "2018 – 2020",
-        summary: "Designed and implemented the Head Count Tracking (HCT) Tool.",
+        date: "May 2018 – 2020",
+        summary: "Delivered high-impact tools like the HeadCT, saving significant manual effort for the finance team.",
         details: `
             <ul>
-                <li>Designed and implemented the Head Count Tracking (HCT) Tool for Amazon Ads, which automated and streamlined the process of tracking employee headcount.</li>
-                <li>The tool used SharePoint forms for input, Redshift for data storage, and QuickSight for visualization.</li>
-                <li>Freed up approximately 50% of a financial analyst's bandwidth.</li>
-                <li>Delivered Retargeting metrics (WBR) by creating joined queries on Athena tables.</li>
+                <li>Praised in performance reviews for resourcefulness, problem-solving, and delivering the HeadCT project through persuasion and technical skill.</li>
+                <li>Designed and implemented the Head Count Tracking (HeadCT) Tool, which automated headcount tracking and freed up ~50% of a financial analyst's bandwidth.</li>
+                <li>Delivered critical retargeting metrics for Weekly Business Reviews (WBR) by building data pipelines and queries against Athena data for DSP/SDP campaigns.</li>
+                <li>Led other key initiatives including a Refund Project and SDP revenue reporting.</li>
             </ul>
         `
     },
-    "sr-bie-compliance": {
-        title: "Sr. BIE, Amazon Compliance",
-        date: "2016 – 2018",
-        summary: "Developed a denormalized table unifying data from over 90 sources.",
+    "bie-compliance": {
+        title: "BIE, Amazon Compliance (HS3C)",
+        date: "Aug 2016 – May 2018",
+        summary: "Managed BI for two major businesses (RPC & COPS), unifying data from over 90 sources and enabling automated reporting.",
         details: `
             <ul>
-                <li>Developed a denormalized table unifying data from over 90 unrelated sources into a comprehensive table with 100+ columns.</li>
-                <li>This enabled faster reporting cycles and the creation of over 300 metrics dashboards.</li>
-                <li>Collaborated with COPS to spin up a 4-node Redshift cluster and provide Tableau licenses.</li>
+                <li>Promoted to BIE in May 2017, managing major pieces of the HS3C (Health, Safety, Sustainability, Security, and Compliance) business.</li>
+                <li>Developed a foundational denormalized table unifying data from over 90 sources, enabling faster reporting and the creation of 300+ metrics dashboards.</li>
+                <li>Collaborated with the COPS team to spin up a 4-node Redshift cluster and provide Tableau licenses, creating a project plan to automate WBR, MBR, and QBR dashboards.</li>
+                <li>Built critical classification tables that allowed two different business teams to launch in 2017.</li>
             </ul>
         `
     },
     "sme-analyst-india": {
         title: "SME / Business Analyst, Amazon India",
-        date: "2012 – 2016",
-        summary: "Delivered high-impact projects in Defect Reduction, saving 8 FTEs.",
+        date: "Sep 2012 – Aug 2016",
+        summary: "Rose from Catalog Associate to Business Analyst, delivering projects that saved 8 FTEs and earning an 'Outstanding' performance review.",
         details: `
             <ul>
-                <li>Delivered high-impact projects in Defect Reduction (e.g., Repeat rate reduction, Barcode reconciliation), saving 32,000 ISS TTs (equivalent to 8 FTEs).</li>
-                <li>Implemented quality measures using Lean Six Sigma to ensure 100% quality.</li>
-                <li>Automated Hazmat classification using SQL/Excel functions to classify ~15K ASINs in bulk.</li>
+                <li>Promoted from Catalog Associate (2012) to SME (2013) and then Business Analyst (2015).</li>
+                <li>Received an "Outstanding" performance rating (2014-2015) for completing ~18 projects, saving 3 FTEs (double the target), and mentoring associates.</li>
+                <li>Led high-impact defect reduction projects (e.g., Barcode reconciliation) that saved 32,000 trouble tickets, equivalent to 8 FTEs.</li>
+                <li>Automated Hazmat classification using SQL/Excel, and developed the "Auto Reporter" tool and UK Retail Dashboard.</li>
+                <li>Conducted BI analytics and Grasshopper training for over 150 associates and managers to promote data-driven decisions.</li>
             </ul>
         `
     }
@@ -79,6 +82,7 @@ const projectData = {
         title: "Agentic AI Workflow for dbt Migration",
         summary: "Automated the migration of 500 Matillion jobs to dbt models using an Agentic AI workflow, saving 90% of manual development effort.",
         details: `
+            <p><strong>Context:</strong> As part of the work at CitiusTech for Kyruus Health.</p>
             <p><strong>Problem:</strong> Manually migrating 500 Matillion jobs to dbt models was a time-consuming and error-prone process.</p>
             <p><strong>Solution:</strong> Engineered a high-efficiency Agentic AI workflow using Python and Claude to automate the migration. The system auto-generated the necessary SQL and YAML (metadata) files for the dbt models on Redshift MCPs.</p>
             <p><strong>Impact:</strong> This automation resulted in a 90% saving in manual development effort, dramatically accelerating the migration project.</p>
@@ -91,156 +95,78 @@ const projectData = {
         details: `
             <p>A series of projects demonstrating capabilities in applying Generative AI to solve business problems:</p>
             <ul>
-                <li><strong>Databricks GenAI Chatbot:</strong> Built a Proof-of-Concept chatbot using Databricks's GenAI capabilities (via its API) to accelerate internal information retrieval for data teams.</li>
-                <li><strong>Custom Data Ingestion API:</strong> Developed a custom Python API script to automate reliable, structured data ingestion from a proprietary service, including the auto-generation of a seed table.</li>
-                <li><strong>Power BI to React Dashboard Replication:</strong> Re-created a Power BI dashboard in React.js to eliminate licensing costs and provide a platform for flexible, custom feature development.</li>
+                <li><strong>Databricks GenAI Chatbot:</strong> Built a Proof-of-Concept chatbot using Databricks's GenAI capabilities to accelerate internal information retrieval.</li>
+                <li><strong>Custom Data Ingestion API:</strong> Developed a Python API script to automate structured data ingestion from a proprietary service.</li>
+                <li><strong>Power BI to React Dashboard Replication:</strong> Re-created a Power BI dashboard in React.js to eliminate licensing costs and provide a platform for flexible feature development.</li>
             </ul>
             <p><strong>Impact:</strong> These projects showcased a full-stack data delivery perspective and the ability to leverage modern AI tools to improve efficiency and reduce costs.</p>
             <p><strong>Technologies:</strong> Python, Gen AI, Databricks, APIs, React.js</p>
         `
     },
-    "mdx-data-engineering": {
-        title: "MDX Data Engineering",
-        summary: "Onboarded 6 datasets for the MDX Targeting team to support WBR, enabling more insights by joining targeting tables with existing data.",
+    "alexa-data-architecture": {
+        title: "Alexa Data Architecture & Self-Service BI",
+        summary: "Led the data architecture for the Alexa Connected Device org, reducing data access time from 2 weeks to under an hour.",
         details: `
-            <p><strong>Problem:</strong> The MDX Targeting team needed to onboard multiple datasets to their Redshift cluster to drive more insights for their Weekly Business Review (WBR).</p>
-            <p><strong>Solution:</strong> Onboarded 6 datasets, 4 via Datanet jobs and 2 from S3 using Redshift Spectrum. To handle multi-region data, set up two new Redshift clusters in the EU and FE regions.</p>
-            <p><strong>Impact:</strong> Enabled the BI team to completely automate WBRs and create insightful dashboards, saving approximately 0.5 days of manual effort per week, per WBR.</p>
-            <p><strong>Technologies:</strong> Redshift, Datanet, Redshift Spectrum, S3</p>
-        `
-    },
-    "gdpr-implementation": {
-        title: "GDPR Compliance Implementation",
-        summary: "Implemented a Datanet solution to ensure GDPR compliance for the data cluster, eliminating dependencies on upstream teams.",
-        details: `
-            <p><strong>Problem:</strong> With the scaling of the cluster storage and the addition of new tables, ensuring GDPR compliance became a critical requirement.</p>
-            <p><strong>Solution:</strong> Implemented a Datanet solution to handle data compliance directly within the cluster, moving away from relying on upstream teams to provide full data loads.</p>
-            <p><strong>Impact:</strong> This gave the team complete ownership of cluster compliance and eliminated dependencies, ensuring the platform adhered to GDPR guidelines.</p>
-            <p><strong>Technologies:</strong> Datanet, Redshift, GDPR</p>
-        `
-    },
-    "multi-agent-analytics": {
-        title: "Multi-Agent Analytics (MAA)",
-        summary: "Created an automated, Excel-based weekly business review (WBR) to provide cross-program analytics for the 'Powered by Alexa' developer program.",
-        details: `
-            <p><strong>Problem:</strong> The 'Powered by Alexa' program lacked cross-program analytics, with individual programs having their own one-off dashboards.</p>
-            <p><strong>Solution:</strong> Designed and built an Excel-based WBR, automatically generated and distributed via email. This report measures customer usage, economic value, and agent quality across different agents.</p>
-            <p><strong>Impact:</strong> Provided a unified view of the program's performance, enabling stakeholders to measure business impact and identify areas for improvement.</p>
-            <p><strong>Technologies:</strong> Excel, SQL, DataMart</p>
-        `
-    },
-    "s3-to-redshift-poc": {
-        title: "S3 to Redshift Data Onboarding POC",
-        summary: "Conducted a proof-of-concept (POC) to identify the most optimal and cost-effective pipeline for ingesting data from AWS S3 to Redshift.",
-        details: `
-            <p><strong>Problem:</strong> For planned dashboards, data was not available in existing BI sources and needed to be ingested from non-BI sources like S3.</p>
-            <p><strong>Solution:</strong> Conducted a POC evaluating multiple data ingestion approaches based on cost, effectiveness, and maintenance. The team concluded that the S3 > Cradle > EDX > Datanet > Redshift pipeline was the optimal approach.</p>
-            <p><strong>Impact:</strong> Established a standardized, replicable, and efficient pattern for all future projects requiring data ingestion from S3, saving time and reducing complexity.</p>
-            <p><strong>Technologies:</strong> AWS S3, Cradle, EDX, Datanet, Redshift</p>
-        `
-    },
-    "multi-device-udr": {
-        title: "Multi-Device Unified Defect Rate (UDR)",
-        summary: "Developed a new SQL-based UDR metric for multi-device Alexa customers, uncovering key insights into customer behavior.",
-        details: `
-            <p><strong>Problem:</strong> The existing Unified Defect Rate (UDR) metric only accounted for single-device customers, leaving a gap in analytics for multi-device users.</p>
-            <p><strong>Solution:</strong> Created a new UDR metric for multi-device customers by writing a SQL query based on logic defined with the product team.</p>
-            <p><strong>Impact:</strong> The analysis revealed that multi-device customers had a lower UDR, leading to the insight that these more tenured customers are more 'trained' on how to interact with Alexa effectively.</p>
-            <p><strong>Technologies:</strong> SQL</p>
-        `
-    },
-    "registry-health-dashboard": {
-        title: "Registry Health Dashboard",
-        summary: "Built a self-service dashboard to monitor key registry data, de-risking the Device Deduplication project and enabling proactive issue identification.",
-        details: `
-            <p><strong>Problem:</strong> The Device Deduplication project required a comprehensive overview of registry data, including composition and growth trends, to inform and de-risk the project.</p>
-            <p><strong>Solution:</strong> Created the Registry Health dashboard, a self-service tool for PMs, SDMs, and BDSAs to monitor data such as unique identifier coverage and duplicate metrics.</p>
-            <p><strong>Impact:</strong> The dashboard allowed the project team to proactively identify and resolve data irregularities ahead of launch, ensuring a smoother project execution.</p>
-            <p><strong>Technologies:</strong> QuickSight, SQL</p>
-        `
-    },
-    "sde-intake-dashboard": {
-        title: "SDE Intake Dashboard",
-        summary: "Automated the manual SDE intake reporting process by creating a dashboard to track intake volume, processing timelines, and other key metrics.",
-        details: `
-            <p><strong>Problem:</strong> CDO TPMs were manually reporting on SDE intake data monthly, a time-consuming process with limited analytical capabilities.</p>
-            <p><strong>Solution:</strong> Created the CDO Intake dashboard to automate reporting and provide real-time insights into intake volume, accept/reject rates, key customers, and processing timelines.</p>
-            <p><strong>Impact:</strong> Enabled TPMs and SDMs to monitor the effectiveness of developer velocity investments and make data-driven decisions on where to invest further.</p>
-            <p><strong>Technologies:</strong> QuickSight, SQL</p>
-        `
-    },
-    "lap-adoption-dashboard": {
-        title: "LAP Adoption Dashboard",
-        summary: "Developed a QuickSight dashboard to track the adoption and impact of the Local Adapter Protocol (LAP) launch.",
-        details: `
-            <p><strong>Problem:</strong> The LAP launch required a way to track local adoption, including the number of customers and devices that would benefit from LAP-enabled local control.</p>
-            <p><strong>Solution:</strong> Created a QuickSight dashboard with about 20 key metrics (planned to expand to 50) to monitor adoption and customer experience edge cases.</p>
-            <p><strong>Impact:</strong> The dashboard helps product and tech teams monitor how frequently customers experience known CX edge cases, allowing them to take action if metrics move beyond estimated thresholds.</p>
-            <p><strong>Technologies:</strong> QuickSight, SQL</p>
+            <p><strong>Context:</strong> During the role as Sr. BIE for Amazon Alexa (2020-2022).</p>
+            <p><strong>Problem:</strong> Over 15 teams lacked a central data architecture, leading to slow, manual data retrieval processes that took weeks.</p>
+            <p><strong>Solution:</strong> Spearheaded the creation of a comprehensive data architecture using Redshift and data pipelining. Developed self-service products including QuickSight Dashboards and a Query Bank for FAQs.</p>
+            <p><strong>Impact:</strong> Reduced data access time from two weeks to less than an hour, empowering teams with real-time insights and freeing up BI resources.</p>
+            <p><strong>Technologies:</strong> Redshift, QuickSight, SQL, Data Pipelining, Data Architecture</p>
         `
     },
     "headct-tool": {
-        title: "HeadCT Tool Implementation",
-        summary: "Replaced manual headcount tracking with a scalable, automated system.",
+        title: "Head Count Tracking (HeadCT) Tool",
+        summary: "Designed and implemented the HeadCT tool for Amazon Ads, automating headcount tracking and saving 50% of a financial analyst's bandwidth.",
         details: `
-            <p><strong>Problem:</strong> Manual headcount tracking via emails, chime, and Excel was inefficient and not scalable.</p>
-            <p><strong>Solution:</strong> Developed an integrated system using SharePoint forms for user input and HR BI data (via DataNet ETL) into a Redshift database. Visualized results in QuickSight.</p>
-            <p><strong>Impact:</strong> Reduced manual effort, saving approximately 50% of a financial analyst's bandwidth and providing a single source of truth for headcount.</p>
-            <p><strong>Technologies:</strong> SharePoint Forms, Redshift, HR BI, QuickSight, DataNet ETL</p>
-        `
-    },
-    "compliance-data": {
-        title: "Compliance Data Unification",
-        summary: "Unified data from over 90 sources into a single source of truth.",
-        details: `
-            <p><strong>Problem:</strong> Data was siloed across 90+ unrelated sources, making comprehensive reporting and analysis nearly impossible.</p>
-            <p><strong>Solution:</strong> Developed a denormalized table that unified these sources into a single table with over 100 columns.</p>
-            <p><strong>Impact:</strong> Accelerated reporting cycles and provided end-to-end visibility for key stakeholders. Enabled faster analysis for metrics like SLA miss reports for gated ASINs.</p>
-            <p><strong>Technologies:</strong> Redshift, SQL, ETL Development</p>
+            <p><strong>Context:</strong> During the role as Sr. BIE for Amazon Ads (2018-2020).</p>
+            <p><strong>Problem:</strong> Manual headcount tracking via emails and spreadsheets was inefficient, error-prone, and not scalable.</p>
+            <p><strong>Solution:</strong> Developed an integrated system using SharePoint forms for input, HR BI data (via DataNet ETL), and a Redshift database. Visualized results in a "Missing PID audit" QuickSight dashboard.</p>
+            <p><strong>Impact:</strong> The tool was launched as a critical stop-gap before the next generation of Amazon Roster, saving approximately 50% of a financial analyst's bandwidth and providing a single source of truth for headcount.</p>
+            <p><strong>Technologies:</strong> SharePoint Forms, Redshift, QuickSight, DataNet ETL</p>
         `
     },
     "dsp-sdp-reporting": {
-        title: "DSP/SDP Reporting",
-        summary: "Built data pipelines and queries for critical advertising metrics.",
+        title: "DSP/SDP Retargeting WBR",
+        summary: "Built data pipelines and queries for critical DSP/SDP advertising metrics under intense time pressure for WBR reporting.",
         details: `
-            <p><strong>Problem:</strong> Needed to build data pipelines and queries for Single Display Product (SDP) and Sponsored Display metrics under intense time pressure for WBR reporting.</p>
-            <p><strong>Solution:</strong> Created queries and views to define metrics for active advertisers using complex SQL logic on da_athena.sp_campaign and spbetaadvertisers tables.</p>
-            <p><strong>Impact:</strong> Ensured that WBR reporting could continue without interruption, providing critical data to the business.</p>
+            <p><strong>Context:</strong> During the role as Sr. BIE for Amazon Ads (2019).</p>
+            <p><strong>Problem:</strong> Retargeting metrics for the Weekly Business Review (WBR) were at risk due to fragmented and unavailable data infrastructure.</p>
+            <p><strong>Solution:</strong> Quickly gained access to the DA Athena cluster and developed complex SQL queries joining multiple tables (e.g., sp_campaigns, sp_ads) to define and deliver metrics for active advertisers.</p>
+            <p><strong>Impact:</strong> Ensured that critical WBR reporting could continue without interruption, providing vital performance data to the business while long-term data solutions were being developed.</p>
             <p><strong>Technologies:</strong> Athena, Redshift, SQL, QuickSight, ADW</p>
         `
     },
-    "automation-fte": {
-        title: "Automation & FTE Savings",
-        summary: "Consistently focused on automation to drive efficiency.",
+    "compliance-data-unification": {
+        title: "Compliance Data Unification & Automation",
+        summary: "Unified data from over 90 sources into a single source of truth and enabled automated Tableau reporting for the COPS team.",
         details: `
-            <p>A consistent theme across projects has been a focus on automation and simplification to save time and resources.</p>
-            <ul>
-                <li><strong>Auto Reporter Tool:</strong> Automated the generation of reports, saving manual effort.</li>
-                <li><strong>Hazmat Classification:</strong> Optimized dangerous goods (DG) Hazmat processes to classify 15K ASINs in bulk using SQL/Excel functions.</li>
-                <li><strong>CTI Onboarding:</strong> Standardized CTI onboarding for EU-3 MPs, reducing complexity and time.</li>
-            </ul>
-            <p><strong>Impact:</strong> These and other projects contributed to a total savings of over 50 FTEs.</p>
-            <p><strong>Technologies:</strong> SQL, Excel VBA, DataNet</p>
+            <p><strong>Context:</strong> During the role as BIE for Amazon Compliance (2016-2018).</p>
+            <p><strong>Problem:</strong> Data was siloed across 90+ unrelated sources, making comprehensive reporting nearly impossible and requiring significant manual effort.</p>
+            <p><strong>Solution:</strong> Architected and developed a denormalized Redshift table that unified these sources into a single table with over 100 columns. Spun up a new Redshift cluster and provided Tableau licenses to the team.</p>
+            <p><strong>Impact:</strong> Accelerated reporting cycles, provided end-to-end visibility for stakeholders, and enabled the automation of WBR, MBR, and QBR dashboards, saving significant manual effort.</p>
+            <p><strong>Technologies:</strong> Redshift, Tableau, SQL, ETL, Data Modeling</p>
         `
     },
-    "rpc-bi-arch": {
-        title: "BI Data Architecture for RPC",
-        summary: "Designed and implemented a new data architecture using Tableau.",
+    "india-defect-reduction": {
+        title: "Defect Reduction & Automation (Amazon India)",
+        summary: "Led high-impact projects at Amazon India that saved 32,000 trouble tickets, equivalent to 8 FTEs.",
         details: `
-            <p><strong>Problem:</strong> The RPC team required a more robust and scalable BI solution to support their reporting and analytics needs.</p>
-            <p><strong>Solution:</strong> Designed a new BI data architecture from the ground up. This involved creating new data models and ETL processes to feed into a Tableau-based reporting system.</p>
-            <p><strong>Impact:</strong> Provided the RPC team with a powerful and flexible BI platform, enabling them to generate insights and make data-driven decisions more effectively.</p>
-            <p><strong>Technologies:</strong> Tableau, SQL, ETL, Data Modeling</p>
-        `
-    },
-    "defect-reduction": {
-        title: "Defect Reduction Initiatives",
-        summary: "Led high-impact projects at Amazon India focused on defect reduction.",
-        details: `
+            <p><strong>Context:</strong> During the role as SME/Business Analyst at Amazon India (2013-2016).</p>
             <p><strong>Problem:</strong> A number of operational processes had high defect rates, leading to wasted resources and increased costs.</p>
-            <p><strong>Solution:</strong> Led several initiatives focused on identifying the root causes of defects and implementing solutions. This included process automation, implementing Lean Six Sigma quality measures, and developing new reconciliation tools.</p>
-            <p><strong>Impact:</strong> These initiatives resulted in significant improvements, including a reduction of 32,000 ISS TTs, which is equivalent to saving 8 FTEs.</p>
+            <p><strong>Solution:</strong> Led several initiatives focused on identifying and eliminating root causes of defects. Key projects included Barcode Reconciliation, Repeat Rate Reduction, and automating Hazmat classification for ~15K ASINs in bulk.</p>
+            <p><strong>Impact:</strong> These initiatives resulted in a reduction of 32,000 ISS trouble tickets, equivalent to saving 8 FTEs, and contributed to an 'Outstanding' performance review.</p>
             <p><strong>Technologies:</strong> SQL, Excel, Lean Six Sigma</p>
+        `
+    },
+    "india-bi-training": {
+        title: "BI Training & Dashboarding (Amazon India)",
+        summary: "Developed automated dashboards and trained over 150 associates and managers in BI tools to foster a data-driven culture.",
+        details: `
+            <p><strong>Context:</strong> During the role as SME/Business Analyst at Amazon India (2013-2016).</p>
+            <p><strong>Problem:</strong> Business teams lacked the tools and skills for self-service data analysis, creating a bottleneck.</p>
+            <p><strong>Solution:</strong> Created multiple dashboards, including the 'Auto Reporter' tool and the UK Retail Dashboard. Conducted extensive training sessions on BI Analytics and Amazon-internal tools like Grasshopper and ETML.</p>
+            <p><strong>Impact:</strong> Empowered over 150 team members to self-serve their data needs, eliminating ramp-up time for analyst roles and promoting data-driven decision-making across the organization.</p>
+            <p><strong>Technologies:</strong> Excel, SQL, Grasshopper, ETML, Internal BI Tools</p>
         `
     }
 };
