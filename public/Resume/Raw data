@@ -1,0 +1,67 @@
+GitHub Portfolio Overview: Content Structure
+1. Profile Summary & Core Expertise
+Section
+Content Drawn from Sources
+Citations
+Headline
+Innovative Senior Business Intelligence Engineer, Manager, and Entrepreneur with 12 to 13 years of expertise in Data-Driven Strategies and Analytics.
+Summary
+Results-driven leader known for architecting scalable data solutions, automating processes, and enabling strategic decision-making through comprehensive dashboards and data models. Proven ability to leverage technical capabilities (SQL, Redshift, Tableau, QuickSight, Python) to solve hard & impactful problems, contributing to savings of over 30 to 50+ full-time equivalent (FTE) positions.
+Technical Skills
+Expert: SQL, DDL, DML, Redshift, S3, Advanced Excel, QuickSight. Skilled: Python, VBA, Athena, ETL, Data Warehousing, Tableau, Power BI. Emerging/Noted: DBT, Looker, Agentic AI, GitHub CoPilot.
+2. Professional Timeline (Work Experience)
+Dates
+Role & Organization
+Key Accomplishments (Examples)
+Citations
+Mar 2025 – Present
+Engineering Manager, CitiusTech (Client: Kyruus Health)
+Managed an 8-person data team (DEs/BIEs). Accelerated 5 critical data projects within 3 months, involving DBT model building (Redshift), GitHub integration, and Looker dashboard creation.
+2022 – 2024
+Individual Trader and Freelancing Mentor
+Managed over six derivative trading portfolios exceeding ₹3 crore, achieving 20% CAGR. Developed four time-based option strategies with multi-year back testing, achieving 50% CAGR.
+2020 – 2022
+Sr. BIE, Amazon Alexa
+Spearheaded data architecture and customer-facing dashboards for the Connected Device organization across 15+ teams. Established a robust data infrastructure (Redshift, data pipelining) and built self-service products like QuickSight Dashboards and a Query Bank for FAQs, reducing data access time from two weeks to less than an hour.
+2018 – 2020
+Sr. BIE, Amazon Ads
+Designed and implemented the Head Count Tracking (HCT) Tool for Amazon Ads using SharePoint forms, Redshift, and QuickSight dashboards, freeing up approximately 50% of a financial analyst's bandwidth. Delivered Retargeting metrics (WBR) by creating joined queries on Athena tables.
+2016 – 2018
+Sr. BIE, Amazon Compliance
+Developed a denormalized table unifying data from over 90 unrelated sources into a comprehensive table with 100+ columns, enabling faster reporting cycles and the creation of over 300 metrics dashboards. Involved in collaboration with COPS to spin up a 4-node Redshift cluster and provide Tableau licenses.
+2012 – 2016
+SME / Business Analyst, Amazon India
+Delivered high-impact projects in Defect Reduction (e.g., Repeat rate reduction, Barcode reconciliation), saving 32,000 ISS TTs (8 FTE savings). Implemented quality measures using Lean Six Sigma to ensure 100% quality. Automated Hazmat classification using SQL/Excel functions to classify ~15K ASINs in bulk.
+3. Projects and Key Deliverables
+This section should detail major projects, focusing on the problem, solution, and impact.
+Project Focus
+Details / Problem Solved
+Data/Tech Used
+Citations
+HeadCT Tool Implementation
+Replaced manual headcount tracking (emails/chime/Excel) with a scalable system. Integrated SharePoint forms (user input) and HR BI data (via DataNet ETL) into a Redshift database, visualizing results in QuickSight. Reduced manual effort, saving ~50% of a financial analyst's bandwidth.
+SharePoint Forms, Redshift, HR BI, QuickSight, DataNet ETL
+Compliance Data Unification
+Unified siloed data from 90+ sources into a single denormalized table (100+ columns) to accelerate reporting and provide end-to-end visibility for key stakeholders. This enabled faster analysis for metrics like SLA miss reports for gated ASINs.
+Redshift, SQL, ETL development
+DSP/SDP Reporting
+Built data pipelines and queries for Single Display Product (SDP) and Sponsored Display metrics. Created queries and views under intense time pressure to ensure WBR reporting could continue. Defined metrics for active advertisers using complex SQL logic on da_athena.sp_campaign and spbetaadvertisers tables.
+Athena, Redshift, SQL, QuickSight, ADW
+Automation & FTE Savings
+Consistently focused on automation and simplification. Projects include creating the Auto Reporter tool, optimizing dangerous goods (DG) Hazmat processes to classify 15K ASINs in bulk using SQL/Excel functions, and standardization of CTI onboarding for EU-3 MPs.
+SQL, Excel VBA, DataNet
+4. Feedback, Strengths, and Growth Areas
+This section can highlight feedback using Amazon Leadership Principles (LPs) to reflect soft skills and impact.
+Strength/Feedback Category
+Details (Drawn from Manager/Peer Reviews)
+Citations
+Invent & Simplify
+A core strength; constantly looks for refinement in processes, naturally seeking automation and reducing manual touch points. Able to "simplify the amount of tasks required" by using multiple technologies.
+Dive Deep & Expertise
+Possesses vast knowledge of all that Amazon has to offer. Is the go-to person for difficult technical issues and has deep database expertise combined with Amazonian processes knowledge. Has a strong foundation in data and tables, utilized for building classification tables in 2017.
+Earn Trust & Collaboration
+Highly collaborative and very responsive to new requirements, ensuring alignment when working with stakeholders. Known for working with a smile and calm demeanor, even under stress or pressure.
+Bias for Action / Deliver Results
+Quick to act, deliver results, and implement solutions, often finding workarounds to time-critical blockers.
+Growth Areas
+Needs to improve scientific approach to solving problems and learn people management skills. Focus on being more proactive and vocalizing confusion earlier, and ensuring thorough checking of final output to meet Insist on the Highest Standards.
