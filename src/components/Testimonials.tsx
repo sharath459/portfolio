@@ -13,7 +13,7 @@ export function Testimonials() {
             <Card key={index} className="flex flex-col">
               <CardContent className="flex-grow flex flex-col justify-between">
                 <blockquote className="text-lg italic border-l-4 border-primary pl-4">
-                  "{testimonial.quote}"
+                  {testimonial.quote}
                 </blockquote>
                 <p className="text-right mt-4 font-semibold text-muted-foreground">— {testimonial.author}</p>
               </CardContent>

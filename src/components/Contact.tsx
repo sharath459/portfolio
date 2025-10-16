@@ -8,7 +8,7 @@ export function Contact() {
           Get In Touch
         </h2>
         <p className="max-w-2xl mx-auto text-muted-foreground md:text-xl mb-8">
-          I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious team.
+          I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious team.
         </p>
         <div className="flex justify-center gap-4">
             <Link
