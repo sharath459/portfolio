@@ -25,7 +25,7 @@ const experienceData = {
     },
     "sr-bie-alexa": {
         title: "Sr. BIE, Amazon Alexa",
-        date: "2020 – 2022",
+        date: "Feb 2020 – May 2022",
         summary: "Spearheaded data architecture for the Connected Device organization, hiring a team of 4 and reducing data access time from weeks to hours.",
         details: `
             <ul>
@@ -36,8 +36,8 @@ const experienceData = {
         `
     },
     "sr-bie-ads": {
-        title: "Sr. BIE, Amazon Ads",
-        date: "May 2018 – 2020",
+        title: "BIE, Amazon Ads",
+        date: "May 2018 – Jan 2020",
         summary: "Delivered high-impact tools like the HeadCT, saving significant manual effort for the finance team.",
         details: `
             <ul>
@@ -61,7 +61,7 @@ const experienceData = {
             </ul>
         `
     },
-    "sme-analyst-india": {
+    "SME-analyst-india": {
         title: "SME / Business Analyst, Amazon India",
         date: "Sep 2012 – Aug 2016",
         summary: "Rose from Catalog Associate to Business Analyst, delivering projects that saved 8 FTEs and earning an 'Outstanding' performance review.",
@@ -173,19 +173,43 @@ const projectData = {
 
 const testimonials = [
     {
-        quote: "A core strength; constantly looks for refinement in processes, naturally seeking automation and reducing manual touch points. Able to 'simplify the amount of tasks required' by using multiple technologies.",
+        quote: "He is a very resourceful person and has very good knowledge of the systems and tools. He has the ability to solve problems and deliver results, even in ambiguous situations.",
+        author: "Manager @ Amazon Ads"
+    },
+    {
+        quote: "Sharath is a BI powerhouse. He has exceptional talent in not only understanding the business problem but also providing a scalable solution. His ability to think big and his problem-solving skills are remarkable.",
+        author: "Manager @ Amazon Ads"
+    },
+    {
+        quote: "A core strength is his ability to constantly look for refinement in processes. He naturally seeks automation and is able to 'simplify the amount of tasks required' by using multiple technologies.",
         author: "Manager @ Amazon"
     },
     {
-        quote: "Possesses vast knowledge of all that Amazon has to offer. Is the go-to person for difficult technical issues and has deep database expertise combined with Amazonian processes knowledge.",
+        quote: "He has been a great asset to the team. His deep dives and data-driven approach have helped us make informed decisions. He is always ready to help and goes the extra mile.",
+        author: "Sr. Manager @ Amazon"
+    },
+    {
+        quote: "Sharath possesses vast knowledge of all that Amazon has to offer. He is the go-to person for difficult technical issues and has deep database expertise combined with Amazonian processes knowledge.",
         author: "Peer @ Amazon"
     },
     {
-        quote: "Highly collaborative and very responsive to new requirements, ensuring alignment when working with stakeholders. Known for working with a smile and calm demeanor, even under stress or pressure.",
-        author: "Stakeholder @ Amazon"
+        quote: "He is highly collaborative and very responsive to new requirements, ensuring alignment when working with stakeholders. He is known for working with a smile and calm demeanor, even under stress.",
+        author: "Finance Manager @ Amazon"
     },
     {
-        quote: "Quick to act, deliver results, and implement solutions, often finding workarounds to time-critical blockers.",
+        quote: "His ability to quickly understand the requirements and deliver results is amazing. He is a quick learner and has a great attitude. He is always willing to take on new challenges.",
+        author: "Product Manager @ Amazon"
+    },
+    {
+        quote: "Sharath is a very dedicated and hardworking individual. He is a great team player and has a very positive attitude. He is always ready to help others and is a pleasure to work with.",
+        author: "Finance Manager @ Amazon"
+    },
+    {
+        quote: "He has a unique ability to understand the business context and translate it into technical requirements. His work on the HeadCT project was exceptional.",
+        author: "Sr. Manager @ Amazon"
+    },
+    {
+        quote: "Quick to act, deliver results, and implement solutions, often finding workarounds to time-critical blockers. His technical skills and his ability to navigate complex data systems are top-notch.",
         author: "Manager @ Amazon"
     }
 ];
