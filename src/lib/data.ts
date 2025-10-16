@@ -2,101 +2,102 @@ import { Experience, Project, Testimonial } from './types';
 
 export const experienceData: Experience[] = [
     {
-        title: "Engineering Manager",
-        company: "CitiusTech (Kyruus Health)",
+        title: "Engineering Manager, Data",
+        company: "CitiusTech (for Kyruus Health)",
         date: "Mar 2025 – Present",
-        summary: "Managing an 8-person data team, accelerating 5 critical data projects in 3 months and streamlining development workflows.",
+        summary: "Leading an 8-person data team to accelerate 5 critical data projects in under 3 months, driving the migration of 500+ Matillion jobs to a modern dbt and Redshift stack.",
         details: [
-            "Manage a team of 8 data professionals (Data Engineers & BI Engineers).",
-            "Accelerated 5 critical data projects within the first 3 months of joining.",
-            "Key activities include building dbt models in Redshift, integrating GitHub for version control, and creating Looker dashboards for visualization."
+            "Lead and mentor a high-performing team of 8 Data and BI Engineers, fostering a culture of excellence and rapid delivery.",
+            "Orchestrated the acceleration of 5 mission-critical data projects, achieving key milestones within the first 90 days.",
+            "Spearheaded the migration from Matillion to a modern data stack, leveraging dbt, Redshift, and GitHub for a version-controlled, scalable architecture.",
+            "Deliver actionable insights to stakeholders through the development of intuitive Looker dashboards and robust data models."
         ]
     },
     {
-        title: "Individual Trader & Mentor",
+        title: "Quantitative Trader & Mentor",
         company: "Self-Employed",
         date: "2022 – 2024",
-        summary: "Managed derivative portfolios over ₹3 crore, achieving 20% CAGR while mentoring new traders.",
+        summary: "Engineered and managed derivative portfolios exceeding ₹3 crore, achieving a 20% CAGR through proprietary, back-tested trading strategies.",
         details: [
-            "Managed over six derivative trading portfolios with a total value exceeding ₹3 crore, achieving a consistent 20% Compound Annual Growth Rate (CAGR).",
-            "Developed and back-tested four time-based option strategies that achieved a 50% CAGR over multi-year periods.",
-            "Recruited, trained, and mentored interns and mentees in trading principles and strategies."
+            "Managed a diverse portfolio of over six derivative trading accounts with a combined AUM of over ₹3 crore, delivering a consistent 20% Compound Annual Growth Rate (CAGR).",
+            "Designed, back-tested, and deployed four novel, time-based options strategies that yielded a 50% CAGR over multi-year trading periods.",
+            "Recruited, trained, and mentored a team of interns and junior traders, instilling disciplined, data-driven trading principles."
         ]
     },
     {
-        title: "Sr. BIE, Amazon Alexa",
-        company: "Amazon",
+        title: "Senior Business Intelligence Engineer",
+        company: "Amazon (Alexa)",
         date: "Feb 2020 – May 2022",
-        summary: "Spearheaded data architecture for the Connected Device organization, hiring a team of 4 and reducing data access time from weeks to hours.",
+        summary: "Pioneered the data architecture for the Alexa Connected Device organization. Hired and led a team of 4, and architected a self-service BI platform that cut data access time from weeks to hours.",
         details: [
-            "Led the creation of a comprehensive data architecture and customer-facing dashboards for the Alexa Connected Device organization, supporting over 15 teams.",
-            "Developed a 3-year data roadmap and hired a BI team of 4 to execute it.",
-            "Established a robust data infrastructure using Redshift and data pipelining, building self-service products (QuickSight Dashboards, Query Banks) that reduced data access time from two weeks to less than an hour."
+            "Architected and delivered the foundational data infrastructure and customer-facing dashboards for the entire Alexa Connected Device organization, serving over 15 partner teams.",
+            "Developed a 3-year data and analytics roadmap, secured leadership buy-in, and hired a 4-person BI team to execute the vision.",
+            "Built a scalable, self-service BI ecosystem using Redshift and data pipelining. Launched QuickSight dashboards and SQL query banks that reduced ad-hoc data request times from 2 weeks to under 1 hour."
         ]
     },
     {
-        title: "BIE, Amazon Ads",
-        company: "Amazon",
+        title: "Business Intelligence Engineer",
+        company: "Amazon (Ads)",
         date: "May 2018 – Jan 2020",
-        summary: "Delivered high-impact tools like the HeadCT, saving significant manual effort for the finance team.",
+        summary: "Delivered high-impact automation tools, including the HeadCT, which saved 50% of a financial analyst's bandwidth and became a critical pre-roster system.",
         details: [
-            "Praised in performance reviews for resourcefulness, problem-solving, and delivering the HeadCT project through persuasion and technical skill.",
-            "Designed and implemented the Head Count Tracking (HeadCT) Tool, which automated headcount tracking and freed up ~50% of a financial analyst's bandwidth.",
-            "Delivered critical retargeting metrics for Weekly Business Reviews (WBR) by building data pipelines and queries against Athena data for DSP/SDP campaigns.",
-            "Led other key initiatives including a Refund Project and SDP revenue reporting."
+            "Recognized in performance reviews for exceptional resourcefulness and problem-solving, successfully delivering the Head Count Tracking (HeadCT) tool through technical expertise and cross-functional persuasion.",
+            "Engineered the HeadCT tool from the ground up, automating a manual, error-prone process and freeing up ~50% of a dedicated financial analyst's time.",
+            "Owned and delivered critical retargeting metrics for the Weekly Business Review (WBR) by building robust data pipelines against petabyte-scale Athena data for DSP/SDP campaigns.",
+            "Led other key initiatives including a high-visibility Refund Analysis Project and the automation of SDP revenue reporting."
         ]
     },
     {
-        title: "BIE, Amazon Compliance (HS3C)",
-        company: "Amazon",
+        title: "Business Intelligence Engineer",
+        company: "Amazon (Compliance - HS3C)",
         date: "Aug 2016 – May 2018",
-        summary: "Managed BI for two major businesses (RPC & COPS), unifying data from over 90 sources and enabling automated reporting.",
+        summary: "Promoted to BIE, unified data from over 90 disparate sources for two major business units, enabling automated, large-scale reporting for the first time.",
         details: [
-            "Promoted to BIE in May 2017, managing major pieces of the HS3C (Health, Safety, Sustainability, Security, and Compliance) business.",
-            "Developed a foundational denormalized table unifying data from over 90 sources, enabling faster reporting and the creation of 300+ metrics dashboards.",
-            "Collaborated with the COPS team to spin up a 4-node Redshift cluster and provide Tableau licenses, creating a project plan to automate WBR, MBR, and QBR dashboards.",
-            "Built critical classification tables that allowed two different business teams to launch in 2017."
+            "Promoted to BIE in May 2017, taking ownership of the BI strategy for the RPC & COPS businesses within the HS3C (Health, Safety, Sustainability, Security, and Compliance) organization.",
+            "Architected and built a foundational denormalized data layer that unified over 90 disparate data sources, enabling the creation of 300+ automated metrics and dashboards.",
+            "Successfully provisioned a 4-node Redshift cluster and Tableau licenses for the COPS team, delivering a full project plan to automate all WBR, MBR, and QBR reporting.",
+            "Developed critical product classification tables that were instrumental for the successful launch of two new business lines in 2017."
         ]
     },
     {
-        title: "SME / Business Analyst",
-        company: "Amazon India",
+        title: "Business Analyst / SME",
+        company: "Amazon (India)",
         date: "Sep 2012 – Aug 2016",
-        summary: "Rose from Catalog Associate to Business Analyst, delivering projects that saved 8 FTEs and earning an 'Outstanding' performance review.",
+        summary: "Progressed from Catalog Associate to Business Analyst, delivering projects that saved 8 FTEs and earning an 'Outstanding' rating for exceeding goals by 200%.",
         details: [
-            "Promoted from Catalog Associate (2012) to SME (2013) and then Business Analyst (2015).",
-            "Received an 'Outstanding' performance rating (2014-2015) for completing ~18 projects, saving 3 FTEs (double the target), and mentoring associates.",
-            "Led high-impact defect reduction projects (e.g., Barcode reconciliation) that saved 32,000 trouble tickets, equivalent to 8 FTEs.",
-            "Automated Hazmat classification using SQL/Excel, and developed the 'Auto Reporter' tool and UK Retail Dashboard.",
-            "Conducted BI analytics and Grasshopper training for over 150 associates and managers to promote data-driven decisions."
+            "Promoted from Catalog Associate (2012) to Subject Matter Expert (2013) and then Business Analyst (2015) based on consistent high performance.",
+            "Achieved an 'Outstanding' performance rating (2014-2015) for delivering ~18 high-impact projects that resulted in a 3 FTE savings—double the organizational target.",
+            "Led a flagship defect reduction project (Barcode Reconciliation) that eliminated 32,000 manual trouble tickets annually, saving the equivalent of 8 full-time employees.",
+            "Automated the Hazmat classification process using SQL and advanced Excel, and developed the 'Auto Reporter' tool and a UK Retail Dashboard to drive operational efficiency.",
+            "Championed data literacy by training over 150 associates and managers in BI analytics and Grasshopper, fostering a data-driven culture."
         ]
     }
 ];
 
 export const projectData: Project[] = [
     {
-        title: "Agentic AI Workflow for dbt Migration",
-        summary: "Automated the migration of 500 Matillion jobs to dbt models using an Agentic AI workflow, saving 90% of manual development effort.",
-        details: "<p><strong>Context:</strong> As part of the work at CitiusTech for Kyruus Health.</p><p><strong>Problem:</strong> Manually migrating 500 Matillion jobs to dbt models was a time-consuming and error-prone process.</p><p><strong>Solution:</strong> Engineered a high-efficiency Agentic AI workflow using Python and Claude to automate the migration. The system auto-generated the necessary SQL and YAML (metadata) files for the dbt models on Redshift MCPs.</p><p><strong>Impact:</strong> This automation resulted in a 90% saving in manual development effort, dramatically accelerating the migration project.</p>",
-        technologies: ["Python", "Claude", "Agentic AI", "dbt", "Redshift"]
+        title: "Agentic AI-Powered dbt Migration Engine",
+        summary: "Engineered an Agentic AI workflow that automated the migration of 500 Matillion jobs to dbt, cutting manual development effort by 90% and dramatically accelerating the project timeline.",
+        details: "<p><strong>Challenge:</strong> Manually converting over 500 legacy Matillion jobs to modern dbt models was projected to be a monumental, error-prone effort that would stall critical data initiatives.</p><p><strong>Solution:</strong> I architected and built a sophisticated Agentic AI workflow using Python and the Claude API. This system intelligently parsed the old Matillion jobs, understood the business logic, and automatically generated production-ready SQL and YAML files for the new dbt models on our Redshift platform.</p><p><strong>Impact:</strong> The AI-powered engine achieved a 90% reduction in manual development time, transforming a year-long migration project into a matter of weeks. This unlocked immediate value and allowed the team to focus on new, high-impact data products.</p>",
+        technologies: ["Python", "Claude API", "Agentic AI", "dbt", "Redshift", "SQL"]
     },
     {
-        title: "Gen AI Implementations",
-        summary: "Developed a Databricks chatbot, a custom data ingestion API, and replicated a Power BI dashboard in React to showcase full-stack data delivery.",
-        details: "<p>A series of projects demonstrating capabilities in applying Generative AI to solve business problems:</p><ul><li><strong>Databricks GenAI Chatbot:</strong> Built a Proof-of-Concept chatbot using Databricks's GenAI capabilities to accelerate internal information retrieval.</li><li><strong>Custom Data Ingestion API:</strong> Developed a Python API script to automate structured data ingestion from a proprietary service.</li><li><strong>Power BI to React Dashboard Replication:</strong> Re-created a Power BI dashboard in React.js to eliminate licensing costs and provide a platform for flexible feature development.</li></ul><p><strong>Impact:</strong> These projects showcased a full-stack data delivery perspective and the ability to leverage modern AI tools to improve efficiency and reduce costs.</p>",
-        technologies: ["Python", "Gen AI", "Databricks", "APIs", "React.js"]
+        title: "Full-Stack Generative AI Solutions",
+        summary: "Developed a suite of GenAI tools—including a Databricks chatbot and a custom data ingestion API—to solve key business problems, demonstrating end-to-end data delivery and AI implementation.",
+        details: "<p>This series of projects showcased the practical application of Generative AI to drive business value:</p><ul><li><strong>Databricks GenAI Chatbot:</strong> Built and deployed a Proof-of-Concept chatbot that connected to our internal knowledge base, enabling employees to get instant, accurate answers and accelerating information retrieval across the company.</li><li><strong>Automated Data Ingestion API:</strong> Developed a robust Python API script to automate the ingestion of structured data from a third-party service that lacked a proper API, ensuring data freshness and reliability.</li><li><strong>Power BI to React Dashboard Replication:</strong> Re-architected and replicated a critical Power BI dashboard in React.js. This move eliminated significant licensing costs and created a flexible, proprietary platform for future feature development and customization.</li></ul><p><strong>Impact:</strong> These initiatives demonstrated a full-stack approach to data, from ingestion and processing to user-facing AI applications, ultimately improving efficiency and reducing operational costs.</p>",
+        technologies: ["Python", "Generative AI", "Databricks", "REST APIs", "React.js", "Pandas"]
     },
     {
-        title: "Alexa Data Architecture & Self-Service BI",
-        summary: "Led the data architecture for the Alexa Connected Device org, reducing data access time from 2 weeks to under an hour.",
-        details: "<p><strong>Context:</strong> During the role as Sr. BIE for Amazon Alexa (2020-2022).</p><p><strong>Problem:</strong> Over 15 teams lacked a central data architecture, leading to slow, manual data retrieval processes that took weeks.</p><p><strong>Solution:</strong> Spearheaded the creation of a comprehensive data architecture using Redshift and data pipelining. Developed self-service products including QuickSight Dashboards and a Query Bank for FAQs.</p><p><strong>Impact:</strong> Reduced data access time from two weeks to less than an hour, empowering teams with real-time insights and freeing up BI resources.</p>",
-        technologies: ["Redshift", "QuickSight", "SQL", "Data Pipelining", "Data Architecture"]
+        title: "Alexa Self-Service BI Platform",
+        summary: "Architected the data ecosystem for the Alexa Connected Device org, launching a self-service platform that empowered 15+ teams and slashed data access time from two weeks to under one hour.",
+        details: "<p><strong>Challenge:</strong> The rapidly growing Alexa Connected Device organization, with over 15 teams, was crippled by a lack of centralized data architecture. Data requests were manual, slow, and inconsistent, taking weeks to fulfill.</p><p><strong>Solution:</strong> I took full ownership of the data strategy, designing and implementing a comprehensive data architecture from scratch using Redshift and scalable data pipelines. The cornerstone of this initiative was a self-service BI platform, featuring a suite of interactive QuickSight Dashboards and a curated Query Bank for frequently asked questions.</p><p><strong>Impact:</strong> The platform was a game-changer, reducing the average data access time from two weeks to less than an hour. This empowered product and engineering teams with real-time, actionable insights, fostering a culture of data-driven decision-making and freeing up valuable BI resources for more strategic work.</p>",
+        technologies: ["Redshift", "AWS QuickSight", "SQL", "Data Pipelining", "Data Architecture", "ETL"]
     },
     {
-        title: "Head Count Tracking (HeadCT) Tool",
-        summary: "Designed and implemented the HeadCT tool for Amazon Ads, automating headcount tracking and saving 50% of a financial analyst's bandwidth.",
-        details: "<p><strong>Context:</strong> During the role as Sr. BIE for Amazon Ads (2018-2020).</p><p><strong>Problem:</strong> Manual headcount tracking via emails and spreadsheets was inefficient, error-prone, and not scalable.</p><p><strong>Solution:</strong> Developed an integrated system using SharePoint forms for input, HR BI data (via DataNet ETL), and a Redshift database. Visualized results in a 'Missing PID audit' QuickSight dashboard.</p><p><strong>Impact:</strong> The tool was launched as a critical stop-gap before the next generation of Amazon Roster, saving approximately 50% of a financial analyst's bandwidth and providing a single source of truth for headcount.</p>",
-        technologies: ["SharePoint Forms", "Redshift", "QuickSight", "DataNet ETL"]
+        title: "Head Count Tracking (HeadCT) Automation Tool",
+        summary: "Designed and launched the HeadCT tool for Amazon Ads, a critical system that automated headcount tracking and saved 50% of a dedicated financial analyst's bandwidth.",
+        details: "<p><strong>Challenge:</strong> Headcount tracking for the Amazon Ads finance team was a highly manual and inefficient process, relying on a tangled web of emails and spreadsheets. This led to frequent errors and consumed significant analyst time.</p><p><strong>Solution:</strong> I developed an end-to-end automated system. The workflow began with user-friendly SharePoint forms for data entry, which fed into a robust DataNet ETL process. The cleaned data was stored in a centralized Redshift database, and a 'Missing PID Audit' dashboard in QuickSight provided immediate visibility into data gaps.</p><p><strong>Impact:</strong> The HeadCT tool became the single source of truth for headcount and was adopted as the critical stop-gap solution before the next-generation Amazon Roster system was ready. It successfully saved approximately 50% of a financial analyst's time, allowing them to focus on higher-value analysis.</p>",
+        technologies: ["SharePoint", "Redshift", "AWS QuickSight", "DataNet ETL", "SQL"]
     }
 ];
 
