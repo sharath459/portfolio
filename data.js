@@ -99,6 +99,86 @@ const projectData = {
             <p><strong>Technologies:</strong> Python, Gen AI, Databricks, APIs, React.js</p>
         `
     },
+    "mdx-data-engineering": {
+        title: "MDX Data Engineering",
+        summary: "Onboarded 6 datasets for the MDX Targeting team to support WBR, enabling more insights by joining targeting tables with existing data.",
+        details: `
+            <p><strong>Problem:</strong> The MDX Targeting team needed to onboard multiple datasets to their Redshift cluster to drive more insights for their Weekly Business Review (WBR).</p>
+            <p><strong>Solution:</strong> Onboarded 6 datasets, 4 via Datanet jobs and 2 from S3 using Redshift Spectrum. To handle multi-region data, set up two new Redshift clusters in the EU and FE regions.</p>
+            <p><strong>Impact:</strong> Enabled the BI team to completely automate WBRs and create insightful dashboards, saving approximately 0.5 days of manual effort per week, per WBR.</p>
+            <p><strong>Technologies:</strong> Redshift, Datanet, Redshift Spectrum, S3</p>
+        `
+    },
+    "gdpr-implementation": {
+        title: "GDPR Compliance Implementation",
+        summary: "Implemented a Datanet solution to ensure GDPR compliance for the data cluster, eliminating dependencies on upstream teams.",
+        details: `
+            <p><strong>Problem:</strong> With the scaling of the cluster storage and the addition of new tables, ensuring GDPR compliance became a critical requirement.</p>
+            <p><strong>Solution:</strong> Implemented a Datanet solution to handle data compliance directly within the cluster, moving away from relying on upstream teams to provide full data loads.</p>
+            <p><strong>Impact:</strong> This gave the team complete ownership of cluster compliance and eliminated dependencies, ensuring the platform adhered to GDPR guidelines.</p>
+            <p><strong>Technologies:</strong> Datanet, Redshift, GDPR</p>
+        `
+    },
+    "multi-agent-analytics": {
+        title: "Multi-Agent Analytics (MAA)",
+        summary: "Created an automated, Excel-based weekly business review (WBR) to provide cross-program analytics for the 'Powered by Alexa' developer program.",
+        details: `
+            <p><strong>Problem:</strong> The 'Powered by Alexa' program lacked cross-program analytics, with individual programs having their own one-off dashboards.</p>
+            <p><strong>Solution:</strong> Designed and built an Excel-based WBR, automatically generated and distributed via email. This report measures customer usage, economic value, and agent quality across different agents.</p>
+            <p><strong>Impact:</strong> Provided a unified view of the program's performance, enabling stakeholders to measure business impact and identify areas for improvement.</p>
+            <p><strong>Technologies:</strong> Excel, SQL, DataMart</p>
+        `
+    },
+    "s3-to-redshift-poc": {
+        title: "S3 to Redshift Data Onboarding POC",
+        summary: "Conducted a proof-of-concept (POC) to identify the most optimal and cost-effective pipeline for ingesting data from AWS S3 to Redshift.",
+        details: `
+            <p><strong>Problem:</strong> For planned dashboards, data was not available in existing BI sources and needed to be ingested from non-BI sources like S3.</p>
+            <p><strong>Solution:</strong> Conducted a POC evaluating multiple data ingestion approaches based on cost, effectiveness, and maintenance. The team concluded that the S3 > Cradle > EDX > Datanet > Redshift pipeline was the optimal approach.</p>
+            <p><strong>Impact:</strong> Established a standardized, replicable, and efficient pattern for all future projects requiring data ingestion from S3, saving time and reducing complexity.</p>
+            <p><strong>Technologies:</strong> AWS S3, Cradle, EDX, Datanet, Redshift</p>
+        `
+    },
+    "multi-device-udr": {
+        title: "Multi-Device Unified Defect Rate (UDR)",
+        summary: "Developed a new SQL-based UDR metric for multi-device Alexa customers, uncovering key insights into customer behavior.",
+        details: `
+            <p><strong>Problem:</strong> The existing Unified Defect Rate (UDR) metric only accounted for single-device customers, leaving a gap in analytics for multi-device users.</p>
+            <p><strong>Solution:</strong> Created a new UDR metric for multi-device customers by writing a SQL query based on logic defined with the product team.</p>
+            <p><strong>Impact:</strong> The analysis revealed that multi-device customers had a lower UDR, leading to the insight that these more tenured customers are more 'trained' on how to interact with Alexa effectively.</p>
+            <p><strong>Technologies:</strong> SQL</p>
+        `
+    },
+    "registry-health-dashboard": {
+        title: "Registry Health Dashboard",
+        summary: "Built a self-service dashboard to monitor key registry data, de-risking the Device Deduplication project and enabling proactive issue identification.",
+        details: `
+            <p><strong>Problem:</strong> The Device Deduplication project required a comprehensive overview of registry data, including composition and growth trends, to inform and de-risk the project.</p>
+            <p><strong>Solution:</strong> Created the Registry Health dashboard, a self-service tool for PMs, SDMs, and BDSAs to monitor data such as unique identifier coverage and duplicate metrics.</p>
+            <p><strong>Impact:</strong> The dashboard allowed the project team to proactively identify and resolve data irregularities ahead of launch, ensuring a smoother project execution.</p>
+            <p><strong>Technologies:</strong> QuickSight, SQL</p>
+        `
+    },
+    "sde-intake-dashboard": {
+        title: "SDE Intake Dashboard",
+        summary: "Automated the manual SDE intake reporting process by creating a dashboard to track intake volume, processing timelines, and other key metrics.",
+        details: `
+            <p><strong>Problem:</strong> CDO TPMs were manually reporting on SDE intake data monthly, a time-consuming process with limited analytical capabilities.</p>
+            <p><strong>Solution:</strong> Created the CDO Intake dashboard to automate reporting and provide real-time insights into intake volume, accept/reject rates, key customers, and processing timelines.</p>
+            <p><strong>Impact:</strong> Enabled TPMs and SDMs to monitor the effectiveness of developer velocity investments and make data-driven decisions on where to invest further.</p>
+            <p><strong>Technologies:</strong> QuickSight, SQL</p>
+        `
+    },
+    "lap-adoption-dashboard": {
+        title: "LAP Adoption Dashboard",
+        summary: "Developed a QuickSight dashboard to track the adoption and impact of the Local Adapter Protocol (LAP) launch.",
+        details: `
+            <p><strong>Problem:</strong> The LAP launch required a way to track local adoption, including the number of customers and devices that would benefit from LAP-enabled local control.</p>
+            <p><strong>Solution:</strong> Created a QuickSight dashboard with about 20 key metrics (planned to expand to 50) to monitor adoption and customer experience edge cases.</p>
+            <p><strong>Impact:</strong> The dashboard helps product and tech teams monitor how frequently customers experience known CX edge cases, allowing them to take action if metrics move beyond estimated thresholds.</p>
+            <p><strong>Technologies:</strong> QuickSight, SQL</p>
+        `
+    },
     "headct-tool": {
         title: "HeadCT Tool Implementation",
         summary: "Replaced manual headcount tracking with a scalable, automated system.",

@@ -276,6 +276,36 @@ footer {
     color: #fff;
 }
 
+#about-me {
+    background-color: var(--surface-color);
+}
+
+.about-me-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 50px;
+}
+
+.about-me-card {
+    background-color: var(--background-color);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    border-top: 4px solid var(--primary-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-me-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.22), 0 8px 8px rgba(0,0,0,0.19);
+}
+
+.about-me-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
