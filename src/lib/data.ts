@@ -1,8 +1,8 @@
 import { Experience, Project, Testimonial, Accolade } from './types';
 
 export const heroData = {
-  pitch: "I'm a seasoned data leader who bridges the gap between complex data and tangible business value. I don't just build dashboards; I architect scalable data ecosystems and pioneer AI-driven solutions that automate processes, unlock insights, and drive strategic growth. Hire me to translate your data into a decisive competitive advantage.",
-  philosophy: "My philosophy is built on three pillars: **Clarity from Complexity**, **Automation as a Force Multiplier**, and **Data as a Product**. I believe the best data solutions are not only technically robust but also elegantly simple for the end-user. I strive to build systems that are scalable, automated, and directly aligned with business outcomes, treating every dataset and dashboard as a product with a clear purpose and audience."
+  pitch: "I'm a seasoned data leader who transforms complex data into tangible business value. I don't just build dashboards—I architect <strong>scalable data ecosystems</strong> and pioneer <strong>AI-driven solutions</strong> that automate processes, unlock insights, and drive strategic growth.",
+  philosophy: "My philosophy is built on three pillars: <strong>Clarity from Complexity</strong>, <strong>Automation as a Force Multiplier</strong>, and <strong>Data as a Product</strong>. I believe the best data solutions are not only technically robust but also elegantly simple for the end-user. I strive to build systems that are scalable, automated, and directly aligned with business outcomes."
 };
 
 export const experienceData: Experience[] = [
