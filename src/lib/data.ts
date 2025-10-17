@@ -1,4 +1,9 @@
-import { Experience, Project, Testimonial } from './types';
+import { Experience, Project, Testimonial, Accolade } from './types';
+
+export const heroData = {
+  pitch: "I'm a seasoned data leader who bridges the gap between complex data and tangible business value. I don't just build dashboards; I architect scalable data ecosystems and pioneer AI-driven solutions that automate processes, unlock insights, and drive strategic growth. Hire me to translate your data into a decisive competitive advantage.",
+  philosophy: "My philosophy is built on three pillars: **Clarity from Complexity**, **Automation as a Force Multiplier**, and **Data as a Product**. I believe the best data solutions are not only technically robust but also elegantly simple for the end-user. I strive to build systems that are scalable, automated, and directly aligned with business outcomes, treating every dataset and dashboard as a product with a clear purpose and audience."
+};
 
 export const experienceData: Experience[] = [
     {
@@ -77,27 +82,68 @@ export const experienceData: Experience[] = [
 export const projectData: Project[] = [
     {
         title: "Agentic AI-Powered dbt Migration Engine",
+        category: "AI & Automation",
         summary: "Engineered an Agentic AI workflow that automated the migration of 500 Matillion jobs to dbt, cutting manual development effort by 90% and dramatically accelerating the project timeline.",
         details: "<p><strong>Challenge:</strong> Manually converting over 500 legacy Matillion jobs to modern dbt models was projected to be a monumental, error-prone effort that would stall critical data initiatives.</p><p><strong>Solution:</strong> I architected and built a sophisticated Agentic AI workflow using Python and the Claude API. This system intelligently parsed the old Matillion jobs, understood the business logic, and automatically generated production-ready SQL and YAML files for the new dbt models on our Redshift platform.</p><p><strong>Impact:</strong> The AI-powered engine achieved a 90% reduction in manual development time, transforming a year-long migration project into a matter of weeks. This unlocked immediate value and allowed the team to focus on new, high-impact data products.</p>",
         technologies: ["Python", "Claude API", "Agentic AI", "dbt", "Redshift", "SQL"]
     },
     {
         title: "Full-Stack Generative AI Solutions",
+        category: "AI & Automation",
         summary: "Developed a suite of GenAI tools—including a Databricks chatbot and a custom data ingestion API—to solve key business problems, demonstrating end-to-end data delivery and AI implementation.",
         details: "<p>This series of projects showcased the practical application of Generative AI to drive business value:</p><ul><li><strong>Databricks GenAI Chatbot:</strong> Built and deployed a Proof-of-Concept chatbot that connected to our internal knowledge base, enabling employees to get instant, accurate answers and accelerating information retrieval across the company.</li><li><strong>Automated Data Ingestion API:</strong> Developed a robust Python API script to automate the ingestion of structured data from a third-party service that lacked a proper API, ensuring data freshness and reliability.</li><li><strong>Power BI to React Dashboard Replication:</strong> Re-architected and replicated a critical Power BI dashboard in React.js. This move eliminated significant licensing costs and created a flexible, proprietary platform for future feature development and customization.</li></ul><p><strong>Impact:</strong> These initiatives demonstrated a full-stack approach to data, from ingestion and processing to user-facing AI applications, ultimately improving efficiency and reducing operational costs.</p>",
         technologies: ["Python", "Generative AI", "Databricks", "REST APIs", "React.js", "Pandas"]
     },
     {
         title: "Alexa Self-Service BI Platform",
+        category: "Top Project",
         summary: "Architected the data ecosystem for the Alexa Connected Device org, launching a self-service platform that empowered 15+ teams and slashed data access time from two weeks to under one hour.",
         details: "<p><strong>Challenge:</strong> The rapidly growing Alexa Connected Device organization, with over 15 teams, was crippled by a lack of centralized data architecture. Data requests were manual, slow, and inconsistent, taking weeks to fulfill.</p><p><strong>Solution:</strong> I took full ownership of the data strategy, designing and implementing a comprehensive data architecture from scratch using Redshift and scalable data pipelines. The cornerstone of this initiative was a self-service BI platform, featuring a suite of interactive QuickSight Dashboards and a curated Query Bank for frequently asked questions.</p><p><strong>Impact:</strong> The platform was a game-changer, reducing the average data access time from two weeks to less than an hour. This empowered product and engineering teams with real-time, actionable insights, fostering a culture of data-driven decision-making and freeing up valuable BI resources for more strategic work.</p>",
         technologies: ["Redshift", "AWS QuickSight", "SQL", "Data Pipelining", "Data Architecture", "ETL"]
     },
     {
         title: "Head Count Tracking (HeadCT) Automation Tool",
+        category: "Top Project",
         summary: "Designed and launched the HeadCT tool for Amazon Ads, a critical system that automated headcount tracking and saved 50% of a dedicated financial analyst's bandwidth.",
         details: "<p><strong>Challenge:</strong> Headcount tracking for the Amazon Ads finance team was a highly manual and inefficient process, relying on a tangled web of emails and spreadsheets. This led to frequent errors and consumed significant analyst time.</p><p><strong>Solution:</strong> I developed an end-to-end automated system. The workflow began with user-friendly SharePoint forms for data entry, which fed into a robust DataNet ETL process. The cleaned data was stored in a centralized Redshift database, and a 'Missing PID Audit' dashboard in QuickSight provided immediate visibility into data gaps.</p><p><strong>Impact:</strong> The HeadCT tool became the single source of truth for headcount and was adopted as the critical stop-gap solution before the next-generation Amazon Roster system was ready. It successfully saved approximately 50% of a financial analyst's time, allowing them to focus on higher-value analysis.</p>",
         technologies: ["SharePoint", "Redshift", "AWS QuickSight", "DataNet ETL", "SQL"]
+    },
+    {
+        title: "Quantitative Trading System",
+        category: "Side Project",
+        summary: "Developed a profitable quantitative trading operation, managing a multi-crore portfolio and achieving a 20% CAGR through self-developed, data-driven strategies.",
+        details: "<p><strong>Initiative:</strong> An entrepreneurial venture into the world of quantitative finance, driven by a passion for data and financial markets.</p><p><strong>Work Done:</strong> I independently researched, developed, and back-tested multiple time-based options strategies. I managed the entire lifecycle, from data analysis and strategy formulation to risk management and execution, growing the portfolio to over ₹3 crore AUM.</p><p><strong>Impact:</strong> Achieved a consistent 20% CAGR, demonstrating strong analytical, risk management, and entrepreneurial skills outside of a traditional corporate environment.</p>",
+        technologies: ["Quantitative Analysis", "Options Trading", "Risk Management", "Python", "Backtesting"]
+    },
+    {
+        title: "Salon Business Venture",
+        category: "Side Project",
+        summary: "Co-founded and managed a successful salon business, overseeing all operational aspects from setup to profitability.",
+        details: "<p><strong>Initiative:</strong> A hands-on entrepreneurial project to build a customer-facing service business from the ground up.</p><p><strong>Work Done:</strong> I was involved in all facets of the business, including location scouting, interior design, hiring and training staff, inventory management, and developing a marketing strategy. I managed the business's finances and operations to ensure a path to profitability.</p><p><strong>Impact:</strong> Successfully launched and operated a profitable local business, gaining invaluable experience in small business management, customer service, and operational logistics.</p>",
+        technologies: ["Business Management", "Operations", "Marketing", "Financial Planning", "Customer Service"]
+    }
+];
+
+export const accolades: Accolade[] = [
+    {
+        title: "Outstanding Performance Rating",
+        description: "Achieved the highest possible performance rating at Amazon for delivering ~18 high-impact projects and saving 3 FTEs, doubling the organizational target.",
+        year: "2015"
+    },
+    {
+        title: "Promotion to Business Analyst",
+        description: "Promoted from SME to Business Analyst in recognition of strong analytical skills and consistent project delivery.",
+        year: "2015"
+    },
+    {
+        title: "Promotion to BIE",
+        description: "Promoted from Business Analyst to Business Intelligence Engineer, taking on greater technical ownership and strategic responsibility.",
+        year: "2017"
+    },
+    {
+        title: "Promotion to Senior BIE",
+        description: "Promoted to Senior BIE, leading data architecture and team-building initiatives for the Alexa organization.",
+        year: "2020"
     }
 ];
 

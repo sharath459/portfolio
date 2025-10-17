@@ -22,7 +22,7 @@ export function Contact() {
                   Connect on LinkedIn
               </Link>
               <Link
-                  href="mailto:youremail@example.com" // Replace with your actual email
+                  href="mailto:sharath459@gmail.com"
                   className="inline-flex h-12 items-center justify-center rounded-md border border-input bg-background px-10 text-sm font-medium shadow-sm transition-colors hover:bg-muted"
               >
                   Send an Email
