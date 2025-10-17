@@ -11,8 +11,6 @@ import {
   SiAmazonwebservices,
   SiAmazonredshift,
   SiTableau,
-  SiPowerbi,
-  SiMicrosoftsqlserver,
   SiPostgresql,
   SiDatabricks,
   SiGit,
@@ -31,10 +29,7 @@ import {
   SiApachekafka,
   SiTerraform,
   SiGraphql,
-  SiMicrosoftazure,
   SiSnowflake,
-  SiLooker,
-  SiSharepoint,
 } from 'react-icons/si';
 import { 
   FaDatabase, 
@@ -105,8 +100,8 @@ export const techIcons: Record<string, { icon: IconType; color: string }> = {
   // Cloud & Infrastructure
   'AWS': { icon: SiAmazonwebservices, color: '#FF9900' },
   'AWS QuickSight': { icon: SiAmazonwebservices, color: '#FF9900' },
-  'Azure': { icon: SiMicrosoft, color: '#0078D4' },
-  'Azure AI Foundry': { icon: SiMicrosoft, color: '#0078D4' },
+  'Azure': { icon: FaCloud, color: '#0078D4' },
+  'Azure AI Foundry': { icon: FaCloud, color: '#0078D4' },
   'GitHub Actions': { icon: SiGithubactions, color: '#2088FF' },
   'Docker': { icon: SiDocker, color: '#2496ED' },
   'Kubernetes': { icon: SiKubernetes, color: '#326CE5' },
@@ -114,7 +109,7 @@ export const techIcons: Record<string, { icon: IconType; color: string }> = {
   
   // Databases
   'Redshift': { icon: SiAmazonredshift, color: '#8C4FFF' },
-  'SQL Server': { icon: SiMysql, color: '#CC2927' },
+  'SQL Server': { icon: FaDatabase, color: '#CC2927' },
   'PostgreSQL': { icon: SiPostgresql, color: '#336791' },
   'MongoDB': { icon: SiMongodb, color: '#47A248' },
   'Redis': { icon: SiRedis, color: '#DC382D' },
@@ -140,7 +135,7 @@ export const techIcons: Record<string, { icon: IconType; color: string }> = {
   'NumPy': { icon: SiNumpy, color: '#013243' },
   'Apache Spark': { icon: SiApachespark, color: '#E25A1C' },
   'Apache Kafka': { icon: SiApachekafka, color: '#231F20' },
-  'SharePoint': { icon: SiMicrosoft, color: '#0078D4' },
+  'SharePoint': { icon: FaCloud, color: '#0078D4' },
   'DataNet ETL': { icon: FaCogs, color: '#6366F1' },
   
   // Processes & Methodologies
