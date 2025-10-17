@@ -105,8 +105,8 @@ export const techIcons: Record<string, { icon: IconType; color: string }> = {
   // Cloud & Infrastructure
   'AWS': { icon: SiAmazonwebservices, color: '#FF9900' },
   'AWS QuickSight': { icon: SiAmazonwebservices, color: '#FF9900' },
-  'Azure': { icon: SiMicrosoftazure, color: '#0078D4' },
-  'Azure AI Foundry': { icon: SiMicrosoftazure, color: '#0078D4' },
+  'Azure': { icon: SiMicrosoft, color: '#0078D4' },
+  'Azure AI Foundry': { icon: SiMicrosoft, color: '#0078D4' },
   'GitHub Actions': { icon: SiGithubactions, color: '#2088FF' },
   'Docker': { icon: SiDocker, color: '#2496ED' },
   'Kubernetes': { icon: SiKubernetes, color: '#326CE5' },
@@ -114,7 +114,7 @@ export const techIcons: Record<string, { icon: IconType; color: string }> = {
   
   // Databases
   'Redshift': { icon: SiAmazonredshift, color: '#8C4FFF' },
-  'SQL Server': { icon: SiMicrosoftsqlserver, color: '#CC2927' },
+  'SQL Server': { icon: SiMysql, color: '#CC2927' },
   'PostgreSQL': { icon: SiPostgresql, color: '#336791' },
   'MongoDB': { icon: SiMongodb, color: '#47A248' },
   'Redis': { icon: SiRedis, color: '#DC382D' },
@@ -122,9 +122,9 @@ export const techIcons: Record<string, { icon: IconType; color: string }> = {
   'Snowflake': { icon: SiSnowflake, color: '#29B5E8' },
   
   // BI & Analytics
-  'Power BI': { icon: SiPowerbi, color: '#F2C811' },
+  'Power BI': { icon: FaChartBar, color: '#F2C811' },
   'Tableau': { icon: SiTableau, color: '#E97627' },
-  'Looker': { icon: SiLooker, color: '#4285F4' },
+  'Looker': { icon: HiChartBar, color: '#4285F4' },
   'Databricks': { icon: SiDatabricks, color: '#FF3621' },
   'Data Warehousing': { icon: FaDatabase, color: '#4A90E2' },
   'Data Architecture': { icon: HiCube, color: '#6366F1' },
@@ -140,7 +140,7 @@ export const techIcons: Record<string, { icon: IconType; color: string }> = {
   'NumPy': { icon: SiNumpy, color: '#013243' },
   'Apache Spark': { icon: SiApachespark, color: '#E25A1C' },
   'Apache Kafka': { icon: SiApachekafka, color: '#231F20' },
-  'SharePoint': { icon: SiSharepoint, color: '#0078D4' },
+  'SharePoint': { icon: SiMicrosoft, color: '#0078D4' },
   'DataNet ETL': { icon: FaCogs, color: '#6366F1' },
   
   // Processes & Methodologies
