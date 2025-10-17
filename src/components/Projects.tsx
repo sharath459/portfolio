@@ -4,6 +4,7 @@ import { projectData } from '@/lib/data';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/Card';
 import { AnimatedSection } from './ui/AnimatedSection';
 import { motion } from 'framer-motion';
+import { getTechIcon } from '@/lib/tech-icons';
 
 const ProjectCard = ({ project, index }: { project: (typeof projectData)[0]; index: number }) => (
     <motion.div
@@ -28,18 +29,31 @@ const ProjectCard = ({ project, index }: { project: (typeof projectData)[0]; ind
                         Technologies
                     </h4>
                     <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech, i) => (
-                            <motion.span 
-                                key={i}
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.3, delay: i * 0.05 }}
-                                className="px-3 py-1.5 text-xs font-medium text-primary-foreground bg-primary/90 rounded-full hover:bg-primary transition-colors duration-200 cursor-default"
-                            >
-                                {tech}
-                            </motion.span>
-                        ))}
+                        {project.technologies.map((tech, i) => {
+                            const { icon: Icon, color } = getTechIcon(tech);
+                            return (
+                                <motion.span 
+                                    key={i}
+                                    initial={{ opacity: 0, scale: 0.8 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 0.3, delay: i * 0.05 }}
+                                    className="group/tech px-3 py-2 text-xs font-medium text-primary-foreground bg-primary/90 rounded-lg hover:bg-primary transition-all duration-200 cursor-default flex items-center gap-2 hover:scale-105 hover:shadow-lg"
+                                    style={{
+                                        boxShadow: `0 0 0 0 ${color}15`,
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.boxShadow = `0 4px 12px ${color}40`;
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.boxShadow = `0 0 0 0 ${color}15`;
+                                    }}
+                                >
+                                    <Icon className="text-sm" style={{ color }} />
+                                    <span>{tech}</span>
+                                </motion.span>
+                            );
+                        })}
                     </div>
                 </div>
             </CardContent>
