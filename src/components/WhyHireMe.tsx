@@ -18,15 +18,15 @@ const valuePropositions = [
     title: 'Proven Business Impact',
     stat: '$2.3MM+ Annual Value',
     description: 'Drove quantifiable business results through data infrastructure, automation, and strategic initiatives recognized in NIE letter.',
-    highlights: ['$2.3MM+ impact', '30+ FTE savings', '10x ROI delivered']
+    highlights: ['$2.3MM+ impact', '50+ FTE savings', '10x ROI delivered']
   },
   {
     icon: FaUsers,
     color: '#8B5CF6',
     title: 'Team Building & Leadership',
-    stat: '8-Person Team Led',
-    description: 'Built and led high-performing BI/data teams from scratch, mentored analysts, and established data cultures in multiple organizations.',
-    highlights: ['Built 4-person BI team', 'Mentored 10+ analysts', '8 direct reports']
+    stat: '8 Direct Reports',
+    description: 'Built and led high-performing BI/data teams from scratch, mentored analysts across Amazon, and established data-driven cultures in multiple organizations.',
+    highlights: ['Built 4-person BI team in Amazon', 'Mentored 100+ analysts at Amazon', '8 direct reports (4 DE and 4 BI)']
   },
   {
     icon: FaBrain,
@@ -75,11 +75,11 @@ export function WhyHireMe() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-500 to-purple-500">
+            <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-purple-600">
               Why Companies Choose Me
             </span>
             <motion.div
-              className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-blue-500/20 to-purple-500/20 blur-2xl -z-10"
+              className="absolute -inset-2 bg-gradient-to-r from-blue-400/20 via-purple-500/20 to-purple-600/20 blur-2xl -z-10"
               animate={{
                 opacity: [0.3, 0.6, 0.3],
               }}
