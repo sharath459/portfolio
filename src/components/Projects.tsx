@@ -142,7 +142,7 @@ const SectionHeader = ({ children, delay = 0 }: { children: React.ReactNode; del
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay }}
-        className="text-3xl font-bold tracking-tight text-center sm:text-4xl md:text-5xl mb-12 bg-clip-text text-transparent bg-gradient-to-r from-white to-primary/70"
+        className="text-3xl font-bold tracking-tight text-center sm:text-4xl md:text-5xl mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-purple-600"
     >
         {children}
     </motion.h2>

@@ -93,14 +93,14 @@ export function Contact() {
   return (
     <section id="contact" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-background to-muted/10">
       <div className="container px-4 md:px-6 max-w-7xl mx-auto">
-        <motion.div
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-primary/70">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-purple-600">
             Get In Touch
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground text-lg">

@@ -5,7 +5,7 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-muted/10 to-background">
       <div className="container px-4 md:px-6 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl md:text-5xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-primary/70">
+        <h2 className="text-3xl font-bold tracking-tighter text-center sm:text-4xl md:text-5xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-purple-600">
           What Others Are Saying
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
