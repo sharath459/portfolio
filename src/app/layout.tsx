@@ -68,7 +68,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {/* Google Analytics */}
         {GA_ID && (
           <>
@@ -92,10 +94,6 @@ export default function RootLayout({
             />
           </>
         )}
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
         <ThemeProvider>
           {children}
           <Analytics />
