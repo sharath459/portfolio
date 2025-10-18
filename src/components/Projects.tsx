@@ -165,12 +165,12 @@ export function Projects() {
 
   return (
     <section id="projects" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-background to-muted/20">
-      <div className="container px-4 md:px-6 space-y-20">
+      <div className="container px-4 md:px-6 max-w-7xl mx-auto space-y-20">
           
           {/* Top Projects */}
           <div>
             <SectionHeader>Featured Projects</SectionHeader>
-            <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-2 lg:gap-10">
+            <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-2 lg:gap-10 mx-auto">
               {topProjects.map((project, index) => (
                 <ProjectCard key={`top-${index}`} project={project} index={index} />
               ))}

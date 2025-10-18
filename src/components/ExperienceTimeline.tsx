@@ -25,11 +25,11 @@ export function ExperienceTimeline() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-500 to-purple-500">
+              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-purple-600">
                 Professional Journey
               </span>
               <motion.div
-                className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-blue-500/20 to-purple-500/20 blur-2xl -z-10"
+                className="absolute -inset-2 bg-gradient-to-r from-blue-400/20 via-purple-500/20 to-purple-600/20 blur-2xl -z-10"
                 animate={{
                   opacity: [0.3, 0.6, 0.3],
                 }}
