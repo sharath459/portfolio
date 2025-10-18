@@ -1,13 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: 0 0% 4%; /* #0a0a0a */
+  --foreground: 0 0% 93%; /* #ededed - WCAG AA compliant on dark bg */
+  --primary: 262 83% 58%; /* Purple-500 */
+  --primary-foreground: 0 0% 100%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%; /* Lighter for better contrast */
 }
 
 .light {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: 0 0% 100%; /* #ffffff */
+  --foreground: 0 0% 9%; /* #171717 - WCAG AA compliant on white bg */
+  --primary: 262 83% 58%; /* Purple-500 */
+  --primary-foreground: 0 0% 100%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%; /* Darker for better contrast */
 }
 
 * {
