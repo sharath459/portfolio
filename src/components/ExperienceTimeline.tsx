@@ -6,17 +6,44 @@ import { motion } from 'framer-motion';
 
 export function ExperienceTimeline() {
   return (
-    <section id="experience" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-background to-muted/10">
-      <div className="container px-4 md:px-6">
-          <motion.h2 
+    <section id="experience" className="w-full py-16 md:py-24 lg:py-32 relative overflow-hidden">
+      {/* Consistent animated background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background -z-10" />
+      <div className="absolute inset-0 bg-grid-white/[0.02] -z-10" />
+      
+      <div className="container px-4 md:px-6 max-w-7xl mx-auto">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl font-bold tracking-tight text-center sm:text-4xl md:text-5xl mb-16 bg-clip-text text-transparent bg-gradient-to-r from-white to-primary/70"
+            className="text-center mb-16"
           >
-            Professional Journey
-          </motion.h2>
+            <motion.h2 
+              className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4 relative inline-block"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-500 to-purple-500">
+                Professional Journey
+              </span>
+              <motion.div
+                className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-blue-500/20 to-purple-500/20 blur-2xl -z-10"
+                animate={{
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+            </motion.h2>
+            <p className="text-muted-foreground text-center text-lg max-w-3xl mx-auto">
+              Over 13 years of experience across multiple domains and companies
+            </p>
+          </motion.div>
           <div className="relative">
             {/* The timeline line */}
             <div className="absolute left-1/2 -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary/50 via-primary/30 to-primary/10 hidden md:block rounded-full"></div>
@@ -54,17 +81,22 @@ export function ExperienceTimeline() {
                       className="absolute top-6 hidden md:block bg-gradient-to-br from-primary to-primary/60 rounded-full w-6 h-6 shadow-lg shadow-primary/50 ring-4 ring-background" 
                       style={index % 2 === 0 ? {left: '-3.25rem'} : {right: '-3.25rem'}}
                     ></motion.div>
-                    <Card className="group hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:border-primary/30 bg-gradient-to-br from-card to-card/50">
-                      <CardHeader>
-                        <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300">
+                    <Card className="group hover:shadow-xl hover:shadow-primary/20 transition-all duration-500 hover:border-primary/50 bg-gradient-to-br from-card to-card/50 backdrop-blur-sm relative overflow-hidden">
+                      {/* Card glow effect on hover */}
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-radial from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        initial={false}
+                      />
+                      <CardHeader className="relative z-10">
+                        <CardTitle className="text-xl group-hover:text-primary transition-colors duration-300 font-bold">
                           {item.title}
                         </CardTitle>
-                        <CardDescription className="text-base font-medium">
+                        <CardDescription className="text-base font-medium mt-2">
                           {item.company}
                         </CardDescription>
                       </CardHeader>
-                      <CardContent>
-                        <p className="text-muted-foreground mb-4 leading-relaxed">
+                      <CardContent className="relative z-10">
+                        <p className="text-muted-foreground mb-6 leading-relaxed text-base">
                           {item.summary}
                         </p>
                         <ul className="space-y-3">
