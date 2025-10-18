@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { heroData } from '@/lib/data';
+import { TypingAnimation } from '@/components/ui/TypingAnimation';
 import { 
   FaDatabase, 
   FaChartBar, 
@@ -10,7 +11,8 @@ import {
   FaCheckCircle,
   FaAws,
   FaReact,
-  FaGithub
+  FaGithub,
+  FaChartPie,
 } from 'react-icons/fa';
 import { 
   SiPython, 
@@ -19,6 +21,7 @@ import {
   SiAmazonredshift,
   SiDbt,
   SiLooker,
+  SiAmazons3,
 } from 'react-icons/si';
 
 const skillCategories = [
@@ -63,14 +66,12 @@ export function Hero() {
         >
           {/* Name & Title */}
           <div className="space-y-6">
-            <motion.h1 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-5xl font-bold tracking-tight sm:text-6xl xl:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-white via-primary to-primary/60 pb-2"
-            >
-              Sharath Somashekar
-            </motion.h1>
+            <TypingAnimation
+              text="Sharath Byladakere Somashekar"
+              className="text-5xl font-bold tracking-tight sm:text-6xl xl:text-7xl text-foreground pb-2"
+              typingSpeed={80}
+              startDelay={500}
+            />
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -88,11 +89,9 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 pt-4"
           >
-            <Link
+            <a
               href="/Resume/Sharath_Resume_2025.pdf"
-              download="Sharath_Somashekar_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              download="Sharath_Byladakere_Somashekar_Resume.pdf"
               className="group relative inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-10 text-sm font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/50 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -100,7 +99,7 @@ export function Hero() {
               </svg>
               <span className="relative z-10">Download Resume</span>
               <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary to-primary/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-            </Link>
+            </a>
             <Link
               href="#contact"
               className="inline-flex h-12 items-center justify-center rounded-lg border-2 border-primary/20 bg-background/50 backdrop-blur-sm px-10 text-sm font-semibold shadow-sm transition-all duration-300 hover:border-primary/40 hover:bg-primary/5 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
@@ -122,10 +121,12 @@ export function Hero() {
                 { name: 'Python', icon: SiPython, color: '#3776AB' },
                 { name: 'SQL', icon: FaDatabase, color: '#00758F' },
                 { name: 'AWS', icon: FaAws, color: '#FF9900' },
+                { name: 'S3', icon: SiAmazons3, color: '#569A31' },
                 { name: 'Redshift', icon: SiAmazonredshift, color: '#8C4FFF' },
                 { name: 'dbt', icon: SiDbt, color: '#FF694B' },
                 { name: 'Databricks', icon: SiDatabricks, color: '#FF3621' },
                 { name: 'Tableau', icon: SiTableau, color: '#E97627' },
+                { name: 'Power BI', icon: FaChartPie, color: '#F2C811' },
                 { name: 'QuickSight', icon: FaChartBar, color: '#FF9900' },
                 { name: 'React', icon: FaReact, color: '#61DAFB' },
                 { name: 'GitHub', icon: FaGithub, color: '#181717' },

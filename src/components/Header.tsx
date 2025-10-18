@@ -62,7 +62,7 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/40">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="#home" className="text-lg font-bold text-primary hover:text-primary/80 transition-colors">
-          Sharath S.
+          Sharath B S.
         </Link>
         
         {/* Desktop Navigation */}
