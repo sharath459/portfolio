@@ -57,7 +57,7 @@ export function Hero() {
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5 -z-10"></div>
       
-      <div className="container px-4 md:px-6 text-center py-24">
+      <div id="main-content" className="container px-4 md:px-6 text-center py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

@@ -11,6 +11,7 @@ export function Header() {
 
   const navItems = useMemo(() => [
     { name: 'Home', href: '#home' },
+    { name: 'Why Hire Me', href: '#why-hire-me' },
     { name: 'Journey', href: '#journey' },
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
@@ -59,11 +60,20 @@ export function Header() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/40">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="#home" className="text-lg font-bold text-primary hover:text-primary/80 transition-colors">
-          Sharath B S.
-        </Link>
+    <>
+      {/* Skip to content link for keyboard navigation */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+      >
+        Skip to main content
+      </a>
+      
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/40">
+        <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+          <Link href="#home" className="text-lg font-bold text-primary hover:text-primary/80 transition-colors">
+            Sharath B S.
+          </Link>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
@@ -172,5 +182,6 @@ export function Header() {
         )}
       </AnimatePresence>
     </header>
+    </>
   );
 }

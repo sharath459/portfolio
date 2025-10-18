@@ -6,11 +6,58 @@ import { motion } from 'framer-motion';
 
 export function Contact() {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
+  const [errors, setErrors] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validateForm = () => {
+    const newErrors = { name: '', email: '', message: '' };
+    let isValid = true;
+
+    if (!formState.name.trim()) {
+      newErrors.name = 'Name is required';
+      isValid = false;
+    } else if (formState.name.trim().length < 2) {
+      newErrors.name = 'Name must be at least 2 characters';
+      isValid = false;
+    }
+
+    if (!formState.email.trim()) {
+      newErrors.email = 'Email is required';
+      isValid = false;
+    } else if (!validateEmail(formState.email)) {
+      newErrors.email = 'Please enter a valid email address';
+      isValid = false;
+    }
+
+    if (!formState.message.trim()) {
+      newErrors.message = 'Message is required';
+      isValid = false;
+    } else if (formState.message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters';
+      isValid = false;
+    } else if (formState.message.trim().length > 1000) {
+      newErrors.message = 'Message must be less than 1000 characters';
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form before submission
+    if (!validateForm()) {
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
@@ -81,9 +128,18 @@ export function Contact() {
                   value={formState.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground"
+                  aria-invalid={errors.name ? 'true' : 'false'}
+                  aria-describedby={errors.name ? 'name-error' : undefined}
+                  className={`w-full px-4 py-3 rounded-lg bg-background border transition-all outline-none text-foreground ${
+                    errors.name ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20' : 'border-border focus:border-primary focus:ring-2 focus:ring-primary/20'
+                  }`}
                   placeholder="John Doe"
                 />
+                {errors.name && (
+                  <p id="name-error" className="mt-1 text-sm text-red-500">
+                    {errors.name}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -97,25 +153,47 @@ export function Contact() {
                   value={formState.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground"
+                  aria-invalid={errors.email ? 'true' : 'false'}
+                  aria-describedby={errors.email ? 'email-error' : undefined}
+                  className={`w-full px-4 py-3 rounded-lg bg-background border transition-all outline-none text-foreground ${
+                    errors.email ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20' : 'border-border focus:border-primary focus:ring-2 focus:ring-primary/20'
+                  }`}
                   placeholder="john@example.com"
                 />
+                {errors.email && (
+                  <p id="email-error" className="mt-1 text-sm text-red-500">
+                    {errors.email}
+                  </p>
+                )}
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                   Message
+                  <span className="text-xs text-muted-foreground ml-2">
+                    ({formState.message.length}/1000)
+                  </span>
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   value={formState.message}
                   onChange={handleChange}
+                  maxLength={1000}
+                  aria-invalid={errors.message ? 'true' : 'false'}
+                  aria-describedby={errors.message ? 'message-error' : undefined}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all outline-none text-foreground resize-none"
+                  className={`w-full px-4 py-3 rounded-lg bg-background border transition-all outline-none text-foreground resize-none ${
+                    errors.message ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20' : 'border-border focus:border-primary focus:ring-2 focus:ring-primary/20'
+                  }`}
                   placeholder="Tell me about your project or opportunity..."
                 />
+                {errors.message && (
+                  <p id="message-error" className="mt-1 text-sm text-red-500">
+                    {errors.message}
+                  </p>
+                )}
               </div>
 
               <button
