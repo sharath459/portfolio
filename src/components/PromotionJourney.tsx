@@ -74,8 +74,8 @@ export default function PromotionJourney() {
             Career Progression Journey
           </h2>
           <p className="text-muted-foreground text-center text-lg mb-16 max-w-3xl mx-auto">
-            13 years of consistent growth—from Catalog Associate to Engineering Manager, 
-            with 5 promotions earned through measurable impact and technical excellence
+            13 years across 2 companies and 2 countries—from SME to Analytics Engineering Manager, 
+            spanning 6 domains with 6 promotions (4 vertical, 2 horizontal) across 4 Amazon organizations
           </p>
         </motion.div>
 
@@ -183,23 +183,39 @@ export default function PromotionJourney() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
           viewport={{ once: true }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
+          className="mt-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 max-w-7xl mx-auto"
         >
-          <div className="text-center p-6 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
-            <div className="text-3xl font-bold text-primary mb-1">13</div>
-            <div className="text-sm text-muted-foreground">Years of Growth</div>
+          <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
+            <div className="text-3xl font-bold text-primary mb-1">2</div>
+            <div className="text-xs text-muted-foreground">Companies</div>
           </div>
-          <div className="text-center p-6 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
-            <div className="text-3xl font-bold text-primary mb-1">5</div>
-            <div className="text-sm text-muted-foreground">Promotions Earned</div>
+          <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
+            <div className="text-3xl font-bold text-primary mb-1">2</div>
+            <div className="text-xs text-muted-foreground">Countries</div>
           </div>
-          <div className="text-center p-6 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
+          <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
             <div className="text-3xl font-bold text-primary mb-1">3</div>
-            <div className="text-sm text-muted-foreground">Organizations</div>
+            <div className="text-xs text-muted-foreground">Roles</div>
           </div>
-          <div className="text-center p-6 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
+          <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
+            <div className="text-3xl font-bold text-primary mb-1">4</div>
+            <div className="text-xs text-muted-foreground">Amazon Orgs</div>
+          </div>
+          <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
             <div className="text-3xl font-bold text-primary mb-1">6</div>
-            <div className="text-sm text-muted-foreground">Role Transitions</div>
+            <div className="text-xs text-muted-foreground">Domains</div>
+          </div>
+          <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
+            <div className="text-3xl font-bold text-primary mb-1">6</div>
+            <div className="text-xs text-muted-foreground">Promotions</div>
+          </div>
+          <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
+            <div className="text-3xl font-bold text-primary mb-1">8</div>
+            <div className="text-xs text-muted-foreground">Managers</div>
+          </div>
+          <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
+            <div className="text-3xl font-bold text-primary mb-1">13</div>
+            <div className="text-xs text-muted-foreground">Years</div>
           </div>
         </motion.div>
       </div>
