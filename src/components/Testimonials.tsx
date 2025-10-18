@@ -19,9 +19,8 @@ export function Testimonials() {
                   &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
                 <div className="mt-auto pt-4 border-t border-muted/20">
-                  <p className="font-semibold text-foreground">{testimonial.author}</p>
                   {testimonial.role && (
-                    <p className="text-sm text-muted-foreground mt-1">{testimonial.role}</p>
+                    <p className="font-semibold text-foreground">{testimonial.role}</p>
                   )}
                   <div className="flex items-center justify-between mt-2">
                     {testimonial.relationship && (
