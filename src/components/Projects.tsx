@@ -20,6 +20,9 @@ const ProjectCard = ({ project, index }: { project: (typeof projectData)[0]; ind
                 </CardTitle>
             </CardHeader>
             <CardContent className="flex-grow flex flex-col gap-6">
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                    {project.summary}
+                </p>
                 <div 
                     className="text-muted-foreground leading-relaxed prose prose-sm prose-invert max-w-none"
                     dangerouslySetInnerHTML={{ __html: project.details }}
