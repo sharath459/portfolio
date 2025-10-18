@@ -95,7 +95,7 @@ export function WhyHireMe() {
           </p>
         </motion.div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
           {valuePropositions.map((prop, index) => {
             const Icon = prop.icon;
             return (
@@ -105,7 +105,7 @@ export function WhyHireMe() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative p-8 rounded-2xl bg-gradient-to-br from-card via-card/90 to-card/70 border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 backdrop-blur-sm"
+                className="group relative p-6 rounded-2xl bg-gradient-to-br from-card via-card/90 to-card/70 border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 backdrop-blur-sm"
               >
                 {/* Animated glow effect */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl" 
@@ -113,20 +113,20 @@ export function WhyHireMe() {
                 />
                 
                 {/* Icon */}
-                <div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 group-hover:scale-110 transition-transform duration-300">
-                  <Icon className="w-7 h-7 group-hover:scale-110 transition-transform duration-300" style={{ color: prop.color }} />
+                <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 group-hover:scale-110 transition-transform duration-300">
+                  <Icon className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" style={{ color: prop.color }} />
                 </div>
 
                 {/* Title & Stat */}
-                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300 leading-tight">
+                <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors duration-300 leading-tight">
                   {prop.title}
                 </h3>
-                <div className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-500">
+                <div className="text-xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
                   {prop.stat}
                 </div>
 
                 {/* Description */}
-                <p className="text-base text-muted-foreground/90 leading-relaxed mb-5 font-medium">
+                <p className="text-sm text-muted-foreground/90 leading-relaxed mb-4 font-medium">
                   {prop.description}
                 </p>
 
