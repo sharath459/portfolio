@@ -4,6 +4,7 @@ import { WhyHireMe } from '@/components/WhyHireMe';
 import { ExperienceTimeline } from '@/components/ExperienceTimeline';
 import PromotionJourney from '@/components/PromotionJourney';
 import { Projects } from '@/components/Projects';
+import { AboutMe } from '@/components/AboutMe';
 import { Testimonials } from '@/components/Testimonials';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
@@ -19,6 +20,7 @@ export default function Home() {
         <PromotionJourney />
         <ExperienceTimeline />
         <Projects />
+        <AboutMe />
         <Testimonials />
         <Contact />
       </main>

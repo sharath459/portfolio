@@ -4,19 +4,91 @@ import { projectData } from '@/lib/data';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/Card';
 import { motion } from 'framer-motion';
 import { getTechIcon } from '@/lib/tech-icons';
+import { FaDollarSign, FaClock, FaUsers } from 'react-icons/fa';
 
-const ProjectCard = ({ project, index }: { project: (typeof projectData)[0]; index: number }) => (
+// Helper function to extract impact metrics from project details
+const getImpactMetrics = (project: (typeof projectData)[0]) => {
+  const metrics = [];
+  
+  // Check for dollar impact
+  if (project.details.includes('$2.3MM') || project.title.includes('Alexa')) {
+    metrics.push({ icon: FaDollarSign, value: '$2.3MM', label: 'Annual Impact', color: '#10B981' });
+  } else if (project.details.includes('$1.2MM')) {
+    metrics.push({ icon: FaDollarSign, value: '$1.2MM', label: 'Project Value', color: '#10B981' });
+  }
+  
+  // Check for time savings
+  if (project.details.includes('90%')) {
+    metrics.push({ icon: FaClock, value: '90%', label: 'Time Saved', color: '#3B82F6' });
+  } else if (project.details.includes('2 weeks to under 1 hour') || project.details.includes('weeks to hours')) {
+    metrics.push({ icon: FaClock, value: 'Weeks→Hours', label: 'Speed Boost', color: '#3B82F6' });
+  }
+  
+  // Check for people impact
+  if (project.details.includes('260+')) {
+    metrics.push({ icon: FaUsers, value: '260+', label: 'Users Served', color: '#8B5CF6' });
+  } else if (project.details.includes('6,000+')) {
+    metrics.push({ icon: FaUsers, value: '6,000+', label: 'Org Size', color: '#8B5CF6' });
+  }
+  
+  return metrics.slice(0, 2); // Max 2 badges per card
+};
+
+// Status badge based on category
+const getStatusBadge = (category: string) => {
+  if (category === 'Top Project') {
+    return { text: '⭐ Featured', color: 'bg-yellow-500/10 text-yellow-500 border-yellow-500/20' };
+  } else if (category === 'AI & Automation') {
+    return { text: '🤖 AI-Powered', color: 'bg-purple-500/10 text-purple-500 border-purple-500/20' };
+  } else {
+    return { text: '💡 Side Project', color: 'bg-blue-500/10 text-blue-500 border-blue-500/20' };
+  }
+};
+
+const ProjectCard = ({ project, index }: { project: (typeof projectData)[0]; index: number }) => {
+  const impactMetrics = getImpactMetrics(project);
+  const statusBadge = getStatusBadge(project.category);
+
+  return (
     <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-        <Card className="flex flex-col h-full group hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:border-primary/30 hover:-translate-y-1 bg-gradient-to-br from-card to-card/50">
+        <Card className="flex flex-col h-full group hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:border-primary/30 hover:-translate-y-1 bg-gradient-to-br from-card to-card/50 relative overflow-hidden">
+            {/* Status Badge */}
+            <div className="absolute top-4 right-4 z-10">
+              <span className={`text-xs font-medium px-3 py-1 rounded-full border ${statusBadge.color}`}>
+                {statusBadge.text}
+              </span>
+            </div>
+
             <CardHeader>
-                <CardTitle className="text-xl sm:text-2xl group-hover:text-primary transition-colors duration-300">
+                <CardTitle className="text-xl sm:text-2xl group-hover:text-primary transition-colors duration-300 pr-24">
                     {project.title}
                 </CardTitle>
+                
+                {/* Impact Metrics Badges */}
+                {impactMetrics.length > 0 && (
+                  <div className="flex gap-3 mt-3">
+                    {impactMetrics.map((metric, i) => {
+                      const Icon = metric.icon;
+                      return (
+                        <div
+                          key={i}
+                          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-muted/50 border border-border/50"
+                        >
+                          <Icon className="w-3.5 h-3.5" style={{ color: metric.color }} />
+                          <div className="text-xs">
+                            <div className="font-bold" style={{ color: metric.color }}>{metric.value}</div>
+                            <div className="text-[10px] text-muted-foreground">{metric.label}</div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
             </CardHeader>
             <CardContent className="flex-grow flex flex-col gap-6">
                 <p className="text-muted-foreground leading-relaxed text-sm">
@@ -61,7 +133,8 @@ const ProjectCard = ({ project, index }: { project: (typeof projectData)[0]; ind
             </CardContent>
         </Card>
     </motion.div>
-);
+  );
+};
 
 const SectionHeader = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => (
     <motion.h2 
