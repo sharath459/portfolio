@@ -66,12 +66,14 @@ export function Hero() {
         >
           {/* Name & Title */}
           <div className="space-y-6">
-            <TypingAnimation
-              text="Sharath Byladakere Somashekar"
-              className="text-5xl font-bold tracking-tight sm:text-6xl xl:text-7xl text-foreground pb-2"
-              typingSpeed={80}
-              startDelay={500}
-            />
+            <h1 className="text-5xl font-bold tracking-tight sm:text-6xl xl:text-7xl text-foreground pb-2">
+              <TypingAnimation
+                text="Sharath Byladakere Somashekar"
+                className=""
+                typingSpeed={80}
+                startDelay={500}
+              />
+            </h1>
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
