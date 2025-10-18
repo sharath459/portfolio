@@ -64,7 +64,7 @@ export function ExperienceTimeline() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
-                    className="text-muted-foreground font-semibold text-sm md:text-base mb-2 md:mb-0 md:pt-6"
+                    className="text-muted-foreground font-semibold text-sm md:text-base mb-2 md:mb-0 md:pt-8"
                   >
                     {item.date}
                   </motion.p>

@@ -26,7 +26,7 @@ export function ThemeToggle() {
           transition={{ duration: 0.3 }}
           className="absolute inset-0 flex items-center justify-center"
         >
-          <FaMoon className="w-5 h-5 text-blue-400" />
+          <FaSun className="w-5 h-5 text-yellow-500" />
         </motion.div>
         <motion.div
           initial={false}
@@ -38,7 +38,7 @@ export function ThemeToggle() {
           transition={{ duration: 0.3 }}
           className="absolute inset-0 flex items-center justify-center"
         >
-          <FaSun className="w-5 h-5 text-yellow-500" />
+          <FaMoon className="w-5 h-5 text-blue-400" />
         </motion.div>
       </div>
     </motion.button>
