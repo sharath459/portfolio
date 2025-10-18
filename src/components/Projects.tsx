@@ -170,7 +170,7 @@ export function Projects() {
           {/* Top Projects */}
           <div>
             <SectionHeader>Featured Projects</SectionHeader>
-            <div className="grid gap-8 md:grid-cols-2 lg:gap-10">
+            <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-2 lg:gap-10">
               {topProjects.map((project, index) => (
                 <ProjectCard key={`top-${index}`} project={project} index={index} />
               ))}
