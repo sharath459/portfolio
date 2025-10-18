@@ -3,6 +3,7 @@ import Link from 'next/link';
 export function Header() {
   const navItems = [
     { name: 'Home', href: '#home' },
+    { name: 'Journey', href: '#journey' },
     { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Testimonials', href: '#testimonials' },

@@ -1,0 +1,69 @@
+-- Add Core tool icon badging in hero section
+-- Gradient is not so clean 
+-- Add T share learning and now expert due to AI in hero section
+
+ -- Add about Trading project 
+Transcript of video convert into meainful info
+
+0:01 So, ah, this will be a quick video to just explain or we give a brief introduction to my, ah, passive way of training, ah, or like, ah, system, which can be traded without market analysis, they are purely time-based strategies.
+0:19 So, where you just come, ah, in a particular time and check for particular criteria, if all are met, you place a trade, if not met, you just let the day go and then there are certain criteria, something like this, these are the criteria, these are the type of traits, three traits, three strategies.
+0:38 If they are met, you take care of a smart, they will skip it, they submit or they profit or close it, it's not you know, the people.
+0:48 So, these are purely based on data, not just based on intuition of like the random opinion, like everything is being practiced in a platform called Option Omega.
+1:02 And also the data model is being done at a very 5 minute level to see how the particular day pattern will be.
+1:11 So on a Monday, this for YTD, this is the pattern, how it looks like an average of 5 minutes, it's an SPH from Y2D.
+1:22 So I've taken the five minutes data points from Y2D and then I did calculate the range and from there I calculated the average and then got it this.
+1:33 So this gives a brief idea like how the morning looks like, how afternoon looks like, how the last hour or like the post afternoon looks like, personal looks like and the power over the last hour looks like.
+1:45 So, based on this, we can divide certain strategies and then like implement certain strategies in a certain time period, so that like we can make profit of it and thus, if we will keep thinking about it a little bit, these strategies are time-based, that means, database that means, we make money not 
+2:03 by the direction of the movement of the price. We make money by a non-direction of the movement of the price, that means if the market is not moving in this topic, I don't understand at one price, you'll make money based on the theta decay or the time decay.
+2:18 So these are option strategies again. So let's quickly show the back testing tool. This will be a five minute video so I'm rushing through.
+2:26 So let me show the back testing results. So there are various strategies I've been testing on and this let's keep them growing.
+2:35 Like come on, some of the few things which I did at this point of time I use are these number one is the iron condor I see shabitji and number two is IF iron fly on Friday is different and then of course there are no iron fly morning that is reverse iron condor.
+2:57 So there are many other strategies these three are something that I strictly at this point of view these are my currently top strategies you can see the result here also So, from YTD, this is for others to try to do it like this is more time.
+3:13 But yeah, I point is, like if I use 20k capital, I can make a CHR of 300 percent. So, that's a lot.
+3:21 And the same thing here, like if I have a capital of 10,000, this is not YTD, this is one year from August to August 22, 23, the CHR has got almost 1,400.
+3:32 And the conditions last were really good for this zero DT. These are all zero DT. That means zero days to expire.
+3:40 They all expired just in one day. So it's all day trades. It's not something that I carry forward. So like placed it in the morning, take profits, take a loss, and then like move on for tomorrow.
+3:50 So no over-metres. And this is for Friday, a version of this. So the CIG arrogance is like 1,400. It's not the same now.
+3:59 The conditions have been changed. This is subject to change based on the market volatility. So right now I think it's around 700 800ish or at least the last three months so and then this is I didn't on Friday there are different different criteria.
+4:14 So every day there are different criteria. All modern based on the data model which I have like did separate pieces.
+4:24 So just to give an idea I'll just take over and then show you one thing. So, this one has been percentage of 97 percent, this is the iron condor and of course, like unit is slightly higher capital, but the win percentage is high.
+4:40 So, that's why I use this. So, I can make like 300 percent CAGR. That's a reasonable, I think it's reasonable profit margins.
+4:50 So, it's very straightforward, like there are electric conditions. Of course, these doesn't have any exit conditions, but there are some risk management and the money management conditions.
+4:59 They are like, he was black or tates. So, knowing when to trade, when not to trade is a big problem.
+0:01 Yeah, we don't follow calendar, like, to know, like, okay, there are some FNC speakers, not trade on that day, or there is some code PC, data, not trade on that day.
+0:09 So, there are certain interest management, uh, I will not go to cover in that video, but which will be applied to have this kind of smooth curve.
+0:17 If you trade on certain days, uh, we can ask something like this, big drops, like, there is too much in this, because of the win percentage is high, the risk is very high.
+0:26 Uh, of course, this is traded on every day, There are certain days, like primarily Monday and Tuesday, like it's almost 100% rent rate.
+0:35 So it can increase the capital size on those days to make more profit also. So this is one strategy and there are other more strategies.
+0:44 So all these strategies, again, I don't need to do a lot of time in training at all. I need to just come to my platform, for example, I don't like which I didn't speak in the option.
+0:59 Omega platform, but it's it's a version of I don't condo and then I butterfly. So all I need to do is just come here.
+1:08 Everything has been said. Just click on this button. So it will create orders for us. This is a actual order and then there will be stop limit and a proper ticking order.
+1:22 Everything will be placed at once. All I need to is just click confirm and send. it will send the order, all I don't need to do anything, I just need to, just not knowing to what the market also, I will need to what the market is in case the order element is filled or not, but the software or the take
+1:38 profit order has been filled or not. Just sometimes there will be like very volatile in the market, steep edges can happen and the order might not fill, so just need to keep eye on that, apart from that, no need to want trade or the market projects are also just you can do or nothing.
+1:56 Another trade also is a similar it just plays the trade. I think it's not just, yeah it's not been here but like I do that slightly manually that can also be customized or templatized so it's not something you can do manually so it's just a couple of clicks and then it's ordered.
+2:16 So yeah this is a quick thing In terms of how these are passive strategies, we don't need to do any market analysis, we don't need to do anything, all we need to do is just come on a particular time and just place the orders, just monitor if any slippage or if the orders are not getting fed properly.
+2:36 So yeah, this is a short video, there are a lot of risk management and money management or boost back end of to this, not in the option in the back testing, just not covered in this loop, but over on all this, that's the main area.
+2:50 The money management of the equipment where actually we can make money. Anything going slightly bigger is not going to help.
+2:59 So, we need to take care of them also. So, yeah, that's a quick short video, questions we can come to get in there.
+3:08 Thank you, bye.0:01 Yeah, forget to mention in previous videos a little far away. So it's so basically this is a bookkeeping and the result aspect as well.
+0:09 Like this, this is the whole stuff. Not just like for basically back testing and execution, and then the report. know what days and what time we need to take, what kind of trades, everything already been being eased here.
+0:38 So all we need to do is just come on that particular day, date, and a particular time, we just feel this order, I can feel in the time, we know this is a year correct.
+0:47 So everything is like recorded here. So you can see the bookkeeping aspect, this is for the last few months. So all the data has been captured here, exactly what is the profit loss, of course, like more sun heat, a lot of other factors.
+1:01 So, to see the results, there are a lot of this is not put it in a way that it would be very easy for others to consume.
+1:10 It's many ideas for myself, so it might feel a bit all over the place, but high level, this is the key area to focus on.
+1:20 Monthly basis, September, October, now, what are the returns are? Like the first September, of the best month I have like very 8% return.
+1:29 October was likely okay month had 4% return. November was also with actually a very very very best month. I almost had like 9% return but sadly I took one one at a rate a couple of days back.
+1:47 I was not in the zone. I better stupid grade rate and I just lost like 2.5k. So if I include that number I shouldn't but if I That's almost based on the actual strategies.
+1:58 This is this was a discretionary strategy, which I used under last, which I shouldn't have. If only use the passage strategies, that easily made like 9%.
+2:06 Yeah, that's the thing. So we can easily make around 7% to 10% in a month. And of course, if there is volatility, it easily goes about 10,000, so it's a very, very good sort of back tested strategies, which we can like to possibly improve much active management.
+2:30 We can add active management to improve the results, but without active management, so it is a modest 7% returns on monthly basis, I think it's a lot.
+2:41 So yeah, that's that's it for now. Thank you.
+
+-- Add about AI project of APPs
+App for tinder of other relationships like father and son, elder brothe to youner brother and so on
+App for kundli along with all the necesacay details such as amthakara, house lord ,element deatils and dasha timeline
+-- Improve jorney section 
+
+Add the promotion journey section from 2012  
+
+-

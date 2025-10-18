@@ -8,7 +8,11 @@ import {
   FaChartBar, 
   FaBrain, 
   FaRobot,
-  FaCheckCircle 
+  FaCheckCircle,
+  FaAws,
+  FaReact,
+  FaGithub,
+  FaCloud
 } from 'react-icons/fa';
 import { 
   SiPython, 
@@ -16,6 +20,8 @@ import {
   SiTableau, 
   SiAmazonredshift,
   SiGithub,
+  SiDbt,
+  SiLooker,
 } from 'react-icons/si';
 import { MdDataExploration, MdAutoAwesome } from 'react-icons/md';
 
@@ -101,6 +107,49 @@ export function Hero() {
             >
               Let&apos;s Connect
             </Link>
+          </motion.div>
+
+          {/* Core Tools Badges */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.7 }}
+            className="w-full max-w-4xl pt-8"
+          >
+            <p className="text-sm text-muted-foreground/60 mb-4 font-medium tracking-wide uppercase">Core Technical Stack</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {[
+                { name: 'Python', icon: SiPython, color: '#3776AB' },
+                { name: 'SQL', icon: FaDatabase, color: '#00758F' },
+                { name: 'AWS', icon: FaAws, color: '#FF9900' },
+                { name: 'Redshift', icon: SiAmazonredshift, color: '#8C4FFF' },
+                { name: 'dbt', icon: SiDbt, color: '#FF694B' },
+                { name: 'Databricks', icon: SiDatabricks, color: '#FF3621' },
+                { name: 'Tableau', icon: SiTableau, color: '#E97627' },
+                { name: 'QuickSight', icon: FaChartBar, color: '#FF9900' },
+                { name: 'React', icon: FaReact, color: '#61DAFB' },
+                { name: 'GitHub', icon: FaGithub, color: '#181717' },
+                { name: 'AI/ML', icon: FaBrain, color: '#8B5CF6' },
+                { name: 'Looker', icon: SiLooker, color: '#4285F4' },
+              ].map((tool, idx) => {
+                const Icon = tool.icon;
+                return (
+                  <motion.div
+                    key={tool.name}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.7 + idx * 0.05 }}
+                    whileHover={{ scale: 1.1, y: -3 }}
+                    className="group relative flex items-center gap-2 px-4 py-2.5 rounded-full bg-muted/30 backdrop-blur-sm border border-muted/40 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+                  >
+                    <Icon className="w-4 h-4 transition-colors duration-300 group-hover:opacity-100 opacity-70" style={{ color: tool.color }} />
+                    <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors duration-300">
+                      {tool.name}
+                    </span>
+                  </motion.div>
+                );
+              })}
+            </div>
           </motion.div>
 
           {/* Skills Showcase */}
