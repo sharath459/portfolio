@@ -1,9 +1,9 @@
 # Active Context: Current Work & Focus
 
 ## Current Session Focus
-**Date**: October 18, 2025
-**Status**: ✅ Priority 1 & 2 improvements completed
-**Next**: Maintenance mode - ready for content updates as needed
+**Date**: October 19, 2025
+**Status**: ✅ Priority 1 & 2 improvements completed; one‑page resume finalized
+**Next**: Maintenance mode — content updates as needed
 
 ## Recent Changes (Latest Session)
 
@@ -156,6 +156,14 @@ No significant technical debt. Code is clean, well-structured, and follows best 
   - `58f8d57`: Implement Priority 1 improvements
 - **Deployment**: Auto-deploys to GitHub Pages on push to main
 - **Build Status**: ✅ Passing
+
+## Session-specific adds (Oct 19, 2025)
+
+- One‑page ATS resume HTML and PDF finalized in `public/Resume/`
+- Site CTAs updated to point to the one‑page PDF, plus a “View Online” HTML link
+- Links switched to relative paths (e.g., `Resume/...`) for GitHub Pages subpath compatibility
+- Verified PDF exports to a single page; contact block includes portfolio URL
+- Added Windows and Node exporters to regenerate PDF locally
 
 ## Key Files to Know
 

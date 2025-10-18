@@ -93,15 +93,23 @@ export function Hero() {
             className="flex flex-col sm:flex-row gap-4 pt-4"
           >
             <a
-              href="/Resume/Sharath_Resume_2025.pdf"
-              download="Sharath_Byladakere_Somashekar_Resume.pdf"
+              href="Resume/Sharath_Resume_OnePage.pdf"
+              download="Sharath_Byladakere_Somashekar_Resume_OnePage.pdf"
               className="group relative inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-10 text-sm font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/50 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              <span className="relative z-10">Download Resume</span>
+              <span className="relative z-10">Download Resume (1‑Page)</span>
               <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary to-primary/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+            </a>
+            <a
+              href="Resume/Sharath_Resume_OnePage.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 items-center justify-center rounded-lg border-2 border-primary/20 bg-background/50 backdrop-blur-sm px-10 text-sm font-semibold shadow-sm transition-all duration-300 hover:border-primary/40 hover:bg-primary/5 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            >
+              View Online
             </a>
             <Link
               href="#contact"

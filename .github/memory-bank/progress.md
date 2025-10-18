@@ -240,7 +240,28 @@ No bugs or issues reported. All functionality tested and working.
 
 ---
 
-## 📝 Future Maintenance Plan
+## � New: One-Page ATS Resume (PDF)
+
+### What was added
+- `public/Resume/Sharath_Resume_OnePage.html` — Single-column, ATS-friendly HTML (US Letter, print CSS)
+- `public/Resume/Sharath_Resume_OnePage.pdf` — Generated via headless browser (Edge/Chrome)
+- `scripts/export-pdf.cmd` — Windows-friendly exporter (no Node deps needed)
+- `scripts/export-pdf.js` — Optional Node exporter using puppeteer-core (uses local Chrome/Edge)
+- `package.json` scripts:
+   - `npm run resume:pdf` (Node route)
+   - `npm run resume:pdf:win` (Windows CMD route)
+
+### Notes
+- Content curated from portfolio data with quantified impact and ATS rules (single column, standard fonts, clear section labels, consistent dates).
+- `.gitignore` updated to include only the one-page resume artifacts.
+
+### How to regenerate
+- Windows: `npm run resume:pdf:win` (uses Edge/Chrome if installed)
+- Node: `npm run resume:pdf` (requires local Chrome/Edge; no Chromium download)
+
+---
+
+## �📝 Future Maintenance Plan
 
 ### Regular Updates (As Needed)
 1. **Resume PDF**: Update when revised
