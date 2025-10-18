@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { heroData } from '@/lib/data';
-import { trackResumeDownload } from '@/components/Analytics';
 import { 
   FaDatabase, 
   FaChartBar, 
@@ -98,7 +97,6 @@ export function Hero() {
               download="Sharath_Somashekar_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={trackResumeDownload}
               className="group relative inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-10 text-sm font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/50 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
