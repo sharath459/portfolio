@@ -56,8 +56,12 @@ const valuePropositions = [
 
 export function WhyHireMe() {
   return (
-    <section id="why-hire-me" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-background to-primary/5">
-      <div className="container px-4 md:px-6">
+    <section id="why-hire-me" className="w-full py-16 md:py-24 lg:py-32 relative overflow-hidden">
+      {/* Animated background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background -z-10" />
+      <div className="absolute inset-0 bg-grid-white/[0.02] -z-10" />
+      
+      <div className="container px-4 md:px-6 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,15 +69,33 @@ export function WhyHireMe() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-primary/70">
-            Why Companies Choose Me
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+          <motion.h2 
+            className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4 relative inline-block"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-500 to-purple-500">
+              Why Companies Choose Me
+            </span>
+            <motion.div
+              className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-blue-500/20 to-purple-500/20 blur-2xl -z-10"
+              animate={{
+                opacity: [0.3, 0.6, 0.3],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          </motion.h2>
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto font-medium">
             Six proven strengths that deliver measurable value from day one
           </p>
         </motion.div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
           {valuePropositions.map((prop, index) => {
             const Icon = prop.icon;
             return (
@@ -83,28 +105,33 @@ export function WhyHireMe() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative p-6 rounded-xl bg-gradient-to-br from-card to-card/50 border border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1"
+                className="group relative p-8 rounded-2xl bg-gradient-to-br from-card via-card/90 to-card/70 border border-border/50 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-2 backdrop-blur-sm"
               >
+                {/* Animated glow effect */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-xl" 
+                     style={{ background: `radial-gradient(circle at 50% 50%, ${prop.color}20, transparent)` }} 
+                />
+                
                 {/* Icon */}
-                <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
-                  <Icon className="w-6 h-6" style={{ color: prop.color }} />
+                <div className="mb-5 inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 group-hover:scale-110 transition-transform duration-300">
+                  <Icon className="w-7 h-7 group-hover:scale-110 transition-transform duration-300" style={{ color: prop.color }} />
                 </div>
 
                 {/* Title & Stat */}
-                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors duration-300 leading-tight">
                   {prop.title}
                 </h3>
-                <div className="text-2xl font-bold text-primary mb-3">
+                <div className="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-500">
                   {prop.stat}
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                <p className="text-base text-muted-foreground/90 leading-relaxed mb-5 font-medium">
                   {prop.description}
                 </p>
 
                 {/* Highlights */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2.5">
                   {prop.highlights.map((highlight, i) => (
                     <span
                       key={i}
