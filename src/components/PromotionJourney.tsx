@@ -177,47 +177,87 @@ export default function PromotionJourney() {
           </div>
         </div>
 
-        {/* Summary Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4 max-w-7xl mx-auto"
-        >
-          <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
-            <div className="text-3xl font-bold text-primary mb-1">2</div>
-            <div className="text-xs text-muted-foreground">Companies</div>
-          </div>
-          <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
-            <div className="text-3xl font-bold text-primary mb-1">2</div>
-            <div className="text-xs text-muted-foreground">Countries</div>
-          </div>
-          <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
-            <div className="text-3xl font-bold text-primary mb-1">3</div>
-            <div className="text-xs text-muted-foreground">Roles</div>
-          </div>
-          <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
-            <div className="text-3xl font-bold text-primary mb-1">4</div>
-            <div className="text-xs text-muted-foreground">Amazon Orgs</div>
-          </div>
-          <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
-            <div className="text-3xl font-bold text-primary mb-1">6</div>
-            <div className="text-xs text-muted-foreground">Domains</div>
-          </div>
-          <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
-            <div className="text-3xl font-bold text-primary mb-1">6</div>
-            <div className="text-xs text-muted-foreground">Promotions</div>
-          </div>
-          <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
-            <div className="text-3xl font-bold text-primary mb-1">8</div>
-            <div className="text-xs text-muted-foreground">Managers</div>
-          </div>
-          <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20">
-            <div className="text-3xl font-bold text-primary mb-1">13</div>
-            <div className="text-xs text-muted-foreground">Years</div>
-          </div>
-        </motion.div>
+        {/* Summary Stats - Enhanced */}
+        <div className="mt-20">
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="text-2xl font-bold text-center mb-8 text-muted-foreground"
+          >
+            Career Highlights at a Glance
+          </motion.h3>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto"
+          >
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="text-center p-6 rounded-2xl bg-gradient-to-br from-blue-500/10 to-blue-600/5 backdrop-blur-sm border-2 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 shadow-lg hover:shadow-blue-500/20"
+            >
+              <div className="text-5xl font-bold text-blue-500 mb-2">13</div>
+              <div className="text-sm font-medium text-muted-foreground mb-1">Years of Excellence</div>
+              <div className="text-xs text-muted-foreground/60">Consistent Growth</div>
+            </motion.div>
+            
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="text-center p-6 rounded-2xl bg-gradient-to-br from-green-500/10 to-green-600/5 backdrop-blur-sm border-2 border-green-500/20 hover:border-green-500/40 transition-all duration-300 shadow-lg hover:shadow-green-500/20"
+            >
+              <div className="text-5xl font-bold text-green-500 mb-2">6</div>
+              <div className="text-sm font-medium text-muted-foreground mb-1">Promotions</div>
+              <div className="text-xs text-muted-foreground/60">4 Vertical, 2 Horizontal</div>
+            </motion.div>
+            
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="text-center p-6 rounded-2xl bg-gradient-to-br from-purple-500/10 to-purple-600/5 backdrop-blur-sm border-2 border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 shadow-lg hover:shadow-purple-500/20"
+            >
+              <div className="text-5xl font-bold text-purple-500 mb-2">4</div>
+              <div className="text-sm font-medium text-muted-foreground mb-1">Amazon Orgs</div>
+              <div className="text-xs text-muted-foreground/60">Retail, Ads, Compliance, Alexa</div>
+            </motion.div>
+            
+            <motion.div 
+              whileHover={{ scale: 1.05 }}
+              className="text-center p-6 rounded-2xl bg-gradient-to-br from-orange-500/10 to-orange-600/5 backdrop-blur-sm border-2 border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 shadow-lg hover:shadow-orange-500/20"
+            >
+              <div className="text-5xl font-bold text-orange-500 mb-2">6</div>
+              <div className="text-sm font-medium text-muted-foreground mb-1">Domains</div>
+              <div className="text-xs text-muted-foreground/60">Operations to Product-Tech</div>
+            </motion.div>
+          </motion.div>
+          
+          {/* Secondary Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            viewport={{ once: true }}
+            className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto"
+          >
+            <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/30 hover:border-primary/30 transition-all duration-300">
+              <div className="text-2xl font-bold text-primary mb-1">2</div>
+              <div className="text-xs text-muted-foreground">Companies</div>
+            </div>
+            <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/30 hover:border-primary/30 transition-all duration-300">
+              <div className="text-2xl font-bold text-primary mb-1">2</div>
+              <div className="text-xs text-muted-foreground">Countries</div>
+            </div>
+            <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/30 hover:border-primary/30 transition-all duration-300">
+              <div className="text-2xl font-bold text-primary mb-1">3</div>
+              <div className="text-xs text-muted-foreground">Role Types</div>
+            </div>
+            <div className="text-center p-4 rounded-xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/30 hover:border-primary/30 transition-all duration-300">
+              <div className="text-2xl font-bold text-primary mb-1">8</div>
+              <div className="text-xs text-muted-foreground">FT Managers</div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

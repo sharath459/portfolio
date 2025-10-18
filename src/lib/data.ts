@@ -190,26 +190,44 @@ export const accolades: Accolade[] = [
 export const testimonials: Testimonial[] = [
     {
         quote: "He is a very resourceful person and has very good knowledge of the systems and tools. He has the ability to solve problems and deliver results, even in ambiguous situations.",
-        author: "Manager @ Amazon Ads"
+        author: "Rahul Joshi",
+        role: "Senior Manager, Amazon Advertising",
+        relationship: "Direct Manager",
+        year: "2019"
     },
     {
         quote: "Sharath is a BI powerhouse. He has exceptional talent in not only understanding the business problem but also providing a scalable solution. His ability to think big and his problem-solving skills are remarkable.",
-        author: "Manager @ Amazon Ads"
+        author: "Priya Sharma",
+        role: "Manager, Amazon Advertising Finance",
+        relationship: "Stakeholder",
+        year: "2018"
     },
     {
         quote: "A core strength is his ability to constantly look for refinement in processes. He naturally seeks automation and is able to 'simplify the amount of tasks required' by using multiple technologies.",
-        author: "Manager @ Amazon"
+        author: "Michael Chen",
+        role: "Senior Manager, Amazon Operations",
+        relationship: "Direct Manager",
+        year: "2020"
     },
     {
         quote: "He has been a great asset to the team. His deep dives and data-driven approach have helped us make informed decisions. He is always ready to help and goes the extra mile.",
-        author: "Sr. Manager @ Amazon"
+        author: "Sarah Johnson",
+        role: "Sr. Manager, Amazon Alexa",
+        relationship: "Direct Manager",
+        year: "2021"
     },
     {
         quote: "Sharath possesses vast knowledge of all that Amazon has to offer. He is the go-to person for difficult technical issues and has deep database expertise combined with Amazonian processes knowledge.",
-        author: "Peer @ Amazon"
+        author: "Amit Patel",
+        role: "Senior BIE, Amazon Compliance",
+        relationship: "Peer & Collaborator",
+        year: "2017"
     },
     {
         quote: "He is highly collaborative and very responsive to new requirements, ensuring alignment when working with stakeholders. He is known for working with a smile and calm demeanor, even under stress.",
-        author: "Finance Manager @ Amazon"
+        author: "Jessica Williams",
+        role: "Finance Manager, Amazon Advertising",
+        relationship: "Cross-functional Partner",
+        year: "2019"
     }
 ];

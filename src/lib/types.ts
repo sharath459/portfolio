@@ -17,6 +17,9 @@ export interface Project {
 export interface Testimonial {
   quote: string;
   author: string;
+  role?: string;
+  relationship?: string;
+  year?: string;
 }
 
 export interface Accolade {
