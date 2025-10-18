@@ -62,18 +62,41 @@ const journeySteps = [
 
 export default function PromotionJourney() {
   return (
-    <section id="journey" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-background to-muted/10">
-      <div className="container px-4 md:px-6">
+    <section id="journey" className="w-full py-16 md:py-24 lg:py-32 relative overflow-hidden">
+      {/* Consistent background with other sections */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background -z-10" />
+      <div className="absolute inset-0 bg-grid-white/[0.02] -z-10" />
+      
+      <div className="container px-4 md:px-6 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold tracking-tight text-center sm:text-4xl md:text-5xl mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-primary/70">
-            Career Progression Journey
-          </h2>
-          <p className="text-muted-foreground text-center text-lg mb-16 max-w-3xl mx-auto">
+          <motion.h2 
+            className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4 relative inline-block"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-500 to-purple-500">
+              Career Progression Journey
+            </span>
+            <motion.div
+              className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-blue-500/20 to-purple-500/20 blur-2xl -z-10"
+              animate={{
+                opacity: [0.3, 0.6, 0.3],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          </motion.h2>
+          <p className="text-muted-foreground text-center text-lg mb-4 max-w-3xl mx-auto font-medium">
             13 years across 2 companies and 2 countries—from SME to Analytics Engineering Manager, 
             spanning 6 domains with 6 promotions (4 vertical, 2 horizontal) across 4 Amazon organizations
           </p>

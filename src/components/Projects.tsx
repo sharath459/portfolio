@@ -149,7 +149,17 @@ const SectionHeader = ({ children, delay = 0 }: { children: React.ReactNode; del
 );
 
 export function Projects() {
-  const topProjects = projectData.filter(p => p.category === 'Top Project');
+  const topProjects = projectData
+    .filter(p => p.category === 'Top Project')
+    .sort((a, b) => {
+      // Custom order: Alexa first, HS3C second, HeadCT third, Agency fourth
+      const order = ['Alexa', 'HS3C', 'Head Count', 'Agency'];
+      const aIndex = order.findIndex(keyword => a.title.includes(keyword));
+      const bIndex = order.findIndex(keyword => b.title.includes(keyword));
+      if (aIndex === -1) return 1;
+      if (bIndex === -1) return -1;
+      return aIndex - bIndex;
+    });
   const aiProjects = projectData.filter(p => p.category === 'AI & Automation');
   const sideProjects = projectData.filter(p => p.category === 'Side Project');
 
