@@ -6,7 +6,7 @@ import { FaGlobeAmericas, FaHeart, FaLightbulb, FaChartLine } from 'react-icons/
 export function AboutMe() {
   return (
     <section id="about" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-muted/10 to-background">
-      <div className="container px-4 md:px-6">
+      <div className="container px-4 md:px-6 max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
