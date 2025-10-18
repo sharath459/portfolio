@@ -104,6 +104,13 @@ export const projectData: Project[] = [
         technologies: ["Athena", "Redshift", "AWS QuickSight", "DataNet ETL", "SQL", "S3", "ADW", "ACH"]
     },
     {
+        title: "Alexa Self-Service BI Platform",
+        category: "Top Project",
+        summary: "Architected the foundational data ecosystem for the 260+ person Alexa Connected Device organization, launching a self-service platform with 5 dashboards that slashed data access time from two weeks to under one hour.",
+        details: "<p><strong>Challenge:</strong> The rapidly growing Alexa Connected Devices & Orchestration (CDO) organization (260+ individuals across 15+ partner teams) was crippled by a lack of centralized data architecture. Data requests were manual, slow, and inconsistent—taking weeks to fulfill and creating bottlenecks for product and engineering teams who needed real-time insights.</p><p><strong>Solution:</strong> As the first and only BIE in the organization, I took full ownership of the data strategy, designing and implementing a comprehensive 3-year data and analytics roadmap. I built a self-service BI ecosystem from scratch using Redshift data warehousing, scalable data pipelines, QuickSight dashboards (Registry Health, SDE Intake, LAP Adoption, Multi-Device UDR, MDX Engagement), and curated SQL Query Banks for frequently asked questions. I onboarded 10+ critical data tables, established GDPR-compliant data deletion mechanisms, and completed 35+ ad-hoc analyses. I also recruited and mentored a 4-person BI team to execute the vision.</p><p><strong>Impact:</strong> The platform was transformative—reducing average data request fulfillment time from 2 weeks to under 1 hour, empowering product and engineering teams with real-time actionable insights, fostering a culture of data-driven decision-making, and freeing up BI resources for strategic work. The infrastructure supported Alexa's AI-based voice assistance serving millions of customers and delivered an estimated $2.3MM in annual business impact.</p>",
+        technologies: ["Redshift", "AWS QuickSight", "SQL", "Data Pipelining", "DataNet ETL", "Redshift Spectrum", "GDPR Compliance"]
+    },
+    {
         title: "Head Count Tracking (HeadCT) Automation Tool",
         category: "Top Project",
         summary: "Designed and launched the HeadCT tool for Amazon Ads' 6,000+ employee organization, automating headcount tracking and saving 50% of a dedicated financial analyst's bandwidth—representing $200K/month in opportunity cost.",
