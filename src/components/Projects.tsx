@@ -2,6 +2,7 @@
 
 import { projectData } from '@/lib/data';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/Card';
+import { FormattedText } from '@/components/ui/FormattedText';
 import { motion } from 'framer-motion';
 import { getTechIcon } from '@/lib/tech-icons';
 import { FaDollarSign, FaClock, FaUsers } from 'react-icons/fa';
@@ -94,10 +95,9 @@ const ProjectCard = ({ project, index }: { project: (typeof projectData)[0]; ind
                 <p className="text-muted-foreground leading-relaxed text-sm">
                     {project.summary}
                 </p>
-                <div 
-                    className="text-muted-foreground leading-relaxed prose prose-sm prose-invert max-w-none"
-                    dangerouslySetInnerHTML={{ __html: project.details }}
-                />
+                <div className="text-muted-foreground leading-relaxed prose prose-sm prose-invert max-w-none">
+                    <FormattedText text={project.details} />
+                </div>
                 <div className="mt-auto pt-4 border-t border-muted/20">
                     <h4 className="font-semibold mb-3 text-sm uppercase tracking-wider text-muted-foreground">
                         Technologies

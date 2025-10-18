@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { heroData } from '@/lib/data';
 import { TypingAnimation } from '@/components/ui/TypingAnimation';
+import { FormattedText } from '@/components/ui/FormattedText';
 import { 
   FaDatabase, 
   FaChartBar, 
@@ -232,10 +233,9 @@ export function Hero() {
                 <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-primary/80">
                   Why Hire Me?
                 </h2>
-                <p 
-                  className="text-muted-foreground leading-relaxed text-base sm:text-lg"
-                  dangerouslySetInnerHTML={{ __html: heroData.pitch }}
-                />
+                <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
+                  <FormattedText text={heroData.pitch} />
+                </p>
               </motion.div>
 
               <motion.div 
@@ -247,10 +247,9 @@ export function Hero() {
                 <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-primary/80">
                   My Philosophy
                 </h2>
-                <p 
-                  className="text-muted-foreground leading-relaxed text-base sm:text-lg"
-                  dangerouslySetInnerHTML={{ __html: heroData.philosophy }}
-                />
+                <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
+                  <FormattedText text={heroData.philosophy} />
+                </p>
               </motion.div>
             </div>
           </motion.div>
