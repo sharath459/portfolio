@@ -2,14 +2,12 @@
 
 import { experienceData } from '@/lib/data';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/Card';
-import { AnimatedSection } from './ui/AnimatedSection';
 import { motion } from 'framer-motion';
 
 export function ExperienceTimeline() {
   return (
-    <AnimatedSection>
-      <section id="experience" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-background to-muted/10">
-        <div className="container px-4 md:px-6">
+    <section id="experience" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-background to-muted/10">
+      <div className="container px-4 md:px-6">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -93,6 +91,5 @@ export function ExperienceTimeline() {
           </div>
         </div>
       </section>
-    </AnimatedSection>
   );
 }

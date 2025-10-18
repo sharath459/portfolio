@@ -2,7 +2,6 @@
 
 import { projectData } from '@/lib/data';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/Card';
-import { AnimatedSection } from './ui/AnimatedSection';
 import { motion } from 'framer-motion';
 import { getTechIcon } from '@/lib/tech-icons';
 
@@ -82,9 +81,8 @@ export function Projects() {
   const sideProjects = projectData.filter(p => p.category === 'Side Project');
 
   return (
-    <AnimatedSection>
-      <section id="projects" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-background to-muted/20">
-        <div className="container px-4 md:px-6 space-y-20">
+    <section id="projects" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-background to-muted/20">
+      <div className="container px-4 md:px-6 space-y-20">
           
           {/* Top Projects */}
           <div>
@@ -118,6 +116,5 @@ export function Projects() {
 
         </div>
       </section>
-    </AnimatedSection>
   );
 }
