@@ -58,13 +58,13 @@ export function ExperienceTimeline() {
                 className="md:grid md:grid-cols-2 md:gap-12 mb-12 last:mb-0"
               >
                 {/* Left or Right side based on index */}
-                <div className={index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8 md:order-2'}>
+                <div className={index % 2 === 0 ? 'md:pr-8 md:text-right flex md:items-start md:justify-end' : 'md:pl-8 md:order-2 flex md:items-start'}>
                   <motion.p 
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
-                    className="text-muted-foreground font-semibold text-sm md:text-base mb-2 md:mb-0"
+                    className="text-muted-foreground font-semibold text-sm md:text-base mb-2 md:mb-0 md:pt-6"
                   >
                     {item.date}
                   </motion.p>
