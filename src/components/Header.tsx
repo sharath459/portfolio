@@ -39,7 +39,7 @@ export function Header() {
     handleScroll(); // Check initial position
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [navItems]);
 
   // Close mobile menu when clicking a link
   const handleNavClick = () => {

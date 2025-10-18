@@ -42,7 +42,6 @@ import {
   FaChartBar,
   FaLightbulb,
   FaHandshake,
-  FaStore,
   FaCogs,
   FaProjectDiagram,
   FaUserTie,
@@ -51,7 +50,6 @@ import {
 import { 
   MdAutoAwesome, 
   MdDataExploration,
-  MdEngineering,
   MdBusiness,
 } from 'react-icons/md';
 import { 

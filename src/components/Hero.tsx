@@ -7,23 +7,19 @@ import {
   FaDatabase, 
   FaChartBar, 
   FaBrain, 
-  FaRobot,
   FaCheckCircle,
   FaAws,
   FaReact,
-  FaGithub,
-  FaCloud
+  FaGithub
 } from 'react-icons/fa';
 import { 
   SiPython, 
   SiDatabricks, 
   SiTableau, 
   SiAmazonredshift,
-  SiGithub,
   SiDbt,
   SiLooker,
 } from 'react-icons/si';
-import { MdDataExploration, MdAutoAwesome } from 'react-icons/md';
 
 const skillCategories = [
   {

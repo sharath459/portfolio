@@ -29,7 +29,7 @@ export function Contact() {
       } else {
         setSubmitStatus('error');
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -57,7 +57,7 @@ export function Contact() {
             Get In Touch
           </h2>
           <p className="max-w-2xl mx-auto text-muted-foreground text-lg">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious team.
+            I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious team.
           </p>
         </motion.div>
 
@@ -132,7 +132,7 @@ export function Contact() {
                   animate={{ opacity: 1, y: 0 }}
                   className="text-green-500 text-sm text-center font-medium"
                 >
-                  ✓ Message sent successfully! I'll get back to you soon.
+                  ✓ Message sent successfully! I&apos;ll get back to you soon.
                 </motion.p>
               )}
 

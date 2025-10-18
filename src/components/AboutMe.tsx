@@ -34,10 +34,10 @@ export function AboutMe() {
                 Born and raised in <strong className="text-primary">Bangalore, India</strong>, I started my career at Amazon as a Catalog Associate in 2012—learning the fundamentals of operations, process optimization, and data-driven problem solving from the ground up.
               </p>
               <p className="text-lg mb-4">
-                Over 13 years, I've had the privilege of working across <strong className="text-primary">4 Amazon organizations</strong> (Retail, Compliance, Advertising, Alexa), progressing from SME to Business Analyst to Business Intelligence Engineer, and eventually to Senior BIE—earning <strong className="text-primary">6 promotions</strong> through consistent delivery of high-impact projects.
+                Over 13 years, I&apos;ve had the privilege of working across <strong className="text-primary">4 Amazon organizations</strong> (Retail, Compliance, Advertising, Alexa), progressing from SME to Business Analyst to Business Intelligence Engineer, and eventually to Senior BIE—earning <strong className="text-primary">6 promotions</strong> through consistent delivery of high-impact projects.
               </p>
               <p className="text-lg mb-4">
-                In 2017, I had the opportunity to relocate to <strong className="text-primary">Seattle, USA</strong>, where I spent 4 transformative years building data infrastructure for Amazon Alexa's Connected Device organization, managing 260+ stakeholders, and delivering an estimated <strong className="text-primary">$2.3MM in annual business impact</strong>.
+                In 2017, I had the opportunity to relocate to <strong className="text-primary">Seattle, USA</strong>, where I spent 4 transformative years building data infrastructure for Amazon Alexa&apos;s Connected Device organization, managing 260+ stakeholders, and delivering an estimated <strong className="text-primary">$2.3MM in annual business impact</strong>.
               </p>
               <p className="text-lg">
                 Today, as an <strong className="text-primary">Engineering Manager at CitiusTech</strong>, I lead an 8-person data team, drive AI-powered automation initiatives, and continue my journey of lifelong learning—recently pivoting into AI/ML, Agentic workflows, and quantitative trading while mentoring the next generation of data professionals.
@@ -95,8 +95,8 @@ export function AboutMe() {
             className="mt-12 text-center p-6 rounded-xl bg-primary/5 border border-primary/20"
           >
             <p className="text-muted-foreground italic">
-              <span className="text-primary font-semibold">Fun fact:</span> When I'm not building data pipelines or analyzing markets, 
-              you'll find me exploring AI-powered side projects—from building Tinder-style apps for non-romantic relationships 
+              <span className="text-primary font-semibold">Fun fact:</span> When I&apos;m not building data pipelines or analyzing markets, 
+              you&apos;ll find me exploring AI-powered side projects—from building Tinder-style apps for non-romantic relationships 
               to creating GenAI chatbots that accelerate knowledge retrieval. I believe the best way to learn is by building! 🚀
             </p>
           </motion.div>
