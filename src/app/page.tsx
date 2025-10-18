@@ -9,6 +9,7 @@ import { Testimonials } from '@/components/Testimonials';
 import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 import { BackToTop } from '@/components/BackToTop';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       </main>
       <Footer />
       <BackToTop />
+      <ThemeToggle />
     </div>
   );
 }
