@@ -1,0 +1,14 @@
+{
+			"greenhouse": [
+				"postman",
+				"databricks",
+				"stripe",
+				"figma"
+			],
+			"lever": [
+				"atlassian",
+				"coinbase",
+				"affirm"
+			]
+}
+

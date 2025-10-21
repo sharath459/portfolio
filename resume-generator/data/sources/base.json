@@ -1,0 +1,41 @@
+{
+  "name": "Sharath",
+  "contact": {
+    "email": "sharath@example.com",
+    "location": "India",
+    "links": [
+      { "label": "Portfolio", "url": "https://sharath459.github.io/portfolio/" },
+      { "label": "GitHub", "url": "https://github.com/sharath459" },
+      { "label": "LinkedIn", "url": "https://www.linkedin.com/in/sharath459" }
+    ]
+  },
+  "summary": "Software Engineer focused on accessible, performant web apps with React/Next.js and TypeScript.",
+  "skills": ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Tailwind", "Framer Motion", "GitHub Actions", "CI/CD"],
+  "highlights": [
+    "Improved Core Web Vitals by 30% via code-splitting and lazy-loading.",
+    "Cut build times 40% with incremental static regeneration and caching.",
+    "Led accessibility push: skip links, ARIA, reduced motion, keyboard nav.",
+    "Hardened security by sanitizing HTML and auditing dependencies.",
+    "Automated resume PDF generation with puppeteer and Windows script.",
+    "Delivered consistent design via HSL themes and semantic tokens."
+  ],
+  "experiences": [
+    {
+      "company": "Portfolio Projects",
+      "role": "Frontend Engineer",
+      "period": "2023–2025",
+      "bullets": [
+        "Built Next.js portfolio with Tailwind and Framer Motion animations.",
+        "Implemented accessibility features (ARIA, skip links, keyboard focus).",
+        "Refactored theming with CSS variables and HSL tokens for contrast.",
+        "Created one-page ATS resume with strict print CSS and headless export.",
+        "Integrated Formspree with client-side validation and safe HTML.",
+        "Handled GitHub Pages deployment via actions and static export."
+      ]
+    }
+  ],
+  "projects": [
+    { "name": "Portfolio Site", "impact": "Responsive, accessible personal site showcasing projects and achievements." },
+    { "name": "Resume Generator", "impact": "CLI tool to tailor resume to JD and export single-page PDF." }
+  ]
+}

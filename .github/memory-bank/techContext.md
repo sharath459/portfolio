@@ -228,3 +228,44 @@ git push origin main
 - First Contentful Paint: < 1.5s
 - Time to Interactive: < 3s
 - Total page size: < 2MB
+
+---
+
+## Resume Generator & Auto Apply (Node.js ESM)
+
+### Runtime & Libraries
+- Node.js 20+ (tested with 22.x)
+- cheerio (HTML parsing), undici (HTTP), puppeteer-core (PDF & apply), inquirer (CLI)
+
+### Commands
+```powershell
+# Scan selected boards for Bangalore + targeted keywords
+npm run jobs:scan
+
+# Fetch full JD content for scanned postings
+npm run jobs:fetch
+
+# Tailor resumes per JD; outputs HTML+PDF per job under out/applications
+npm run jobs:tailor
+
+# Safe prefill on supported providers or open application page
+npm run jobs:apply
+
+# One-shot pipeline
+npm run jobs:run
+```
+
+### Configuration
+- `resume-generator/src/apply/config/companies.json` — Greenhouse/Lever slugs
+- `resume-generator/src/apply/config/profile.json` — contact info, keywords, locations
+
+### Outputs
+- `resume-generator/out/jobs.json` — job records (source, company, title, url, jd)
+- `resume-generator/out/applications/<job-id>/resume.html|pdf` — tailored artifacts
+
+### Browser Path
+- Uses local Edge/Chrome (no Chromium download). Set `EDGE_PATH` or `CHROME_PATH` if needed.
+
+### Safety Notes
+- No auto-submit by default; prompts before automation.
+- Falls back to opening job page when automation isn’t safe.

@@ -1,8 +1,10 @@
 # Progress: What's Done & What's Left
 
-## Project Status: ✅ **Production Ready**
+## Project Status: ✅ **Portfolio Live** | ✅ **Resume Auto-Apply v1 Live**
 
-The portfolio is fully functional, deployed, and optimized. All core features are complete, and all planned improvements have been implemented.
+The portfolio is fully functional, deployed, and optimized.
+
+New: The resume generator has been enhanced with a job scanner and safe auto-apply pipeline (Greenhouse/Lever).
 
 ---
 
@@ -15,6 +17,13 @@ The portfolio is fully functional, deployed, and optimized. All core features ar
 - ✅ **Smooth Navigation**: Scroll to sections with offset, active highlighting
 - ✅ **Contact Form**: Formspree integration with client-side validation
 - ✅ **Download Resume**: PDF downloads correctly with proper filename
+
+### Resume Generator & Job Pipeline (New)
+- ✅ Greenhouse + Lever scanning via public APIs with Bangalore + role keyword filters
+- ✅ Robust JD extraction and normalization
+- ✅ Tailored resume generation per job (HTML + PDF) using existing engine
+- ✅ Safe prefill on supported providers; falls back to opening page (no blind auto-submit)
+- ✅ CLI scripts: `jobs:scan`, `jobs:fetch`, `jobs:tailor`, `jobs:apply`, `jobs:run`
 
 ### Content Sections (All Complete)
 1. ✅ **Hero Section**
@@ -115,17 +124,22 @@ The portfolio is fully functional, deployed, and optimized. All core features ar
 
 ## 🚫 What's Left to Build
 
-### Nothing Critical
+### For Portfolio
+Nothing critical.
 
-All planned features are complete. The portfolio is production-ready and fully functional.
+### For Job Pipeline (v2 Roadmap)
+- Add Workday support (common in large India companies)
+- Add prioritization logic (recency, company list, relevancy score)
+- Generate tailored cover letters and attach when forms allow
+- Add small dashboard/report of selected jobs + status
 
 ---
 
 ## 📋 Known Issues
 
-### None Currently
-
-No bugs or issues reported. All functionality tested and working.
+### Job Pipeline
+- Some providers may block automation; we open the page instead
+- JDs on marketing pages may include extra text; tailoring filters mitigate this
 
 ---
 
@@ -145,6 +159,12 @@ No bugs or issues reported. All functionality tested and working.
 11. ✅ Fix theme toggle icons (reversed sun/moon)
 
 ### Phase 2: Comprehensive Improvements (10 items) - ✅ Completed
+### Phase 3: Resume Auto-Apply (Initial) - ✅ Completed
+1. ✅ Implement Greenhouse/Lever scanners (public APIs)
+2. ✅ Implement JD fetch & robust extraction
+3. ✅ Integrate tailoring to per-job outputs (HTML+PDF)
+4. ✅ Implement safe prefill (no auto-submit by default)
+5. ✅ Add CLI orchestrator and scripts
 1. ✅ Add "Why Hire Me" to navigation
 2. ✅ Implement skip-to-content link
 3. ✅ Add comprehensive form validation
@@ -223,7 +243,10 @@ No bugs or issues reported. All functionality tested and working.
 - **Source**: `main` branch triggers build
 - **Status**: ✅ Live and functional
 
-### Build Pipeline
+### Build Pipeline (Portfolio)
+### Job Pipeline Artifacts
+- `resume-generator/out/jobs.json` — latest scanned jobs with JDs
+- `resume-generator/out/applications/<job-id>/resume.html|pdf` — tailored artifacts
 1. Push to `main` branch
 2. GitHub Actions triggered (`.github/workflows/deploy.yml`)
 3. `npm install` → `npm run build`

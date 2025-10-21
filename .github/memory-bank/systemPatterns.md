@@ -37,6 +37,23 @@ portfolio/
 │   └── lib/
 │       └── data.ts            # All content data (single source of truth)
 └── tailwind.config.ts         # Tailwind configuration
+
+resume-generator/
+├── jobs/                      # Sample JD inputs
+├── out/                       # Generated resumes & applications
+├── src/
+│   ├── lib/                   # JD parser, sources, generate, render
+│   ├── apply/                 # Job pipeline (scan/fetch/tailor/apply)
+│   │   ├── config/            # companies.json, profile.json
+│   │   ├── providers/         # greenhouse/lever helpers
+│   │   ├── index.mjs          # CLI orchestrator
+│   │   ├── scan.mjs           # API scanners
+│   │   ├── jd-fetch.mjs       # JD fetch/extract
+│   │   ├── tailor.mjs         # Per‑job resume generation (HTML+PDF)
+│   │   └── submit.mjs         # Safe prefill/apply
+│   ├── build-pdf.mjs          # Generic HTML→PDF exporter
+│   └── index.mjs              # Manual JD→resume flow
+└── package.json               # Scripts: jobs:scan/fetch/tailor/apply/run
 ```
 
 ## Key Architectural Decisions
@@ -76,6 +93,20 @@ const topProjects = projectData.filter(p => p.category === 'Top Project');
 - Respects system preference on first visit
 
 ### 5. Accessibility First
+### 6. Job Scanning via Public APIs
+**Pattern**: Use Greenhouse boards API and Lever v0 postings for reliability.
+**Why**: Avoid brittle HTML scraping and 404 slug variance.
+**Trade-offs**: Not all companies expose APIs; add Workday integration next.
+
+### 7. JD Extraction Heuristic
+**Pattern**: Choose the longest text among likely containers (main/article/content) using cheerio.
+**Why**: Provider pages vary; longest block captures most of the JD reliably.
+**Trade-offs**: May include extra page fluff; tailoring parser filters for skills.
+
+### 8. Safe Application Automation
+**Pattern**: Use puppeteer-core with local Edge/Chrome to prefill standard fields and upload resume; do not auto-submit by default.
+**Why**: Respect site ToS and reduce risk of mis-submissions.
+**Trade-offs**: Requires manual confirmation for completion on complex flows.
 **Patterns**:
 - Semantic HTML (h1 → h2 → h3 hierarchy)
 - ARIA labels on form inputs (`aria-invalid`, `aria-describedby`)
@@ -153,6 +184,12 @@ const validateForm = () => {
 3. Theme colors: Update `:root` and `.light` in globals.css
 
 ### Deployment
+### Auto Apply Flow
+1. `npm run jobs:scan` populates `out/jobs.json` with filtered postings
+2. `npm run jobs:fetch` fills `jd` and `title` per job
+3. `npm run jobs:tailor` generates `out/applications/<job-id>/resume.(html|pdf)`
+4. `npm run jobs:apply` pre-fills forms or opens application pages for final submit
+
 1. Push to `main` branch
 2. GitHub Actions runs (`.github/workflows/deploy.yml`)
 3. `npm run build` creates static export

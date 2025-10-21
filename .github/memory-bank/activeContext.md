@@ -1,13 +1,25 @@
 # Active Context: Current Work & Focus
 
 ## Current Session Focus
-**Date**: October 19, 2025
-**Status**: ✅ Priority 1 & 2 improvements completed; one‑page resume finalized
-**Next**: Maintenance mode — content updates as needed
+**Date**: October 22, 2025
+**Status**: Portfolio polished; Resume Generator upgraded to automated pipeline
+**Next**: Expand job sources (Workday), add apply heuristics and cover letters
 
 ## Recent Changes (Latest Session)
 
-### Completed Improvements (All 10 Tasks ✅)
+### New Feature: Resume Generator → Auto Apply Pipeline (✅ Initial Version)
+
+- Added `resume-generator/src/apply` pipeline with commands:
+   - `npm run jobs:scan` — scan Greenhouse/Lever boards via public APIs
+   - `npm run jobs:fetch` — fetch and extract JD content
+   - `npm run jobs:tailor` — generate per‑job tailored HTML + PDF
+   - `npm run jobs:apply` — safe prefill on supported providers or open page
+   - `npm run jobs:run` — all‑in‑one (scan → fetch → tailor → apply)
+- Configurable filters in `src/apply/config/{companies.json, profile.json}` (Bangalore, role keywords)
+- Outputs tracked in `out/jobs.json` and per‑job artifacts under `out/applications/<job-id>/`
+- Prefill implemented for Greenhouse/Lever; avoids auto‑submit by default (safety)
+
+### Completed Improvements (All 10 Tasks ✅) — Portfolio
 
 #### **Priority 1: High Impact (Completed Earlier)**
 1. ✅ **Navigation Enhancement**
@@ -137,7 +149,11 @@
 - Update stats (FTE savings, project counts) quarterly
 - Refresh testimonials if new ones received
 
-### Potential Enhancements (Low Priority)
+### Job Pipeline Enhancements
+- Add Workday scrapers/APIs and more companies with India presence
+- Prioritize jobs by company list, recency, and relevance score
+- Generate a targeted cover letter per JD; attach if supported
+- Add a small report/dashboard for selection and status tracking
 - Add project detail pages (would need routing solution for static export)
 - Integrate blog (external platform like Medium, link in nav)
 - Add downloadable case studies for key projects
