@@ -24,6 +24,9 @@
 		{ "host": "ups.wd5.myworkdayjobs.com", "tenant": "ups", "site": "UPSCareers" },
 		{ "host": "pepsico.wd1.myworkdayjobs.com", "tenant": "pepsico", "site": "PepsiCoCareers" }
 		],
+			"oracle": [
+				{ "host": "jpmc.fa.oraclecloud.com", "site": "JPMC" }
+			],
 		"hirist": [
 			{ "url": "https://www.hirist.com/search?q=analytics%20manager&l=Bengaluru" },
 			{ "url": "https://www.hirist.com/search?q=business%20intelligence%20manager&l=Bengaluru" },

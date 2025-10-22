@@ -2,6 +2,8 @@
 
 This toolkit supports Greenhouse, Lever, Ashby, and Workday boards. Many Fortune 100 companies use Workday. You can configure targets in `src/apply/config/companies.json`.
 
+It also supports Oracle Cloud Candidate Experience (fa.oraclecloud.com) used by companies like JPMorgan via the `oracle` section.
+
 ## How to find Workday tenant and site
 
 1. Open the company careers page and a specific job posting.
@@ -33,3 +35,17 @@ Use `src/apply/config/profile.json` to set:
 - Daily watch: `npm run jobs:watch` (set `WATCH_INTERVAL_HOURS` to change cadence)
 
 Artifacts are saved under `resume-generator/out/applications/<job-id>/` (resume + cover letter, HTML + PDF).
+
+## Oracle Cloud quick start
+
+Add entries under the `oracle` section using the company’s Oracle Cloud host and site:
+
+```
+{
+  "oracle": [
+    { "host": "jpmc.fa.oraclecloud.com", "site": "JPMC" }
+  ]
+}
+```
+
+Find the exact `site` by opening a job and checking network requests containing `/hcmUI/CandidateExperience/en/sites/` (the segment after `/sites/` is case-sensitive).

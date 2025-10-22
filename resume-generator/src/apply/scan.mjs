@@ -170,7 +170,8 @@ export async function scanJobs() {
 		lever: ["atlassian", "rippling", "coinbase", "affirm"],
 		ashby: [],
 			workday: [],
-			hirist: []
+			hirist: [],
+			oracle: []
 	};
 	const profile = await readJsonMaybe(path.join(CONFIG_DIR, 'profile.json')) || {};
 	const keywords = profile.keywords || KEYWORDS_DEFAULT;
@@ -182,6 +183,7 @@ export async function scanJobs() {
 		for (const ab of (companies.ashby || [])) boards.push({ type: 'ashby', id: ab });
 		for (const wd of (companies.workday || [])) boards.push({ type: 'workday', entry: wd });
 			for (const hr of (companies.hirist || [])) boards.push({ type: 'hirist', entry: hr });
+			for (const oc of (companies.oracle || [])) boards.push({ type: 'oracle', entry: oc });
 
 	const results = [];
 	for (const b of boards) {
@@ -192,6 +194,7 @@ export async function scanJobs() {
 				else if (b.type === 'ashby') list = await scanAshbyOrg(b.id);
 				else if (b.type === 'workday') list = await scanWorkdayTenant(b.entry || {});
 				else if (b.type === 'hirist') list = await scanHiristEntry(b.entry || {});
+						else if (b.type === 'oracle') list = await scanOracleCloud(b.entry || {});
 			for (const j of list) {
 				if (matchesFilters(j, keywords, locations)) results.push(j);
 			}
@@ -201,4 +204,49 @@ export async function scanJobs() {
 	}
 	return results;
 }
+
+	async function scanOracleCloud(entry) {
+		// entry: { host, site, q?, location? }
+		const host = entry.host; const site = entry.site;
+		if (!host || !site) return [];
+		// Derive search params if not provided
+		let q = entry.q || '';
+		let loc = entry.location || '';
+		try {
+			const profile = await readJsonMaybe(path.join(CONFIG_DIR, 'profile.json')) || {};
+			if (!q && Array.isArray(profile.keywords) && profile.keywords[0]) q = profile.keywords[0];
+			if (!loc && Array.isArray(profile.locations) && profile.locations[0]) loc = profile.locations[0];
+		} catch {}
+		const params = [];
+		if (q) params.push(`keyword=${encodeURIComponent(q)}`);
+		if (loc) params.push(`location=${encodeURIComponent(loc)}`);
+		const qs = params.length ? `?${params.join('&')}` : '';
+		const url = `https://${host}/hcmUI/CandidateExperience/en/sites/${site}/search${qs}`;
+		try {
+			const res = await undiciFetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (JobScanner/1.0)' } });
+			if (!res.ok) return [];
+			const html = await res.text();
+			const $ = loadHtml(html);
+			const jobs = [];
+			// Look for job detail links typical to Oracle Cloud CE
+			$('a[href*="/CandidateExperience/"][href*="/job/"], a[href*="/CandidateExperience/"][href*="/requisitions/"]').each((_, a) => {
+				const href = $(a).attr('href') || '';
+				const title = ($(a).text() || $(a).attr('aria-label') || '').replace(/\s+/g, ' ').trim();
+				if (!href || !title) return;
+				const abs = href.startsWith('http') ? href : `https://${host}${href.startsWith('/') ? '' : '/'}${href}`;
+				// Try to find a location near the link
+				let location = '';
+				const card = $(a).closest('div');
+				const locCand = card.find('*:contains(Bengaluru), *:contains(Bangalore)').first().text() || card.text();
+				if (/Bengaluru|Bangalore/i.test(locCand)) location = 'Bengaluru, India';
+				jobs.push({ source: 'oracle', company: host.split('.')[0], title: norm(title), location: norm(location), url: abs });
+			});
+			// dedupe
+			const byUrl = new Map();
+			for (const j of jobs) if (j.url && !byUrl.has(j.url)) byUrl.set(j.url, j);
+			return Array.from(byUrl.values());
+		} catch {
+			return [];
+		}
+	}
 
