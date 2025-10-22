@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { load as loadHtml } from 'cheerio';
 import { fetch as undiciFetch } from 'undici';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -114,12 +115,62 @@ async function scanWorkdayTenant(entry) {
 	return jobs;
 }
 
+async function scanHiristEntry(entry) {
+	// Supports two forms:
+	// 1) Direct search URL string: "https://www.hirist.com/search?q=...&l=..."
+	// 2) Object: { url?: string, q?: string, location?: string }
+	let url = '';
+	if (typeof entry === 'string') {
+		if (/^https?:\/\//i.test(entry)) url = entry;
+	} else if (entry && typeof entry === 'object') {
+		if (entry.url) url = entry.url;
+		else if (entry.q) {
+			const q = encodeURIComponent(entry.q);
+			const l = entry.location ? `&l=${encodeURIComponent(entry.location)}` : '';
+			// Best-effort search pattern (may vary); docs instruct users to paste actual hirist search URL
+			url = `https://www.hirist.com/search?q=${q}${l}`;
+		}
+	}
+	if (!url) return [];
+	try {
+		const res = await undiciFetch(url, { headers: { 'User-Agent': 'Mozilla/5.0 (JobScanner/1.0)' } });
+		if (!res.ok) return [];
+		const html = await res.text();
+		const $ = loadHtml(html);
+		const jobs = [];
+		// Generic anchors linking to job pages
+		$('a[href*="/job/"]').each((_, a) => {
+			const href = $(a).attr('href') || '';
+			let title = $(a).text().replace(/\s+/g, ' ').trim();
+			if (!title) {
+				// try heading inside card
+				const h = $(a).find('h3,h2,h4').first().text().replace(/\s+/g, ' ').trim();
+				if (h) title = h;
+			}
+			if (!href || !title) return;
+			// Build absolute URL if needed
+			const jobUrl = href.startsWith('http') ? href : `https://www.hirist.com${href}`;
+			// Try to find a nearby location element
+			let location = '';
+			const card = $(a).closest('div');
+			const locCand = card.find(':contains(Bengaluru), :contains(Bangalore)').first().text() || card.text();
+			if (/Bengaluru|Bangalore/i.test(locCand)) location = 'Bengaluru, India';
+			jobs.push({ source: 'hirist', company: 'hirist', title: norm(title), location: norm(location), url: jobUrl });
+		});
+		// Deduplicate by url
+		const byUrl = new Map();
+		for (const j of jobs) if (j.url && !byUrl.has(j.url)) byUrl.set(j.url, j);
+		return Array.from(byUrl.values());
+	} catch { return []; }
+}
+
 export async function scanJobs() {
 	const companies = await readJsonMaybe(path.join(CONFIG_DIR, 'companies.json')) || {
 		greenhouse: ["databricks", "snowflake", "figma", "notion", "stripe"],
 		lever: ["atlassian", "rippling", "coinbase", "affirm"],
 		ashby: [],
-		workday: []
+			workday: [],
+			hirist: []
 	};
 	const profile = await readJsonMaybe(path.join(CONFIG_DIR, 'profile.json')) || {};
 	const keywords = profile.keywords || KEYWORDS_DEFAULT;
@@ -130,6 +181,7 @@ export async function scanJobs() {
 		for (const lv of (companies.lever || [])) boards.push({ type: 'lever', id: lv });
 		for (const ab of (companies.ashby || [])) boards.push({ type: 'ashby', id: ab });
 		for (const wd of (companies.workday || [])) boards.push({ type: 'workday', entry: wd });
+			for (const hr of (companies.hirist || [])) boards.push({ type: 'hirist', entry: hr });
 
 	const results = [];
 	for (const b of boards) {
@@ -139,6 +191,7 @@ export async function scanJobs() {
 				else if (b.type === 'lever') list = await scanLeverBoard(b.id);
 				else if (b.type === 'ashby') list = await scanAshbyOrg(b.id);
 				else if (b.type === 'workday') list = await scanWorkdayTenant(b.entry || {});
+				else if (b.type === 'hirist') list = await scanHiristEntry(b.entry || {});
 			for (const j of list) {
 				if (matchesFilters(j, keywords, locations)) results.push(j);
 			}
