@@ -7,6 +7,8 @@ import { scanJobs } from './scan.mjs';
 import { fetchAllJobDescriptions } from './jd-fetch.mjs';
 import { tailorResumes } from './tailor.mjs';
 import { submitApplications } from './submit.mjs';
+import { rankJobs } from './rank.mjs';
+import { generateCoverLetters } from './cover-letter.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -53,7 +55,12 @@ async function cmdFetchJD() {
 async function cmdTailor() {
 	const db = await readJobs();
 	const count = await tailorResumes(db.jobs);
+	const profilePath = path.join(__dirname, 'config', 'profile.json');
+	let profile = {};
+	try { profile = JSON.parse(await fs.readFile(profilePath, 'utf8')); } catch {}
+	const cl = await generateCoverLetters(db.jobs, { profile });
 	console.log(`Tailored ${count} resumes`);
+	if (cl) console.log(`Generated ${cl} cover letters`);
 }
 
 async function cmdApply() {
@@ -80,6 +87,14 @@ async function cmdApply() {
 async function cmdRun() {
 	await cmdScan();
 	await cmdFetchJD();
+	// rank and show top matches
+	const { jobs } = await readJobs();
+	const ranked = await rankJobs(jobs);
+	const top = ranked.slice(0, 10);
+	console.log('Top matches:');
+	for (const j of top) {
+		console.log(`- [${j.score}] ${j.title} @ ${j.company || j.source} (${j.location || 'N/A'})\n  ${j.url}`);
+	}
 	await cmdTailor();
 	await cmdApply();
 }

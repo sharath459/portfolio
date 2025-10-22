@@ -43,3 +43,8 @@ next-env.d.ts
 public/Resume/
 !public/Resume/Sharath_Resume_OnePage.html
 !public/Resume/Sharath_Resume_OnePage.pdf
+
+# resume-generator (CLI tool)
+resume-generator/node_modules/
+resume-generator/out/
+resume-generator/.puppeteer/
