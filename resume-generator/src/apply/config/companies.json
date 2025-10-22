@@ -13,7 +13,9 @@
 	"ashby": [
 	],
 	"workday": [
-		{ "host": "boeing.wd1.myworkdayjobs.com", "tenant": "boeing", "site": "External" },
+			{ "host": "boeing.wd1.myworkdayjobs.com", "tenant": "boeing", "site": "External" },
+			{ "host": "walmart.wd5.myworkdayjobs.com", "tenant": "walmart", "site": "WalmartExternal" },
+			{ "host": "maersk.wd3.myworkdayjobs.com", "tenant": "maersk", "site": "Maersk_External" },
 		{ "host": "nvidia.wd5.myworkdayjobs.com", "tenant": "nvidia", "site": "NVIDIAExternalCareerSite" },
 		{ "host": "wellsfargo.wd1.myworkdayjobs.com", "tenant": "wellsfargo", "site": "External" },
 		{ "host": "intel.wd1.myworkdayjobs.com", "tenant": "intel", "site": "External" },
@@ -24,7 +26,9 @@
 		],
 		"hirist": [
 			{ "url": "https://www.hirist.com/search?q=analytics%20manager&l=Bengaluru" },
-			{ "url": "https://www.hirist.com/search?q=business%20intelligence%20manager&l=Bengaluru" }
+			{ "url": "https://www.hirist.com/search?q=business%20intelligence%20manager&l=Bengaluru" },
+			{ "url": "https://www.hirist.com/search?q=JP%20Morgan&l=Bengaluru" },
+			{ "url": "https://www.hirist.com/search?q=JPMorgan%20Chase&l=Bengaluru" }
 		]
 }
 
