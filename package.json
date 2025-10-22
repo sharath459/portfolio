@@ -15,7 +15,8 @@
     "jobs:fetch": "npm --prefix resume-generator run jobs:fetch",
     "jobs:tailor": "npm --prefix resume-generator run jobs:tailor",
     "jobs:apply": "npm --prefix resume-generator run jobs:apply",
-    "jobs:run": "npm --prefix resume-generator run jobs:run"
+    "jobs:run": "npm --prefix resume-generator run jobs:run",
+    "jobs:watch": "npm --prefix resume-generator run watch"
   },
   "dependencies": {
     "framer-motion": "^12.23.24",

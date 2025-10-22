@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import puppeteer from 'puppeteer-core';
+import { loadAllSources } from '../lib/sources.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -91,17 +92,39 @@ function buildLetterHTML({ name, email, role, company, location, highlights }) {
   return template;
 }
 
+function extractJDBullets(jd) {
+  if (!jd) return [];
+  const text = jd.replace(/\r/g, '').split('\n');
+  const bullets = [];
+  for (const line of text) {
+    const m = line.match(/^\s*[•\-*]\s+(.+)/);
+    if (m) bullets.push(m[1].trim());
+  }
+  if (!bullets.length) {
+    // Fallback: split sentences and pick requirement-looking lines
+    const parts = jd.split(/(?<=[.!?])\s+/).map(s => s.trim()).filter(s => s.length > 0);
+    for (const p of parts) { if (/[0-9]+\+\s*years|experience|lead|manage|analytics|bi|data/i.test(p)) bullets.push(p); }
+  }
+  return bullets.slice(0, 6);
+}
+
 export async function generateCoverLetters(jobs, { profile } = {}) {
-  const person = profile?.name || 'Candidate';
-  const email = profile?.email || profile?.contactEmail || '';
+  const base = await loadAllSources();
+  const person = profile?.name || base?.name || 'Candidate';
+  const email = profile?.email || profile?.contactEmail || base?.contact?.email || '';
   let count = 0;
   for (const job of jobs) {
     if (!job.jd || job.jd.length < 50) continue;
     const role = job.title || 'Role';
     const company = job.company || extractCompanyFromUrl(job.url || '') || '';
     const location = job.location || '';
-    // simple highlights (can improve: parse from resume achievements or JD requirements)
-    const highlights = [
+    const jdBullets = extractJDBullets(job.jd);
+    const resumeHighlights = Array.isArray(base?.highlights) ? base.highlights : [];
+    const pick = [];
+    if (jdBullets[0]) pick.push(jdBullets[0]);
+    if (jdBullets[1]) pick.push(jdBullets[1]);
+    if (resumeHighlights[0]) pick.push(resumeHighlights[0]);
+    const highlights = pick.length ? pick : [
       'Built analytics platforms that saved 50+ FTE via automation and AI-assisted workflows',
       'Led cross-functional data teams (DE/BI) and mentored 100+ analysts',
       'Delivered measurable impact through ML-powered observability and KPI instrumentation'

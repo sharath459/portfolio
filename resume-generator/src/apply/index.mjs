@@ -15,6 +15,7 @@ const __dirname = path.dirname(__filename);
 
 const OUT_DIR = path.resolve(__dirname, '../../out');
 const JOBS_JSON = path.join(OUT_DIR, 'jobs.json');
+const APPLIED_JSON = path.join(OUT_DIR, 'applied.json');
 
 async function ensureOut() { await fs.mkdir(OUT_DIR, { recursive: true }); }
 
@@ -29,6 +30,15 @@ async function readJobs() {
 async function writeJobs(db) {
 	await ensureOut();
 	await fs.writeFile(JOBS_JSON, JSON.stringify(db, null, 2), 'utf8');
+}
+
+async function readApplied() {
+	await ensureOut();
+	try { return JSON.parse(await fs.readFile(APPLIED_JSON, 'utf8')); } catch { return { urls: {} }; }
+}
+async function writeApplied(applied) {
+	await ensureOut();
+	await fs.writeFile(APPLIED_JSON, JSON.stringify(applied, null, 2), 'utf8');
 }
 
 async function cmdScan() {
@@ -70,6 +80,7 @@ async function cmdApply() {
 	const envDry = process.env.APPLY_DRY === '1';
 	const reallyFlag = argv.includes('--yes') || argv.includes('-y');
 	const dryFlag = argv.includes('--dry');
+	const reapply = argv.includes('--reapply');
 	const really = envReally || reallyFlag;
 	const dryRun = envDry || dryFlag || !really;
 	if (!really && !dryRun) {
@@ -80,7 +91,20 @@ async function cmdApply() {
 			console.log('Dry-run apply (no browser navigation). Pass --yes to attempt automation.');
 		}
 	}
-	const stats = await submitApplications(db.jobs, { dryRun });
+		// skip jobs already applied unless reapply flag set
+		const applied = await readApplied();
+		const nowList = db.jobs.filter(j => reapply ? true : !applied.urls?.[j.url]);
+		const stats = await submitApplications(nowList, { dryRun });
+		if (!dryRun) {
+			const ts = new Date().toISOString();
+			for (const j of nowList) {
+				applied.urls[j.url] = { appliedAt: ts, title: j.title, company: j.company };
+			}
+			await writeApplied(applied);
+			// also mark applied in jobs.json for visibility
+			const newJobs = db.jobs.map(j => applied.urls?.[j.url] ? { ...j, appliedAt: applied.urls[j.url].appliedAt } : j);
+			await writeJobs({ jobs: newJobs });
+		}
 	console.log(`Applications processed: ${stats.processed}, submitted: ${stats.submitted}, opened: ${stats.opened}`);
 }
 
@@ -99,6 +123,17 @@ async function cmdRun() {
 	await cmdApply();
 }
 
+async function cmdWatch() {
+	const hours = Number(process.env.WATCH_INTERVAL_HOURS || 24);
+	const ms = Math.max(1, hours) * 60 * 60 * 1000;
+	console.log(`Watching every ${hours}h. Press Ctrl+C to stop.`);
+	// immediate run first
+	await cmdRun();
+	setInterval(async () => {
+		try { await cmdRun(); } catch (e) { console.error('Watch cycle error:', e.message); }
+	}, ms);
+}
+
 const cmd = process.argv[2] || 'run';
 switch (cmd) {
 	case 'scan': await cmdScan(); break;
@@ -106,6 +141,7 @@ switch (cmd) {
 	case 'tailor': await cmdTailor(); break;
 	case 'apply': await cmdApply(); break;
 	case 'run': await cmdRun(); break;
+	case 'watch': await cmdWatch(); break;
 	default:
 		console.log('Usage: node src/apply/index.mjs [scan|fetch-jd|tailor|apply|run]');
 }

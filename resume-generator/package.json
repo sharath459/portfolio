@@ -13,7 +13,8 @@
     "jobs:fetch": "node src/apply/index.mjs fetch-jd",
     "jobs:tailor": "node src/apply/index.mjs tailor",
     "jobs:apply": "node src/apply/index.mjs apply",
-    "jobs:run": "node src/apply/index.mjs run"
+    "jobs:run": "node src/apply/index.mjs run",
+    "watch": "node src/apply/index.mjs watch"
   },
   "dependencies": {
     "cheerio": "^1.0.0",
