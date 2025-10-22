@@ -1,14 +1,26 @@
 {
-			"greenhouse": [
-				"postman",
-				"databricks",
-				"stripe",
-				"figma"
-			],
-			"lever": [
-				"atlassian",
-				"coinbase",
-				"affirm"
-			]
+	"greenhouse": [
+		"postman",
+		"databricks",
+		"stripe",
+		"figma"
+	],
+	"lever": [
+		"atlassian",
+		"coinbase",
+		"affirm"
+	],
+	"ashby": [
+	],
+	"workday": [
+		{ "host": "boeing.wd1.myworkdayjobs.com", "tenant": "boeing", "site": "External" },
+		{ "host": "nvidia.wd5.myworkdayjobs.com", "tenant": "nvidia", "site": "NVIDIAExternalCareerSite" },
+		{ "host": "wellsfargo.wd1.myworkdayjobs.com", "tenant": "wellsfargo", "site": "External" },
+		{ "host": "intel.wd1.myworkdayjobs.com", "tenant": "intel", "site": "External" },
+		{ "host": "comcast.wd5.myworkdayjobs.com", "tenant": "comcast", "site": "Comcast_Careers" },
+		{ "host": "dell.wd1.myworkdayjobs.com", "tenant": "dell", "site": "DellCareers" },
+		{ "host": "ups.wd5.myworkdayjobs.com", "tenant": "ups", "site": "UPSCareers" },
+		{ "host": "pepsico.wd1.myworkdayjobs.com", "tenant": "pepsico", "site": "PepsiCoCareers" }
+	]
 }
 
