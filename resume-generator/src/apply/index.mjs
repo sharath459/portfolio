@@ -80,6 +80,12 @@ async function cmdApply() {
 	const envDry = process.env.APPLY_DRY === '1';
 	const reallyFlag = argv.includes('--yes') || argv.includes('-y');
 	const dryFlag = argv.includes('--dry');
+	const oneRandom = argv.includes('--one-random');
+	const unsafeSubmit = argv.includes('--unsafe-submit');
+	const screenshots = argv.includes('--screenshots');
+	const onlyProvider = (argv.find(a => a.startsWith('--provider=')) || '').split('=')[1];
+	const onlyUrl = (argv.find(a => a.startsWith('--url=')) || '').split('=')[1];
+	const reportOut = path.join(OUT_DIR, 'apply-report-latest.json');
 	const reapply = argv.includes('--reapply');
 	const really = envReally || reallyFlag;
 	const dryRun = envDry || dryFlag || !really;
@@ -93,17 +99,98 @@ async function cmdApply() {
 	}
 		// skip jobs already applied unless reapply flag set
 		const applied = await readApplied();
-		const nowList = db.jobs.filter(j => reapply ? true : !applied.urls?.[j.url]);
-		const stats = await submitApplications(nowList, { dryRun });
+		let candidates = db.jobs.filter(j => reapply ? true : !applied.urls?.[j.url]);
+		if (onlyProvider) candidates = candidates.filter(j => (j.source || '').toLowerCase() === onlyProvider.toLowerCase());
+		if (onlyUrl) candidates = candidates.filter(j => j.url === onlyUrl);
+		let nowList = candidates;
+		let picked = null;
+		if (oneRandom) {
+			if (!nowList.length) nowList = reapply ? db.jobs : db.jobs.filter(Boolean);
+			picked = nowList[Math.floor(Math.random() * nowList.length)];
+			nowList = picked ? [picked] : [];
+		}
+
+		// Prepare simple report metadata (for one job, if applicable)
+		let perJobReport = null;
+		if (nowList.length === 1) {
+			const j = nowList[0];
+			const safeId = (j.title || 'job').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+			const appDir = path.join(OUT_DIR, 'applications', safeId.substring(0, 60));
+			const resumeHtml = path.join(appDir, 'resume.html');
+			const resumePdf = path.join(appDir, 'resume.pdf');
+			const coverHtml = path.join(appDir, 'cover-letter.html');
+			const coverPdf = path.join(appDir, 'cover-letter.pdf');
+			const beforePng = path.join(appDir, 'before.png');
+			const afterPng = path.join(appDir, 'after.png');
+			const exists = async p => !!(await fs.stat(p).catch(()=>null));
+			perJobReport = {
+				ts: new Date().toISOString(),
+				mode: oneRandom ? 'one-random' : (onlyUrl ? 'one-url' : 'single'),
+				dryRun,
+				job: { title: j.title, company: j.company || '', location: j.location || '', url: j.url, source: j.source },
+				artifacts: {
+					resumeHtml,
+					resumePdf,
+					coverHtml,
+					coverPdf,
+					screenshots: { before: beforePng, after: afterPng }
+				},
+				automationSupported: ['greenhouse','lever'].includes((j.source||'').toLowerCase())
+			};
+			// Check existence lazily after tailoring typically; may already exist
+			perJobReport.artifactsExists = {
+				resumeHtml: await exists(resumeHtml),
+				resumePdf: await exists(resumePdf),
+				coverHtml: await exists(coverHtml),
+				coverPdf: await exists(coverPdf),
+				screenshots: {
+					before: await exists(beforePng),
+					after: await exists(afterPng)
+				}
+			};
+		}
+
+		console.log('[apply] jobs total:', db.jobs.length, 'selected:', nowList.length, 'flags:', { oneRandom, reapply, onlyUrl: !!onlyUrl, onlyProvider: !!onlyProvider, dryRun, unsafeSubmit, screenshots });
+		const stats = await submitApplications(nowList, { dryRun, unsafeSubmit, screenshots });
 		if (!dryRun) {
 			const ts = new Date().toISOString();
-			for (const j of nowList) {
+		  for (const j of nowList) {
 				applied.urls[j.url] = { appliedAt: ts, title: j.title, company: j.company };
 			}
 			await writeApplied(applied);
 			// also mark applied in jobs.json for visibility
 			const newJobs = db.jobs.map(j => applied.urls?.[j.url] ? { ...j, appliedAt: applied.urls[j.url].appliedAt } : j);
 			await writeJobs({ jobs: newJobs });
+		}
+		// Write report for single job and global latest
+		if (perJobReport) {
+			perJobReport.result = stats;
+			perJobReport.unsafeSubmit = unsafeSubmit;
+			perJobReport.screenshots = screenshots;
+			// Refresh artifact existence now that actions may have created them
+			try {
+				const exists = async p => !!(await fs.stat(p).catch(()=>null));
+				perJobReport.artifactsExists = {
+					resumeHtml: await exists(perJobReport.artifacts.resumeHtml),
+					resumePdf: await exists(perJobReport.artifacts.resumePdf),
+					coverHtml: await exists(perJobReport.artifacts.coverHtml),
+					coverPdf: await exists(perJobReport.artifacts.coverPdf),
+					screenshots: perJobReport.artifacts.screenshots ? {
+						before: await exists(perJobReport.artifacts.screenshots.before),
+						after: await exists(perJobReport.artifacts.screenshots.after)
+					} : undefined
+				};
+			} catch {}
+			try {
+				const appDir = path.dirname(perJobReport.artifacts.resumeHtml);
+				await fs.mkdir(appDir, { recursive: true });
+				await fs.writeFile(path.join(appDir, 'report.json'), JSON.stringify(perJobReport, null, 2), 'utf8');
+			} catch {}
+			try {
+				await fs.writeFile(reportOut, JSON.stringify(perJobReport, null, 2), 'utf8');
+			} catch {}
+			console.log('Apply report written to:', reportOut);
+			console.log(`Applied to: ${perJobReport.job.title} @ ${perJobReport.job.company || perJobReport.job.source}\n${perJobReport.job.url}`);
 		}
 	console.log(`Applications processed: ${stats.processed}, submitted: ${stats.submitted}, opened: ${stats.opened}`);
 }
