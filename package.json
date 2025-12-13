@@ -8,9 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "export": "next build",
-  "resume:pdf": "node scripts/export-pdf.js",
-  "resume:pdf:win": "scripts\\export-pdf.cmd"
-  ,
+    "resume:pdf": "node scripts/export-pdf.js",
+    "resume:pdf:win": "scripts\\export-pdf.cmd",
     "jobs:scan": "npm --prefix resume-generator run jobs:scan",
     "jobs:fetch": "npm --prefix resume-generator run jobs:fetch",
     "jobs:tailor": "npm --prefix resume-generator run jobs:tailor",
@@ -21,9 +20,9 @@
   "dependencies": {
     "framer-motion": "^12.23.24",
     "geist": "^1.5.1",
-    "next": "15.5.5",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "next": "^16.0.10",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "react-icons": "^5.5.0"
   },
   "devDependencies": {
@@ -33,9 +32,9 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "15.5.5",
+    "eslint-config-next": "^16.0.10",
+    "puppeteer-core": "^23.7.0",
     "tailwindcss": "^4",
-    "typescript": "^5",
-    "puppeteer-core": "^23.7.0"
+    "typescript": "^5"
   }
 }
