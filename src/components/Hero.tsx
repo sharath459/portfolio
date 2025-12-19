@@ -5,20 +5,20 @@ import { motion } from 'framer-motion';
 import { heroData } from '@/lib/data';
 import { TypingAnimation } from '@/components/ui/TypingAnimation';
 import { FormattedText } from '@/components/ui/FormattedText';
-import { 
-  FaDatabase, 
-  FaChartBar, 
-  FaBrain, 
+import {
+  FaDatabase,
+  FaChartBar,
+  FaBrain,
   FaCheckCircle,
   FaAws,
   FaReact,
   FaGithub,
   FaChartPie,
 } from 'react-icons/fa';
-import { 
-  SiPython, 
-  SiDatabricks, 
-  SiTableau, 
+import {
+  SiPython,
+  SiDatabricks,
+  SiTableau,
   SiAmazonredshift,
   SiDbt,
   SiLooker,
@@ -57,7 +57,7 @@ export function Hero() {
     <section id="home" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5 -z-10"></div>
-      
+
       <div id="main-content" className="container px-4 md:px-6 text-center py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -75,7 +75,7 @@ export function Hero() {
                 startDelay={500}
               />
             </h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.4 }}
@@ -86,14 +86,14 @@ export function Hero() {
           </div>
 
           {/* CTA Buttons */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 pt-4"
           >
             <a
-              href="Resume/Sharath_Resume_OnePage.pdf"
+              href="/portfolio/Resume/Sharath_Resume_OnePage.pdf"
               download="Sharath_Byladakere_Somashekar_Resume_OnePage.pdf"
               className="group relative inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-10 text-sm font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/50 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
@@ -104,7 +104,7 @@ export function Hero() {
               <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary to-primary/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
             </a>
             <a
-              href="Resume/Sharath_Resume_OnePage.html"
+              href="/portfolio/Resume/Sharath_Resume_OnePage.html"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-12 items-center justify-center rounded-lg border-2 border-primary/20 bg-background/50 backdrop-blur-sm px-10 text-sm font-semibold shadow-sm transition-all duration-300 hover:border-primary/40 hover:bg-primary/5 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
@@ -191,12 +191,12 @@ export function Hero() {
                   }}
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div 
+                    <div
                       className="p-2 rounded-lg"
                       style={{ backgroundColor: `${category.color}20` }}
                     >
-                      <category.icon 
-                        className="text-xl" 
+                      <category.icon
+                        className="text-xl"
                         style={{ color: category.color }}
                       />
                     </div>
@@ -211,8 +211,8 @@ export function Hero() {
                         transition={{ duration: 0.3, delay: 1 + idx * 0.1 + skillIdx * 0.05 }}
                         className="flex items-start gap-2 text-xs text-muted-foreground"
                       >
-                        <FaCheckCircle 
-                          className="text-[10px] mt-0.5 flex-shrink-0" 
+                        <FaCheckCircle
+                          className="text-[10px] mt-0.5 flex-shrink-0"
                           style={{ color: category.color }}
                         />
                         <span>{skill}</span>
@@ -225,14 +225,14 @@ export function Hero() {
           </motion.div>
 
           {/* Value Propositions */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
             className="max-w-5xl mx-auto pt-16 space-y-12"
           >
             <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 1.4 }}
@@ -246,7 +246,7 @@ export function Hero() {
                 </p>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 1.6 }}
