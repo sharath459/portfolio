@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sharath B. Somashekar — Resume (One Page, ATS)</title>
+  <meta name="description" content="Senior Data Leader & AI Innovator. 12+ years in data engineering, BI, and AI automation with measurable business impact." />
+  <style>
+    /* ATS-safe: single column, no tables, standard fonts */
+    :root { --fg: #111; --muted: #444; }
+  @page { size: Letter; margin: 0.4in; }
+    html, body { padding: 0; margin: 0; }
+  body { font-family: Calibri, Arial, Helvetica, sans-serif; color: var(--fg); line-height: 1.2; font-size: 10.5pt; }
+    .container { max-width: 8in; margin: 0 auto; }
+    h1, h2 { margin: 0; padding: 0; }
+  h1 { font-size: 16pt; font-weight: 700; }
+  h2 { font-size: 11pt; font-weight: 700; margin-top: 10pt; border-bottom: 1px solid #ccc; padding-bottom: 2pt; }
+    .subhead { font-size: 11pt; color: var(--muted); margin-top: 2pt; }
+    .row { display: flex; justify-content: space-between; align-items: baseline; gap: 8pt; }
+    .nowrap { white-space: nowrap; }
+  .contact { font-size: 10pt; margin-top: 4pt; }
+    .contact a { color: #0b57d0; text-decoration: none; }
+    .contact a:hover { text-decoration: underline; }
+  ul { margin: 4pt 0 0 12pt; padding: 0; }
+  li { margin: 2pt 0; }
+  .skills { display: flex; flex-wrap: wrap; gap: 4pt 8pt; margin-top: 4pt; font-size: 10pt; }
+  .pill { padding: 1pt 5pt; border: 1px solid #ddd; border-radius: 3pt; }
+  .section { margin-top: 8pt; }
+  .tight { margin-top: 2pt; }
+    .muted { color: var(--muted); }
+    .role { font-weight: 700; }
+    .company { font-weight: 600; }
+    .loc { color: var(--muted); }
+    .date { color: var(--muted); }
+    .print-only { display: none; }
+    .no-print { display: block; }
+    /* Keep single page by reducing spacing on print overflow */
+    @media print {
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      a { color: #000; text-decoration: none; }
+      .section, .row, ul, li, p { page-break-inside: avoid; }
+      .print-only { display: block; }
+      .no-print { display: none !important; }
+      .optional { display: none !important; }
+    }
+  </style>
+  <!--
+    ATS Guidelines followed:
+    - Single column, no tables/graphics; standard fonts; clear section headers
+    - Contact details outside headers/footers; consistent date formats
+    - Bullets with action + impact + metrics; keywords mirrored from data stack
+    - PDF-safe: keep everything text-based
+  -->
+</head>
+<body>
+  <main class="container">
+    <!-- Header -->
+    <section aria-label="header">
+      <h1>Sharath Byladakere Somashekar</h1>
+      <div class="subhead">Senior Data Leader & AI Innovator</div>
+      <div class="contact">
+        <span><a href="mailto:sharath459@gmail.com">sharath459@gmail.com</a></span>
+        • <span><a href="https://www.linkedin.com/in/sharath-somashekar/">linkedin.com/in/sharath-somashekar</a></span>
+        • <span><a href="https://github.com/sharath459">github.com/sharath459</a></span>
+        • <span><a href="https://sharath459.github.io/portfolio/">sharath459.github.io/portfolio</a></span>
+      </div>
+    </section>
+
+    <!-- Headline Summary -->
+    <section class="section" aria-label="summary">
+      <p class="muted">
+        Data & BI leader with 12+ years building scalable data ecosystems, self‑service BI, and AI‑driven automation. Delivered $2.3MM+ annual impact at Amazon, saved 50+ FTE via automation, and cut data access from weeks to &lt;1 hour. Recent focus: Agentic AI workflows (90% dev time reduction), dbt migrations, and leadership of 8‑person teams delivering 5 critical projects in 3 months.
+      </p>
+    </section>
+
+    <!-- Core Skills -->
+    <section class="section" aria-label="skills">
+      <h2>Core Skills</h2>
+      <div class="skills no-print">
+        <span class="pill">SQL</span>
+        <span class="pill">Python</span>
+        <span class="pill">Redshift</span>
+        <span class="pill">dbt</span>
+        <span class="pill">ETL / ELT</span>
+        <span class="pill">Data Warehousing</span>
+        <span class="pill">AWS (S3, Athena, QuickSight)</span>
+        <span class="pill">Databricks</span>
+        <span class="pill">BI: Looker, Tableau, Power BI, QuickSight</span>
+        <span class="pill">Agentic AI Workflows</span>
+        <span class="pill">Automation & QA Frameworks</span>
+        <span class="pill">Stakeholder Management</span>
+        <span class="pill">Team Leadership</span>
+      </div>
+      <p class="print-only muted" style="margin-top: 4pt; font-size: 10pt;">
+        SQL · Python · Redshift · dbt · ETL/ELT · Data Warehousing · AWS (S3, Athena, QuickSight) · Databricks · Looker · Tableau · Power BI · Agentic AI · Automation · Stakeholder Management · Leadership
+      </p>
+    </section>
+
+    <!-- Experience -->
+    <section class="section" aria-label="experience">
+      <h2>Experience</h2>
+
+      <div class="row tight">
+        <div><span class="role">Engineering Manager, Data</span> — <span class="company">CitiusTech (for Kyruus Health)</span></div>
+        <div class="date nowrap">Mar 2025 – Present</div>
+      </div>
+      <ul>
+        <li>Engineered an agentic AI workflow (Python + Claude) that auto‑migrated 500 Matillion jobs to dbt, reducing manual development time by ~90%.</li>
+        <li>Led 8 engineers (dbt/Looker) to unblock and deliver 5 critical projects in 3 months; instituted QA framework to improve delivery quality and velocity.</li>
+        <li>Built GenAI chatbot (Databricks) and a custom Python ingestion API; replicated a Power BI dashboard in React to cut license costs and enable custom features.</li>
+      </ul>
+
+      <div class="row">
+        <div><span class="role">Senior Business Intelligence Engineer</span> — <span class="company">Amazon (Alexa)</span></div>
+        <div class="date nowrap">Feb 2020 – May 2022</div>
+      </div>
+      <ul>
+        <li>Pioneered data architecture for 260+ person org; launched self‑service BI platform cutting data access from 2 weeks to &lt;1 hour; ~$2.3MM annual impact.</li>
+        <li>Delivered 5 QuickSight dashboards, onboarded 10+ critical tables, and completed 35+ analyses; built GDPR‑compliant deletion mechanisms.</li>
+        <li>Built and mentored a 4‑person BI team; authored 3‑year analytics roadmap with executive buy‑in.</li>
+      </ul>
+
+      <div class="row">
+        <div><span class="role">Senior Business Intelligence Engineer</span> — <span class="company">Amazon (Ads)</span></div>
+        <div class="date nowrap">May 2018 – Jan 2020</div>
+      </div>
+      <ul>
+        <li>Built HeadCT automation for a 6,000+ employee org; eliminated 50% analyst bandwidth (≈$200K/mo opportunity cost) via SharePoint → Redshift → QuickSight.</li>
+        <li>Established retargeting metrics infrastructure from petabyte‑scale Athena; automated SDP revenue reporting and WBR metrics under tight deadlines.</li>
+        <li>Drove agency reporting automation from 2 days to hours via weekend staging and daily scheduled pipelines; improved accuracy and stakeholder trust.</li>
+      </ul>
+
+      <div class="row">
+        <div><span class="role">Business Intelligence Engineer</span> — <span class="company">Amazon (Compliance – HS3C)</span></div>
+        <div class="date nowrap">Aug 2016 – May 2018</div>
+      </div>
+      <ul>
+        <li>Unified 90+ sources into a denormalized Redshift layer (100+ columns) enabling 300+ automated metrics and dashboards for RPC &amp; COPS.</li>
+        <li>Provisioned Redshift cluster and Tableau licenses; automated WBR/MBR/QBR reporting; built classification tables enabling 2 new business launches.</li>
+      </ul>
+
+      <div class="row">
+        <div><span class="role">Business Analyst / SME</span> — <span class="company">Amazon (India)</span></div>
+        <div class="date nowrap">Sep 2012 – Aug 2016</div>
+      </div>
+      <ul>
+        <li>Delivered ~18 high‑impact projects; flagship Barcode Reconciliation eliminated 32,000 tickets/yr (≈8 FTE saved); earned “Outstanding” rating.</li>
+        <li>Automated Hazmat classification for ~15,000 ASINs; built the Auto Reporter tool; championed data literacy for 150+ associates/managers.</li>
+      </ul>
+    </section>
+
+    <!-- Education (concise) -->
+    <section class="section" aria-label="education">
+      <h2>Education</h2>
+      <div>BE, Mechanical Engineering — Visvesvaraya Technological University</div>
+    </section>
+
+    <!-- Selected Achievements (space permitting) -->
+    <section class="section optional" aria-label="achievements">
+      <h2>Selected Achievements</h2>
+      <ul>
+        <li>NIE recognition letter citing ~$2.3MM annual business impact.</li>
+        <li>5× “Outstanding”/promotion milestones across 2012–2020 career progression.</li>
+        <li>Built quantitative trading systems (₹3 Cr+ AUM) with 20% CAGR; mentored interns and mentees.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

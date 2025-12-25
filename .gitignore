@@ -40,7 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-public/Resume/
+public/Resume/*
 !public/Resume/Sharath_Resume_OnePage.html
 !public/Resume/Sharath_Resume_OnePage.pdf
 
