@@ -92,8 +92,8 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 pt-4"
           >
-            <Link
-              href="/Resume/Sharath_Resume_OnePage.pdf"
+            <a
+              href="/portfolio/Resume/Sharath_Resume_OnePage.pdf"
               target="_blank"
               download="Sharath_Byladakere_Somashekar_Resume_OnePage.pdf"
               className="group relative inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-10 text-sm font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/50 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
@@ -103,15 +103,15 @@ export function Hero() {
               </svg>
               <span className="relative z-10">Download Resume (1‑Page)</span>
               <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary to-primary/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-            </Link>
-            <Link
-              href="/Resume/Sharath_Resume_OnePage.html"
+            </a>
+            <a
+              href="/portfolio/Resume/Sharath_Resume_OnePage.html"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-12 items-center justify-center rounded-lg border-2 border-primary/20 bg-background/50 backdrop-blur-sm px-10 text-sm font-semibold shadow-sm transition-all duration-300 hover:border-primary/40 hover:bg-primary/5 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             >
               View Online
-            </Link>
+            </a>
             <Link
               href="#contact"
               className="inline-flex h-12 items-center justify-center rounded-lg border-2 border-primary/20 bg-background/50 backdrop-blur-sm px-10 text-sm font-semibold shadow-sm transition-all duration-300 hover:border-primary/40 hover:bg-primary/5 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
