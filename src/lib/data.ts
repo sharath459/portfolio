@@ -10,12 +10,13 @@ export const experienceData: Experience[] = [
         title: "Engineering Manager, Data",
         company: "CitiusTech (for Kyruus Health)",
         date: "Mar 2025 – Present",
-        summary: "Managing an 8-person data team to accelerate delivery of 5 critical data projects ($1.2MM total cost, 10x ROI expected) within 3 months, driving the migration of 500+ Matillion jobs to modern dbt and Redshift stack.",
+        summary: "Managing a cross-functional 8-person data team (4 dbt, 4 Looker Engineers) to accelerate the delivery of 5 critical data projects ($1.2M total cost, 10x ROI), standardized KPI definitions across business units, increasing dashboard adoption by 60%.",
         details: [
-            "Engineered a groundbreaking Agentic AI workflow using Python and Claude API that automated the migration of 500 Matillion jobs to dbt models—auto-generating SQL and YAML files and achieving 90% reduction in manual development time, transforming what would have been a year-long project into weeks.",
-            "Led an 8-person team of dbt Data Engineers and Looker BI Engineers to accelerate 5 long-stalled, critical data projects within 3 months, with total project cost of $1.2MM and expected 10x return on investment (ROI).",
-            "Streamlined development lifecycle by implementing a robust QA framework and coaching the team on best practices, significantly enhancing project quality and operational efficiency.",
-            "Built a Databricks GenAI chatbot POC to accelerate internal information retrieval, developed a custom Python API for automated data ingestion from proprietary services, and replicated a Power BI dashboard in React.js to eliminate licensing costs while enabling flexible custom feature development."
+            "Architected and led the end-to-end migration of 1,220 Matillion ETL jobs to AWS MWAA (Airflow) and dbt Cloud; designed a 3-tier DAG orchestration architecture on track to eliminate $600K/year in licensing costs.",
+            "Engineered a groundbreaking Agentic AI workflow using Python and Claude API that automated the migration of 500 Matillion jobs to dbt models—auto-generating SQL and YAML files and achieving 90% reduction in manual development time.",
+            "Designed and delivered an AI Foundation Workshop for 30+ engineers covering LLM fundamentals, SDLC value stream mapping, and agentic workflows; established team-wide AI standards including system prompts, model tiering, and Datadog cost monitoring.",
+            "Built a custom Migration dashboard using React (Vite, Recharts) to catalog 2,695 Redshift tables and 1,220 Matillion dependencies; developed interactive DAG visualizations that eliminated licensed BI dependencies.",
+            "Spearheaded the Provider Reach Looker dashboard, integrating data from Google, Bing, and Apple to track $2.5M in revenue; provided healthcare providers with clear ROI metrics on Kyruus platform investments."
         ]
     },
     {

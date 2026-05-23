@@ -3,11 +3,13 @@
 import Link from 'next/link';
 import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
+import { useTheme } from '@/components/ThemeProvider';
 
 export function Header() {
   const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const navItems = useMemo(() => [
     { name: 'Home', href: '#home' },
@@ -76,35 +78,67 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
-            {navItems.map((item) => {
-              const isActive = activeSection === item.href.substring(1);
-              return (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`text-sm font-medium transition-colors relative group ${isActive
-                      ? 'text-primary'
-                      : 'text-muted-foreground hover:text-primary'
-                    }`}
-                >
-                  {item.name}
-                  {isActive && (
-                    <span className="absolute -bottom-[1.45rem] left-0 right-0 h-0.5 bg-primary"></span>
-                  )}
-                </Link>
-              );
-            })}
-          </nav>
+          <div className="hidden md:flex items-center space-x-8">
+            <nav className="flex items-center space-x-6">
+              {navItems.map((item) => {
+                const isActive = activeSection === item.href.substring(1);
+                return (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`text-sm font-medium transition-colors relative group ${isActive
+                        ? 'text-primary'
+                        : 'text-muted-foreground hover:text-primary'
+                      }`}
+                  >
+                    {item.name}
+                    {isActive && (
+                      <span className="absolute -bottom-[1.45rem] left-0 right-0 h-0.5 bg-primary"></span>
+                    )}
+                  </Link>
+                );
+              })}
+            </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-          </button>
+            {/* Theme Toggle Button */}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={toggleTheme}
+              className="p-2 rounded-lg bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+              aria-label="Toggle theme"
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={theme}
+                  initial={{ opacity: 0, rotate: -90 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  exit={{ opacity: 0, rotate: 90 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {theme === 'dark' ? <FaSun size={18} /> : <FaMoon size={18} />}
+                </motion.div>
+              </AnimatePresence>
+            </motion.button>
+          </div>
+
+          {/* Mobile Buttons */}
+          <div className="flex md:hidden items-center space-x-2">
+            <button
+              onClick={toggleTheme}
+              className="p-2 text-foreground hover:text-primary transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? <FaSun size={20} /> : <FaMoon size={20} />}
+            </button>
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-foreground hover:text-primary transition-colors"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation Menu */}

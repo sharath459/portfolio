@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { heroData } from '@/lib/data';
 import { TypingAnimation } from '@/components/ui/TypingAnimation';
 import { FormattedText } from '@/components/ui/FormattedText';
+import { Magnetic } from '@/components/ui/Magnetic';
 import {
   FaDatabase,
   FaChartBar,
@@ -53,6 +54,10 @@ const skillCategories = [
 ];
 
 export function Hero() {
+  const { scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, 400], [1, 0]);
+  const scale = useTransform(scrollY, [0, 400], [1, 0.9]);
+
   return (
     <section id="home" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated background gradient */}
@@ -60,28 +65,43 @@ export function Hero() {
 
       <div id="main-content" className="container px-4 md:px-6 text-center py-24">
         <motion.div
+          style={{ opacity, scale }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center space-y-8"
         >
           {/* Name & Title */}
           <div className="space-y-6">
-            <h1 className="text-5xl font-bold tracking-tight sm:text-6xl xl:text-7xl text-foreground pb-2">
-              <TypingAnimation
-                text="Sharath Byladakere Somashekar"
-                className=""
-                typingSpeed={80}
-                startDelay={500}
+            <h1 className="text-5xl font-bold tracking-tight sm:text-6xl xl:text-7xl pb-2 relative">
+              <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-purple-600 drop-shadow-sm">
+                <TypingAnimation
+                  text="Sharath Byladakere Somashekar"
+                  className=""
+                  typingSpeed={80}
+                  startDelay={500}
+                />
+              </span>
+              <motion.div
+                className="absolute -inset-x-4 -inset-y-2 bg-primary/10 blur-3xl -z-10 rounded-full"
+                animate={{
+                  scale: [1, 1.1, 1],
+                  opacity: [0.3, 0.5, 0.3],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
               />
             </h1>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 0.4 }}
-              className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground font-light"
+              className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground font-light tracking-wide"
             >
-              Senior Data Leader & AI Innovator
+              Senior Data Leader & <span className="text-primary font-medium">AI Innovator</span>
             </motion.p>
           </div>
 
@@ -90,34 +110,46 @@ export function Hero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 pt-4"
+            className="flex flex-col sm:flex-row gap-6 pt-4"
           >
-            <a
-              href="/portfolio/Resume/Sharath_Resume_OnePage.pdf"
-              target="_blank"
-              download="Sharath_Byladakere_Somashekar_Resume_OnePage.pdf"
-              className="group relative inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-10 text-sm font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-primary/50 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            >
-              <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              <span className="relative z-10">Download Resume (1‑Page)</span>
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-primary to-primary/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-            </a>
-            <a
-              href="/portfolio/Resume/Sharath_Resume_OnePage.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center rounded-lg border-2 border-primary/20 bg-background/50 backdrop-blur-sm px-10 text-sm font-semibold shadow-sm transition-all duration-300 hover:border-primary/40 hover:bg-primary/5 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            >
-              View Online
-            </a>
-            <Link
-              href="#contact"
-              className="inline-flex h-12 items-center justify-center rounded-lg border-2 border-primary/20 bg-background/50 backdrop-blur-sm px-10 text-sm font-semibold shadow-sm transition-all duration-300 hover:border-primary/40 hover:bg-primary/5 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-            >
-              Let&apos;s Connect
-            </Link>
+            <Magnetic strength={0.3}>
+              <motion.a
+                href="/portfolio/Resume/Sharath_Resume_OnePage.pdf"
+                target="_blank"
+                download="Sharath_Byladakere_Somashekar_Resume_OnePage.pdf"
+                whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
+                whileTap={{ scale: 0.98 }}
+                className="group relative inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary px-10 text-sm font-semibold text-primary-foreground shadow-lg transition-all duration-300"
+              >
+                <svg className="w-4 h-4 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <span className="relative z-10">Download Resume</span>
+                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              </motion.a>
+            </Magnetic>
+            <Magnetic strength={0.3}>
+              <motion.a
+                href="/portfolio/Resume/Sharath_Resume_OnePage.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05, borderColor: "rgba(139, 92, 246, 0.5)" }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex h-12 items-center justify-center rounded-lg border-2 border-primary/20 bg-background/50 backdrop-blur-sm px-10 text-sm font-semibold shadow-sm transition-all duration-300"
+              >
+                View Online
+              </motion.a>
+            </Magnetic>
+            <Magnetic strength={0.3}>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                <Link
+                  href="#contact"
+                  className="inline-flex h-12 items-center justify-center rounded-lg border-2 border-primary/20 bg-background/50 backdrop-blur-sm px-10 text-sm font-semibold shadow-sm transition-all duration-300 hover:border-primary/40 hover:bg-primary/5"
+                >
+                  Let&apos;s Connect
+                </Link>
+              </motion.div>
+            </Magnetic>
           </motion.div>
 
           {/* Core Tools Badges */}
@@ -147,19 +179,30 @@ export function Hero() {
               ].map((tool, idx) => {
                 const Icon = tool.icon;
                 return (
-                  <motion.div
-                    key={tool.name}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: 0.7 + idx * 0.05 }}
-                    whileHover={{ scale: 1.1, y: -3 }}
-                    className="group relative flex items-center gap-2 px-4 py-2.5 rounded-full bg-muted/30 backdrop-blur-sm border border-muted/40 hover:border-primary/40 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
-                  >
-                    <Icon className="w-4 h-4 transition-colors duration-300 group-hover:opacity-100 opacity-70" style={{ color: tool.color }} />
-                    <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors duration-300">
-                      {tool.name}
-                    </span>
-                  </motion.div>
+                  <Magnetic key={tool.name} strength={0.2}>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.3, delay: 0.7 + idx * 0.05 }}
+                      whileHover={{ 
+                        scale: 1.1, 
+                        y: -5,
+                        boxShadow: `0 10px 20px ${tool.color}20`,
+                        borderColor: `${tool.color}50`
+                      }}
+                      className="group relative flex items-center gap-2 px-4 py-2.5 rounded-full bg-muted/30 backdrop-blur-sm border border-muted/40 transition-all duration-300"
+                    >
+                      <motion.div
+                        animate={{ y: [0, -2, 0] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: idx * 0.2 }}
+                      >
+                        <Icon className="w-4 h-4 transition-colors duration-300" style={{ color: tool.color }} />
+                      </motion.div>
+                      <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors duration-300">
+                        {tool.name}
+                      </span>
+                    </motion.div>
+                  </Magnetic>
                 );
               })}
             </div>
@@ -177,15 +220,25 @@ export function Hero() {
               {skillCategories.map((category, idx) => (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.9 + idx * 0.1 }}
-                  className="group p-6 rounded-xl bg-gradient-to-br from-muted/20 to-muted/5 backdrop-blur-sm border border-muted/20 hover:border-primary/30 transition-all duration-500 hover:shadow-lg"
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.5, 
+                    delay: 0.9 + idx * 0.1,
+                    y: {
+                      duration: 3,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "easeInOut",
+                      delay: idx * 0.5
+                    }
+                  }}
+                  className="group p-6 rounded-xl bg-gradient-to-br from-muted/20 to-muted/5 backdrop-blur-sm border border-muted/20 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl"
                   style={{
                     boxShadow: `0 0 0 0 ${category.color}15`,
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.boxShadow = `0 8px 24px ${category.color}30`;
+                    e.currentTarget.style.boxShadow = `0 12px 30px ${category.color}30`;
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.boxShadow = `0 0 0 0 ${category.color}15`;
@@ -237,28 +290,30 @@ export function Hero() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 1.4 }}
-                className="group p-8 rounded-2xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20 hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/10"
+                whileHover={{ y: -5, boxShadow: "0 10px 30px rgba(0,0,0,0.2)" }}
+                className="group p-8 rounded-2xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20 hover:border-primary/30 transition-all duration-500"
               >
                 <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-primary/80">
                   Why Hire Me?
                 </h2>
-                <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
+                <div className="text-muted-foreground leading-relaxed text-base sm:text-lg">
                   <FormattedText text={heroData.pitch} />
-                </p>
+                </div>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 1.6 }}
-                className="group p-8 rounded-2xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20 hover:border-primary/30 transition-all duration-500 hover:shadow-lg hover:shadow-primary/10"
+                whileHover={{ y: -5, boxShadow: "0 10px 30px rgba(0,0,0,0.2)" }}
+                className="group p-8 rounded-2xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20 hover:border-primary/30 transition-all duration-500"
               >
                 <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-primary/80">
                   My Philosophy
                 </h2>
-                <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
+                <div className="text-muted-foreground leading-relaxed text-base sm:text-lg">
                   <FormattedText text={heroData.philosophy} />
-                </p>
+                </div>
               </motion.div>
             </div>
           </motion.div>
