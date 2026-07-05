@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { ParticleBackground, AnimatedOrbs } from "@/components/ui/ParticleBackground";
+import { AnimatedOrbs } from "@/components/ui/ParticleBackground";
+import { Background3D } from "@/components/three/Background3D";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 
 const geistSans = Geist({
@@ -64,13 +65,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Set the theme class before first paint to avoid a flash of the wrong theme */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.classList.toggle('light',t==='light')}catch(e){}`,
+          }}
+        />
         <ThemeProvider>
           <ScrollProgress />
-          <ParticleBackground />
+          <Background3D />
           <AnimatedOrbs />
           {children}
         </ThemeProvider>

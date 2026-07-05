@@ -13,7 +13,9 @@ import { BackToTop } from '@/components/BackToTop';
 
 export default function Home() {
   return (
-    <div className="bg-background text-foreground">
+    // No bg-background on this wrapper: body paints the background and the fixed
+    // 3D canvas must stay visible behind the content
+    <div className="text-foreground">
       <Header />
       <main>
         <Hero />

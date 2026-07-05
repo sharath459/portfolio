@@ -10,40 +10,43 @@ interface TypingAnimationProps {
   startDelay?: number;
 }
 
-export function TypingAnimation({ 
-  text, 
-  className = '', 
+export function TypingAnimation({
+  text,
+  className = '',
   typingSpeed = 100,
-  startDelay = 0 
+  startDelay = 0
 }: TypingAnimationProps) {
   const [displayedText, setDisplayedText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
-    // Start delay before typing begins
-    const startTimeout = setTimeout(() => {
-      if (currentIndex < text.length) {
-        const timeout = setTimeout(() => {
-          setDisplayedText((prev) => prev + text[currentIndex]);
-          setCurrentIndex((prev) => prev + 1);
-        }, typingSpeed);
-
-        return () => clearTimeout(timeout);
-      } else if (!isComplete) {
-        setIsComplete(true);
-      }
+    let interval: ReturnType<typeof setInterval> | undefined;
+    // startDelay applies once, then one character per typingSpeed tick
+    const start = setTimeout(() => {
+      let i = 0;
+      interval = setInterval(() => {
+        i += 1;
+        setDisplayedText(text.slice(0, i));
+        if (i >= text.length) {
+          clearInterval(interval);
+          setIsComplete(true);
+        }
+      }, typingSpeed);
     }, startDelay);
 
-    return () => clearTimeout(startTimeout);
-  }, [currentIndex, text, typingSpeed, startDelay, isComplete]);
+    return () => {
+      clearTimeout(start);
+      clearInterval(interval);
+    };
+  }, [text, typingSpeed, startDelay]);
 
+  // Renders a span (not a heading) so it can live inside the caller's <h1>
   return (
-    <motion.h1
+    <motion.span
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className={className}
+      className={`inline-block ${className}`}
     >
       {displayedText}
       {!isComplete && (
@@ -53,6 +56,6 @@ export function TypingAnimation({
           className="inline-block w-0.5 h-[0.9em] bg-primary ml-1 align-middle"
         />
       )}
-    </motion.h1>
+    </motion.span>
   );
 }

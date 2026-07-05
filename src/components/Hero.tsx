@@ -6,6 +6,7 @@ import { heroData } from '@/lib/data';
 import { TypingAnimation } from '@/components/ui/TypingAnimation';
 import { FormattedText } from '@/components/ui/FormattedText';
 import { Magnetic } from '@/components/ui/Magnetic';
+import { TiltCard } from '@/components/ui/TiltCard';
 import {
   FaDatabase,
   FaChartBar,
@@ -61,11 +62,14 @@ export function Hero() {
   return (
     <section id="home" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5 -z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-background/40 via-background/20 to-primary/5 -z-10"></div>
 
       <div id="main-content" className="container px-4 md:px-6 text-center py-24">
+        {/* Scroll-driven fade lives on the outer wrapper; the entrance animation on the
+            inner one. Combining them on one element lets the scroll MotionValue override
+            the mount animation, killing the fade-in. */}
+        <motion.div style={{ opacity, scale }}>
         <motion.div
-          style={{ opacity, scale }}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -222,18 +226,12 @@ export function Hero() {
                   key={idx}
                   initial={{ opacity: 0, scale: 0.9, y: 20 }}
                   animate={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ 
-                    duration: 0.5, 
-                    delay: 0.9 + idx * 0.1,
-                    y: {
-                      duration: 3,
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                      ease: "easeInOut",
-                      delay: idx * 0.5
-                    }
-                  }}
-                  className="group p-6 rounded-xl bg-gradient-to-br from-muted/20 to-muted/5 backdrop-blur-sm border border-muted/20 hover:border-primary/30 transition-all duration-500 hover:shadow-2xl"
+                  transition={{ duration: 0.5, delay: 0.9 + idx * 0.1 }}
+                  className="h-full"
+                >
+                <TiltCard max={12}>
+                <div
+                  className="group h-full p-6 rounded-xl bg-gradient-to-br from-muted/20 to-muted/5 backdrop-blur-sm border border-muted/20 hover:border-primary/30 transition-all duration-500"
                   style={{
                     boxShadow: `0 0 0 0 ${category.color}15`,
                   }}
@@ -273,6 +271,8 @@ export function Hero() {
                       </motion.li>
                     ))}
                   </ul>
+                </div>
+                </TiltCard>
                 </motion.div>
               ))}
             </div>
@@ -293,7 +293,7 @@ export function Hero() {
                 whileHover={{ y: -5, boxShadow: "0 10px 30px rgba(0,0,0,0.2)" }}
                 className="group p-8 rounded-2xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20 hover:border-primary/30 transition-all duration-500"
               >
-                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-primary/80">
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-purple-600">
                   Why Hire Me?
                 </h2>
                 <div className="text-muted-foreground leading-relaxed text-base sm:text-lg">
@@ -308,7 +308,7 @@ export function Hero() {
                 whileHover={{ y: -5, boxShadow: "0 10px 30px rgba(0,0,0,0.2)" }}
                 className="group p-8 rounded-2xl bg-gradient-to-br from-muted/30 to-muted/10 backdrop-blur-sm border border-muted/20 hover:border-primary/30 transition-all duration-500"
               >
-                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-primary/80">
+                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-purple-600">
                   My Philosophy
                 </h2>
                 <div className="text-muted-foreground leading-relaxed text-base sm:text-lg">
@@ -336,6 +336,7 @@ export function Hero() {
               </motion.div>
             </div>
           </motion.div>
+        </motion.div>
         </motion.div>
       </div>
     </section>

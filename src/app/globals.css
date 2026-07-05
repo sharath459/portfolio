@@ -1,21 +1,41 @@
 @import "tailwindcss";
 
+/* Theme tokens. Dark is the default; the .light class (set by ThemeProvider)
+   overrides. Utilities like bg-background/text-primary are generated from the
+   @theme block below (Tailwind v4 — the old tailwind.config.ts is not read). */
 :root {
-  --background: 0 0% 4%; /* #0a0a0a */
-  --foreground: 0 0% 93%; /* #ededed - WCAG AA compliant on dark bg */
-  --primary: 262 83% 58%; /* Purple-500 */
-  --primary-foreground: 0 0% 100%;
-  --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%; /* Lighter for better contrast */
+  --background: hsl(240 10% 4%);
+  --foreground: hsl(0 0% 93%); /* WCAG AA compliant on dark bg */
+  --primary: hsl(262 83% 58%); /* Purple-500 */
+  --primary-foreground: hsl(0 0% 100%);
+  --muted: hsl(240 4% 16%);
+  --muted-foreground: hsl(240 5% 65%);
+  --card: hsl(240 6% 7%);
+  --border: hsl(240 4% 20%);
 }
 
 .light {
-  --background: 0 0% 100%; /* #ffffff */
-  --foreground: 0 0% 9%; /* #171717 - WCAG AA compliant on white bg */
-  --primary: 262 83% 58%; /* Purple-500 */
-  --primary-foreground: 0 0% 100%;
-  --muted: 240 4.8% 95.9%;
-  --muted-foreground: 240 3.8% 46.1%; /* Darker for better contrast */
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(0 0% 9%); /* WCAG AA compliant on white bg */
+  --primary: hsl(262 83% 58%);
+  --primary-foreground: hsl(0 0% 100%);
+  --muted: hsl(240 5% 96%);
+  --muted-foreground: hsl(240 4% 46%);
+  --card: hsl(0 0% 99%);
+  --border: hsl(240 6% 90%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 * {
@@ -51,12 +71,12 @@ html {
 
 /* Custom prose styles for project details */
 .prose {
-  color: hsl(var(--muted-foreground));
+  color: var(--muted-foreground);
   line-height: 1.75;
 }
 
 .prose strong {
-  color: hsl(var(--primary));
+  color: var(--primary);
   font-weight: 600;
 }
 
@@ -89,7 +109,7 @@ html {
 
 /* Improved selection colors */
 ::selection {
-  background-color: hsl(var(--primary) / 0.3);
+  background-color: color-mix(in srgb, var(--primary) 30%, transparent);
   color: var(--foreground);
 }
 
@@ -103,10 +123,10 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--primary) / 0.5);
+  background: color-mix(in srgb, var(--primary) 50%, transparent);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary) / 0.7);
+  background: color-mix(in srgb, var(--primary) 70%, transparent);
 }

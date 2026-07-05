@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 export function Accolades() {
   return (
     <AnimatedSection>
-      <section id="accolades" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-muted/20 to-background">
+      <section id="accolades" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-muted/20 to-transparent">
         <div className="container px-4 md:px-6">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}

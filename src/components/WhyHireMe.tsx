@@ -58,7 +58,7 @@ export function WhyHireMe() {
   return (
     <section id="why-hire-me" className="w-full py-16 md:py-24 lg:py-32 relative overflow-hidden">
       {/* Animated background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background -z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent -z-10" />
       <div className="absolute inset-0 bg-grid-white/[0.02] -z-10" />
       
       <div className="container px-4 md:px-6 max-w-7xl mx-auto">

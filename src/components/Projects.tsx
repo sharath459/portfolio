@@ -4,6 +4,7 @@ import { projectData } from '@/lib/data';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/Card';
 import { FormattedText } from '@/components/ui/FormattedText';
 import { motion } from 'framer-motion';
+import { TiltCard } from '@/components/ui/TiltCard';
 import { getTechIcon } from '@/lib/tech-icons';
 import { FaDollarSign, FaClock, FaUsers } from 'react-icons/fa';
 
@@ -56,8 +57,10 @@ const ProjectCard = ({ project, index }: { project: (typeof projectData)[0]; ind
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
+        className="h-full"
     >
-        <Card className="flex flex-col h-full group hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:border-primary/30 hover:-translate-y-1 bg-gradient-to-br from-card to-card/50 relative overflow-hidden">
+        <TiltCard max={5}>
+        <Card className="flex flex-col h-full group hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:border-primary/30 bg-gradient-to-br from-card to-card/50 relative overflow-hidden">
             {/* Status Badge */}
             <div className="absolute top-4 right-4 z-10">
               <span className={`text-xs font-medium px-3 py-1 rounded-full border ${statusBadge.color}`}>
@@ -132,6 +135,7 @@ const ProjectCard = ({ project, index }: { project: (typeof projectData)[0]; ind
                 </div>
             </CardContent>
         </Card>
+        </TiltCard>
     </motion.div>
   );
 };
@@ -164,7 +168,7 @@ export function Projects() {
   const sideProjects = projectData.filter(p => p.category === 'Side Project');
 
   return (
-    <section id="projects" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-background to-muted/20">
+    <section id="projects" className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-transparent to-muted/20">
       <div className="container px-4 md:px-6 max-w-7xl mx-auto space-y-20">
           
           {/* Top Projects */}
