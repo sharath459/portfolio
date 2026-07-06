@@ -100,7 +100,9 @@ function DataCore({ reduced }: { reduced: boolean }) {
         <meshBasicMaterial wireframe color="#8b5cf6" transparent opacity={0.14} />
       </mesh>
       <mesh scale={0.95}>
-        <icosahedronGeometry args={[1, 6]} />
+        {/* detail 6 (~82k tris) pegged the main thread recomputing displacement every
+            frame; detail 3 (~1.3k tris) looks identical once distorted+blurred */}
+        <icosahedronGeometry args={[1, 3]} />
         <MeshDistortMaterial
           color="#4c1d95"
           emissive={new THREE.Color('#8b5cf6')}
@@ -139,7 +141,7 @@ export default function Scene3D() {
     const onChange = (e: MediaQueryListEvent) => setReduced(e.matches);
     mq.addEventListener('change', onChange);
 
-    setParticleCount(window.innerWidth < 768 ? 1200 : 2600);
+    setParticleCount(window.innerWidth < 768 ? 700 : 1600);
 
     const onMove = (e: PointerEvent) => {
       mouse.current.x = (e.clientX / window.innerWidth) * 2 - 1;
@@ -159,12 +161,11 @@ export default function Scene3D() {
   return (
     <Canvas
       camera={{ position: [0, 0, 9], fov: 55 }}
-      dpr={[1, 1.5]}
+      dpr={[1, 1.25]}
       gl={{ antialias: false, alpha: true, powerPreference: 'high-performance' }}
     >
-      <ambientLight intensity={0.4} />
+      <ambientLight intensity={0.5} />
       <pointLight position={[6, 6, 6]} intensity={40} color="#8b5cf6" />
-      <pointLight position={[-6, -4, 4]} intensity={25} color="#3b82f6" />
       <ParticleField count={particleCount} reduced={reduced} />
       <DataCore reduced={reduced} />
       <CameraRig mouse={mouse} reduced={reduced} />

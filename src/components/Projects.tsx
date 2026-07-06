@@ -60,7 +60,7 @@ const ProjectCard = ({ project, index }: { project: (typeof projectData)[0]; ind
         className="h-full"
     >
         <TiltCard max={5}>
-        <Card className="flex flex-col h-full group hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:border-primary/30 bg-gradient-to-br from-card to-card/50 relative overflow-hidden">
+        <Card className="flex flex-col h-full group hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 relative overflow-hidden">
             {/* Status Badge */}
             <div className="absolute top-4 right-4 z-10">
               <span className={`text-xs font-medium px-3 py-1 rounded-full border ${statusBadge.color}`}>

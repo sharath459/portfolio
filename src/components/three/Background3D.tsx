@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 const Scene3D = dynamic(() => import('./Scene3D'), { ssr: false });
 
 /** Full-viewport fixed 3D background. Renders nothing on the server or when
- *  WebGL is unavailable (AnimatedOrbs still provides ambient color). */
+ *  WebGL is unavailable. */
 export function Background3D() {
   const [supported, setSupported] = useState(false);
 

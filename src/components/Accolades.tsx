@@ -28,7 +28,7 @@ export function Accolades() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="flex flex-col text-center items-center h-full group hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:border-primary/30 hover:-translate-y-2 bg-gradient-to-br from-card to-card/50">
+                <Card className="flex flex-col text-center items-center h-full group hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 hover:-translate-y-2">
                   <CardHeader className="pb-4">
                     <motion.div
                       initial={{ scale: 0 }}

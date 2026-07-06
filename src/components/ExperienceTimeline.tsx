@@ -81,7 +81,7 @@ export function ExperienceTimeline() {
                       className="absolute top-6 hidden md:block bg-gradient-to-br from-primary to-primary/60 rounded-full w-6 h-6 shadow-lg shadow-primary/50 ring-4 ring-background" 
                       style={index % 2 === 0 ? {left: '-3.25rem'} : {right: '-3.25rem'}}
                     ></motion.div>
-                    <Card className="group hover:shadow-xl hover:shadow-primary/20 transition-all duration-500 hover:border-primary/50 bg-gradient-to-br from-card to-card/50 backdrop-blur-sm relative overflow-hidden">
+                    <Card className="group hover:shadow-xl hover:shadow-primary/20 transition-all duration-500 relative overflow-hidden">
                       {/* Card glow effect on hover */}
                       <motion.div
                         className="absolute inset-0 bg-gradient-radial from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"

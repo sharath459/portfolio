@@ -196,12 +196,7 @@ export function Hero() {
                       }}
                       className="group relative flex items-center gap-2 px-4 py-2.5 rounded-full bg-muted/30 backdrop-blur-sm border border-muted/40 transition-all duration-300"
                     >
-                      <motion.div
-                        animate={{ y: [0, -2, 0] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: idx * 0.2 }}
-                      >
-                        <Icon className="w-4 h-4 transition-colors duration-300" style={{ color: tool.color }} />
-                      </motion.div>
+                      <Icon className="w-4 h-4 transition-colors duration-300" style={{ color: tool.color }} />
                       <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors duration-300">
                         {tool.name}
                       </span>
@@ -231,7 +226,7 @@ export function Hero() {
                 >
                 <TiltCard max={12}>
                 <div
-                  className="group h-full p-6 rounded-xl bg-gradient-to-br from-muted/20 to-muted/5 backdrop-blur-sm border border-muted/20 hover:border-primary/30 transition-all duration-500"
+                  className="glass-card group h-full p-6 rounded-xl transition-all duration-500"
                   style={{
                     boxShadow: `0 0 0 0 ${category.color}15`,
                   }}

@@ -69,6 +69,49 @@ html {
   }
 }
 
+/* Fixed grain overlay for a less flat, more tactile surface. Static image, so it
+   costs one paint, not a per-frame animation. */
+.grain-overlay {
+  /* No mix-blend-mode: any blend mode other than normal forces the browser to
+     resample the (constantly animating) WebGL canvas beneath it every frame,
+     same cost class as backdrop-filter. Plain low-opacity alpha compositing
+     is GPU-cheap and still reads as grain. */
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Glass card: gradient-bordered translucent surface used for project/timeline/
+   testimonial cards. The border is a padding-box/border-box gradient trick so it
+   works over the WebGL background without an extra wrapper element. */
+.glass-card {
+  position: relative;
+  isolation: isolate; /* contains ::before's negative z-index to this card only */
+  /* No backdrop-filter: blurring the animated WebGL canvas behind these cards
+     forces a resample every frame (regressed idle FPS ~43 -> ~29 in testing).
+     A near-opaque tint reads as "glass" without that per-frame cost. */
+  background: color-mix(in srgb, var(--card) 88%, transparent);
+  border: 1px solid transparent;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  margin: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--primary) 50%, transparent),
+    color-mix(in srgb, var(--primary) 5%, transparent) 40%,
+    color-mix(in srgb, var(--primary) 25%, transparent)
+  );
+}
+
 /* Custom prose styles for project details */
 .prose {
   color: var(--muted-foreground);

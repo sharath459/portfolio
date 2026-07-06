@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { AnimatedOrbs } from "@/components/ui/ParticleBackground";
 import { Background3D } from "@/components/three/Background3D";
 import { ScrollProgress } from "@/components/ui/ScrollProgress";
 
@@ -78,7 +77,7 @@ export default function RootLayout({
         <ThemeProvider>
           <ScrollProgress />
           <Background3D />
-          <AnimatedOrbs />
+          <div className="grain-overlay" aria-hidden />
           {children}
         </ThemeProvider>
       </body>
