@@ -40,13 +40,17 @@ export function TypingAnimation({
     };
   }, [text, typingSpeed, startDelay]);
 
-  // Renders a span (not a heading) so it can live inside the caller's <h1>
+  // Renders a span (not a heading) so it can live inside the caller's <h1>.
+  // Must stay `inline` (not inline-block): when this wraps across multiple
+  // lines on narrow viewports, an inline-block here breaks the outer
+  // bg-clip-text gradient span's text-clip painting, rendering the wrapped
+  // lines invisible (transparent-on-transparent) on mobile.
   return (
     <motion.span
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className={`inline-block ${className}`}
+      className={className}
     >
       {displayedText}
       {!isComplete && (
